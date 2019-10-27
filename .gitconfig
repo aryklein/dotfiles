@@ -1,0 +1,5 @@
+[user]
+	email = kleinerman@gmail.com
+	name = Ary Kleinerman
+[credential]
+	helper = cache --timeout=3600
