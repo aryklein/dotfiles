@@ -29,7 +29,7 @@ compinit
 _comp_options+=(globdots) # Include hidden files.
 
 ## Command Correction
-setopt correctall
+#setopt correctall
 
 ## Reverse search
 bindkey '^R' history-incremental-search-backward
