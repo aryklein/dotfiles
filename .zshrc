@@ -148,3 +148,6 @@ bindkey -s "^[Ok" "+"
 bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
+
+# ls file type colors
+[ -r /etc/DIR_COLORS ] && eval `dircolors /etc/DIR_COLORS`
