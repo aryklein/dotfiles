@@ -10,7 +10,7 @@ SAVEHIST=5000
 bindkey -v
 
 ## The following lines wasadded by compinstall
-zstyle :compinstall filename '/home/ary/.zshrc'
+zstyle :compinstall filename "'$HOME/.zshrc'"
 
 ## Prompt configuration
 autoload -U colors && colors
