@@ -1,5 +1,6 @@
 ## Vars
-ZSHDIR=~/.zsh
+ZSH_DIR=$HOME/.zsh
+ZSH_PLUGINS_DIR=$ZSH_DIR/plugins
 
 ## History
 HISTFILE=~/.zsh_history
@@ -15,7 +16,7 @@ zstyle :compinstall filename "'$HOME/.zshrc'"
 ## Prompt configuration
 autoload -U colors && colors
 # Load git plugin for prompt (https://github.com/woefe/git-prompt.zsh)
-source ${ZSHDIR}/git-prompt.zsh/git-prompt.zsh
+source ${ZSH_PLUGINS_DIR}/git-prompt.zsh/git-prompt.zsh
 # Set some plugin variables
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[green]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[green]%})"
