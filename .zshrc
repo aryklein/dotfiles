@@ -39,7 +39,9 @@ bindkey '^F' history-incremental-pattern-search-forward
 setopt hist_ignore_space
 
 ## Enable autosuggestion plugins
-source ${ZSHDIR}/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ -f  /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 ## Key bindings (https://wiki.archlinux.org/index.php/Zsh#Key_bindings)
 
