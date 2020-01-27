@@ -56,7 +56,7 @@ If the step above failed because your $HOME folder might already have some stock
 you can remove them with the following command:
 
 ```
-dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs rm -v
+dotfiles checkout 2>&1 | egrep "\s+\.|README.md" | awk {'print $1'} | xargs rm -v
 ```
 
 And re-run the checkout command:
