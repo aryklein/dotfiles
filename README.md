@@ -49,7 +49,7 @@ git clone --bare [git-repo-url] $HOME/.dotfiles
 Checkout the content of your bare repository to your `$HOME`:
 
 ```
-dotfile checkout
+dotfiles checkout
 ```
 
 If the step above failed because your $HOME folder might already have some stock configuration files,
