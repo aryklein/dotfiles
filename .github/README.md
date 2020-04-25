@@ -62,6 +62,6 @@ dotfiles checkout 2>&1 | egrep "\s+\.|README.md" | awk {'print $1'} | xargs rm -
 And re-run the checkout command:
 
 ```
-dotfile checkout
+dotfiles checkout
 ```
 
