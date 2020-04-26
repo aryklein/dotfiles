@@ -1,13 +1,19 @@
+" The new default vimrc file has been included since vim 8, with some very sensible defaults.
+" However it is not enabled by default if you have a .vimrc file already.
+" If you create your own .vimrc, it is recommended to add these 2 line somewhere near the top.
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
-" Convert tabs to spaces
-autocmd FileType c set tabstop=8 expandtab shiftwidth=4
-autocmd FileType sh set tabstop=8 expandtab shiftwidth=4
-autocmd FileType python set tabstop=8 expandtab shiftwidth=4 softtabstop=4
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+" Syntax
+syntax on
 
-" Toggling paste mode
+" Convert tabs to spaces
+autocmd FileType c set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType sh set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType python set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType yaml set tabstop=8 softtabstop=2 shiftwidth=2 expandtab
+
+" Toggling paste mode. This prevents Vim from auto-indenting the pasted code
 set pastetoggle=<F2>
 
 " Disable mouse
@@ -16,3 +22,13 @@ set ttymouse=
 
 " Syntax highlighting for groovy (Jenkinsfile)
 autocmd BufNewFile,BufRead Jenkinsfile setf groovy
+
+" Make the new split window appear below/right the current window
+set splitbelow splitright
+
+" Make adjusing split sizes a bit more friendly:
+" resize current buffer by +/- 3 
+nnoremap <silent> <C-j> :resize -3<CR>
+nnoremap <silent> <C-k> :resize +3<CR>
+nnoremap <silent> <C-l> :vertical resize -3<CR>
+nnoremap <silent> <C-h> :vertical resize +3<CR>
