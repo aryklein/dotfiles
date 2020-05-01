@@ -11,7 +11,7 @@ syntax on
 autocmd FileType c set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType sh set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType python set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
-autocmd FileType yaml set tabstop=8 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Toggling paste mode. This prevents Vim from auto-indenting the pasted code
 set pastetoggle=<F2>
