@@ -158,3 +158,6 @@ bindkey -s "^[Oo" "/"
 
 # ls file type colors
 [ -r /etc/DIR_COLORS ] && eval `dircolors /etc/DIR_COLORS`
+
+# load Kubernetes config files
+export KUBECONFIG=$(echo $(find ~/.kube -regextype posix-extended -regex '.*config\..+\.(yml|yaml)') | sed 's/[[:space:]]/:/g')
