@@ -24,13 +24,11 @@ MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
-ColorForeground=#eeeeeeeeecec
-ColorBoldUseDefault=FALSE
-ColorBold=#ffffffffffff
 FontName=Monospace 11
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=FALSE
 ScrollingUnlimited=TRUE
 UseDefaultWorkingDir=TRUE
 DefaultWorkingDir=~/
+ColorBackground=#1b1b1b1b1b1b
 
