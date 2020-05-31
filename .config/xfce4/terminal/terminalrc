@@ -30,5 +30,4 @@ MiscShowUnsafePasteDialog=FALSE
 ScrollingUnlimited=TRUE
 UseDefaultWorkingDir=TRUE
 DefaultWorkingDir=~/
-ColorBackground=#1f921f921f92
 
