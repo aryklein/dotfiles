@@ -161,3 +161,6 @@ bindkey -s "^[Oo" "/"
 
 # set KUBECONFIG environment variable with a list of all kubeconfig yaml files in the ~/.kube directory
 export KUBECONFIG=$(echo $(find ~/.kube -regextype posix-extended -regex '.*config\..+\.(yml|yaml)') | sed 's/[[:space:]]/:/g')
+
+# Add $HOME/bin to the PATH variable
+path+=$HOME/bin
