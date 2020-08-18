@@ -129,6 +129,7 @@ alias grep='grep --color=auto'
 alias diff='colordiff'
 alias history='history 0'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias cat='bat -pp'
 # Aliases for my work
 alias vault-dev='export VAULT_ADDR="https://vaultdev.internal.telnyx.com"'
 alias vault-prod='export VAULT_ADDR="https://vault.internal.telnyx.com"'
