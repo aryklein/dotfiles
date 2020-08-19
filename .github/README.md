@@ -75,7 +75,6 @@ To revert a change, you should clone the repository in your laptop:
 
 ```
 git clone --bare [git-repo-url] $HOME/.dotfiles
-
 ```
 
 And then:
