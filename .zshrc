@@ -20,7 +20,9 @@ source ${ZSH_PLUGINS_DIR}/git-prompt.zsh/git-prompt.zsh
 # Set some plugin variables
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[green]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[green]%})"
-PROMPT='%B%{$fg[green]%}[%n@%M %{$fg[white]%}%1~%{$reset_color%}$(gitprompt)%B%{$fg[green]%}]%(?:%{$fg[green]%}$:%{$fg[red]%}$)%b%{$reset_color%} '
+#
+#PROMPT='%B%{$fg[green]%}[%n@%M %{$fg[white]%}%1~%{$reset_color%}$(gitprompt)%B%{$fg[green]%}]%(?:%{$fg[green]%}$:%{$fg[red]%}$)%b%{$reset_color%} '
+PROMPT='%B%{$fg[cyan]%}%1~%{$reset_color%}$(gitprompt) %B%(?:%{$fg[green]%}➜:%{$fg[red]%}➜)%b%{$reset_color%} '
 
 ## Basic auto/tab completion with menu style
 autoload -Uz compinit
@@ -39,9 +41,14 @@ bindkey '^F' history-incremental-pattern-search-forward
 ## Remove command lines from the history list when the first character on the line is a space
 setopt hist_ignore_space
 
-## Enable autosuggestion plugins
+## Enable autosuggestion plugin
 if [[ -f  /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+## Enable syntax-highlighting plugin
+if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 ## Key bindings (https://wiki.archlinux.org/index.php/Zsh#Key_bindings)
@@ -129,7 +136,6 @@ alias grep='grep --color=auto'
 alias diff='colordiff'
 alias history='history 0'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias cat='bat -pp'
 # Aliases for my work
 alias vault-dev='export VAULT_ADDR="https://vaultdev.internal.telnyx.com"'
 alias vault-prod='export VAULT_ADDR="https://vault.internal.telnyx.com"'
