@@ -65,3 +65,28 @@ And re-run the checkout command:
 dotfiles checkout
 ```
 
+## How to uncommit the last commit (it's git bare repository)?
+
+Taking into consideration that there are several git commands that make no sense in a bare repository
+(because bare repositories don't use indexes and do not have a working directory) `git reset --hard HEAD^`
+is not a solution to uncommit the last change in this repository.
+
+To revert a change, you should clone the repository in your laptop:
+
+```
+git clone --bare [git-repo-url] $HOME/.dotfiles
+
+```
+
+And then:
+
+```
+dotfiles update-ref HEAD HEAD^
+```
+
+And finally push it to the origin:
+
+```
+dotfiles push origin master --force
+```
+
