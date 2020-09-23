@@ -32,3 +32,11 @@ nnoremap <silent> <C-j> :resize -3<CR>
 nnoremap <silent> <C-k> :resize +3<CR>
 nnoremap <silent> <C-l> :vertical resize -3<CR>
 nnoremap <silent> <C-h> :vertical resize +3<CR>
+
+" Removes pipes | that act as separators on splits
+set fillchars=vert:\ 
+
+" open a terminal inside VIM
+noremap <Leader>tt :terminal<CR>
+" open a vertical terminal inside VIM
+noremap <Leader>vt :vertical terminal<CR>
