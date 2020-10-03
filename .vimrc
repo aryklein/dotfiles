@@ -42,6 +42,4 @@ noremap <Leader>vt :vertical terminal<CR>
 set fillchars=vert:\ 
 
 " add relative line numbers
-set nu rnu
-" change line numbers color
-highlight LineNr ctermfg=grey
+set number relativenumber
