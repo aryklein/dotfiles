@@ -175,3 +175,6 @@ export KUBECONFIG=$(echo $(find ~/.kube -regextype posix-extended -regex '.*conf
 
 # Add $HOME/bin to the PATH variable
 path+=$HOME/bin
+
+# set Vim as default editor for gh
+export EDITOR=vim
