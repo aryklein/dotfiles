@@ -47,3 +47,6 @@ set number relativenumber
 " set shortcuts for line numbering
 noremap <Leader>n :set number relativenumber<CR>
 noremap <Leader>nn :set nonumber norelativenumber<CR>
+
+" Change line number color
+highlight LineNr ctermfg=grey
