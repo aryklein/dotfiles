@@ -49,4 +49,10 @@ noremap <Leader>n :set number relativenumber<CR>
 noremap <Leader>nn :set nonumber norelativenumber<CR>
 
 " Change line number color
-highlight LineNr ctermfg=grey
+"highlight LineNr ctermfg=grey
+
+let gruvbox_contrast_light='hard'
+let g:gruvbox_italic=1
+set bg=dark
+colorscheme gruvbox
+highlight Normal ctermbg=None
