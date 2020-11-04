@@ -136,6 +136,9 @@ alias grep='grep --color=auto'
 alias diff='colordiff'
 alias history='history 0'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+# replace vim by nvim only if it is installed
+if [[ -x /usr/bin/nvim ]]; then alias vim='nvim'; fi
+
 # k8s aliases
 alias kns='kubectl config set-context --current --namespace'
 alias kuc='kubectl config use-context'
@@ -177,4 +180,4 @@ export KUBECONFIG=$(echo $(find ~/.kube -regextype posix-extended -regex '.*conf
 path+=$HOME/bin
 
 # set Vim as default editor for gh
-export EDITOR=vim
+export EDITOR=nvim
