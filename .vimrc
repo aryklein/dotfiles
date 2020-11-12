@@ -4,27 +4,28 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
-" Syntax
+" enable syntax
 syntax on
-
-" Convert tabs to spaces
-autocmd FileType c set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
-autocmd FileType sh set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
-autocmd FileType python set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
-autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-
-" Syntax highlighting for groovy (Jenkinsfile)
-autocmd BufNewFile,BufRead Jenkinsfile setf groovy
-
-" Toggling paste mode. This prevents Vim from auto-indenting the pasted code
+"" basic setup
+set nobackup
+set smartindent
+" add relative line numbers
+set number relativenumber
+" make the new split window appear below/right the current window
+set splitbelow splitright
+" toggling paste mode. This prevents Vim from auto-indenting the pasted code
 set pastetoggle=<F2>
-
 " Disable mouse
 set mouse=
 set ttymouse=
 
-" Make the new split window appear below/right the current window
-set splitbelow splitright
+" convert tabs to spaces
+autocmd FileType c set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType sh set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType python set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+" Syntax highlighting for groovy (Jenkinsfile)
+autocmd BufNewFile,BufRead Jenkinsfile setf groovy
 
 " Make adjusing split sizes a bit more friendly:
 " resize current buffer by +/- 3 
@@ -40,9 +41,6 @@ noremap <Leader>vt :vertical terminal<CR>
 
 " Removes pipes | that act as separators on splits
 set fillchars=vert:\ 
-
-" add relative line numbers
-set number relativenumber
 
 " set shortcuts for line numbering
 noremap <Leader>n :set number relativenumber<CR>
