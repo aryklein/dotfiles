@@ -59,7 +59,9 @@ autocmd BufReadPost *
 " plugins - vim-plug
 call plug#begin()
 Plug 'gruvbox-community/gruvbox'
-"Plug 'vim-airline/vim-airline'    
+Plug 'hashivim/vim-terraform'
+Plug 'pearofducks/ansible-vim'
+"Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 "Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
