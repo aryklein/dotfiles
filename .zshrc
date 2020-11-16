@@ -170,6 +170,17 @@ bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
 
+## bindkey for productivity
+bindkey "^A" vi-beginning-of-line
+bindkey "^E" vi-end-of-line
+# ctrl+arrows
+bindkey "^[1;5C" forward-word
+bindkey "^[1;5D" backward-word
+# ctrl+delete
+bindkey "^[[3;5~" kill-word
+# ctrl+backspace
+bindkey '^H' backward-kill-word
+
 # ls file type colors
 [ -r /etc/DIR_COLORS ] && eval `dircolors /etc/DIR_COLORS`
 
@@ -181,3 +192,4 @@ path+=$HOME/bin
 
 # set Vim as default editor for gh
 export EDITOR=nvim
+
