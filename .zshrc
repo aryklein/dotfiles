@@ -39,7 +39,7 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^F' history-incremental-pattern-search-forward
 
 ## Remove command lines from the history list when the first character on the line is a space
-setopt hist_ignore_space
+setopt HIST_IGNORE_SPACE
 
 ## Enable autosuggestion plugin
 if [[ -f  /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
