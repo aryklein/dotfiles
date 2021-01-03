@@ -174,8 +174,8 @@ bindkey -s "^[Oo" "/"
 bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
 # ctrl+arrows
-bindkey "^[1;5C" forward-word
-bindkey "^[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 # ctrl+delete
 bindkey "^[[3;5~" kill-word
 # ctrl+backspace
