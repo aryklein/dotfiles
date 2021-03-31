@@ -34,6 +34,9 @@ _comp_options+=(globdots) # Include hidden files.
 ## Command Correction
 #setopt correctall
 
+# Interactive comments
+setopt interactivecomments
+
 ## Reverse search
 bindkey '^R' history-incremental-search-backward
 bindkey '^F' history-incremental-pattern-search-forward
