@@ -138,6 +138,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias diff='colordiff'
 alias history='history 0'
+alias ip='ip -color=auto'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 # Terminal issues with SSH in Kitty
 alias ssh='TERM="xterm-256color" ssh'
