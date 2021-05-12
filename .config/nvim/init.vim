@@ -14,6 +14,9 @@ set pastetoggle=<F2>
 " disable cursor style change (only for Neovim)
 set guicursor=""
 
+" highlight the cursor line
+set cursorline
+
 " convert tabs to spaces
 autocmd FileType c set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType sh set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
@@ -37,7 +40,7 @@ noremap <Leader>vt :vsp \| :terminal<CR>
 noremap <Leader>n :set number relativenumber<CR>
 noremap <Leader>nn :set nonumber norelativenumber<CR>
 " shortcut for vertical Explore
-noremap <Leader>e :Vexplore<CR>
+noremap <Leader>e :NERDTreeToggle<CR>
 " Esc key for normal mode in terminal
 tnoremap <Esc> <C-\><C-n>
 
@@ -61,6 +64,8 @@ call plug#begin()
 Plug 'gruvbox-community/gruvbox'
 Plug 'hashivim/vim-terraform'
 Plug 'pearofducks/ansible-vim'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 "Plug 'dracula/vim', { 'as': 'dracula' }
