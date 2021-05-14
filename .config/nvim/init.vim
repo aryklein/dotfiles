@@ -38,6 +38,8 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <silent><F6> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 " toggle vim-gitgutter
 nnoremap <silent><F7> :GitGutterToggle<CR>
+" toggle indentline plugin
+nnoremap <silent><F8> :IndentLinesToggle<CR>
 
 " removes pipes | that act as separators on splits
 " (commented out - this option mess up gruvbox)
@@ -54,7 +56,7 @@ autocmd BufReadPost *
   \ |   exe "normal! g`\""
   \ | endif
 
-" plugins - vim-plug
+"" plugins - vim-plug
 call plug#begin()
 Plug 'gruvbox-community/gruvbox'
 Plug 'hashivim/vim-terraform'
@@ -65,20 +67,30 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'yggdroot/indentline'
+Plug 'preservim/nerdcommenter'
 "Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
-" airline config
+"" airline config
 let g:airline#extensions#hunks#enabled = 1
 let g:airline_extensions = ['branch', 'tabline']
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'gruvbox'
 
-" netrw config
+"" indentline plugin config
+let g:indentLine_char = '▏'
+ " disable by default
+let g:indentLine_enabled = 0
+
+"" NERDCommenter config
+let g:NERDDefaultAlign = 'left'
+
+"" netrw config
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
-" gruvbox theme setup
+"" gruvbox theme config
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_italic = 1
 colorscheme gruvbox
