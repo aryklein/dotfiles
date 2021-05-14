@@ -81,7 +81,6 @@ let g:airline_theme = 'gruvbox'
 "" indentline plugin config
 let g:indentLine_char = '▏'
  " disable by default
-let g:indentLine_enabled = 0
 
 "" NERDCommenter config
 let g:NERDDefaultAlign = 'left'
