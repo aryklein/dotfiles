@@ -146,6 +146,7 @@ alias ssh='TERM="xterm-256color" ssh'
 if [[ -x /usr/bin/nvim ]]; then alias vim='nvim'; fi
 
 # k8s aliases
+alias k='kubectl'
 alias kns='kubectl config set-context --current --namespace'
 alias kuc='kubectl config use-context'
 alias kgc='kubectl config get-contexts'
