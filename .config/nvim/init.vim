@@ -69,6 +69,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'yggdroot/indentline'
 Plug 'preservim/nerdcommenter'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
@@ -80,7 +81,7 @@ let g:airline_theme = 'gruvbox'
 
 "" indentline plugin config
 let g:indentLine_char = '▏'
- " disable by default
+let g:indentLine_setConceal = 0
 
 "" NERDCommenter config
 let g:NERDDefaultAlign = 'left'
