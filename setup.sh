@@ -45,6 +45,12 @@ install_vim_plug() {
 PACKAGES=( $(for i in $(ls -d */); do echo ${i%/}; done) )
 NVIM_PACKAGE=nvim
 
+# Do not run as root
+if [[ $EUID -eq 0 ]]; then
+   echo "This script must not be run as root."
+   exit 1
+fi
+
 case "$1" in
     install-dotfiles)
         install_dotfiles ${PACKAGES[@]}
