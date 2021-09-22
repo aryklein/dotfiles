@@ -2,8 +2,14 @@
 
 ZSH_PLUGINS_DIR=$HOME/.zsh/plugins
 ZSH_PACKAGE=zsh
+ZSH_PLUGINS=(
+    zsh-autosuggestions
+    zsh-completions
+    zsh-syntax-highlighting
+)
 
-function setup {    
+# install zshrc dotfile and install plugins
+setup() {
     if [[ -f ${HOME}/.zshrc ]]; then
         read -r -p "There is an existing zsh config. Do you want to override it? [y/N]: " RESPONSE
         if [[ ! $RESPONSE =~ ^(y|Y|yes|Yes)$ ]]; then
@@ -38,11 +44,14 @@ function setup {
         fi
     fi
     
-    echo "Setup done."
-    echo "Info: Consider installing 'zsh-autosuggestions', 'zsh-syntax-highlighting' and 'zsh-completions' packages for a better experience."
+    for ZSH_PLUGIN in ${ZSH_PLUGINS[@]}; do
+        if ! pacman -Qi $ZSH_PLUGIN> /dev/null 2>&1; then
+            echo "INFO: consider installing '$ZSH_PLUGIN' for a better experience."
+        fi
+    done
 }
 
-function update {
+update() {
     if find $HOME/.zsh/plugins -maxdepth 2 -name .git -type d > /dev/null; then
         find $HOME/.zsh/plugins -maxdepth 2 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull origin master
     else
@@ -51,7 +60,7 @@ function update {
     fi
 }
 
-function remove {
+remove() {
     if [[ -f $HOME/.zshrc ]]; then
         echo "Removing .zshrc file..."
         rm -f $HOME/.zshrc
