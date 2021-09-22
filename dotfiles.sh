@@ -28,41 +28,23 @@ clean_dotifles() {
     done
 }
 
-install_vim_plug() {
-    # check if vim-plug is already installed
-    if [[ -f "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim ]]; then
-        echo "Vim-plug is already installed. No changes were made."
-    else
-        echo "Installing vim-plug for Neovim..."
-        curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        nvim +PlugInstall +qall
-    fi
-}
-
 ## main
-
-PACKAGES=( $(for i in $(ls -d */); do echo ${i%/}; done) )
-NVIM_PACKAGE=nvim
-
-# Do not run as root
+# do not run as root or with sudo
 if [[ $EUID -eq 0 ]]; then
-   echo "This script must not be run as root."
+   echo "Error: you must not be root to run this script."
    exit 1
 fi
 
+PACKAGES=( $(for i in $(ls -d */); do echo ${i%/}; done) )
+
 case "$1" in
-    install-dotfiles)
+    install)
         install_dotfiles ${PACKAGES[@]}
         ;;
-    clean-dotfiles)
+    clean)
         clean_dotifles ${PACKAGES[@]}
         ;;
-    install-vim-plug)
-        install_vim_plug
-        stow -v -t $HOME $NVIM_PACKAGE
-        ;;
     *)
-        echo "Invalid option"
-        exit 1
+        echo "Usage: $0 [install|clean]"
 esac
+
