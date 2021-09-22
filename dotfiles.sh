@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+PACKAGES=( $(for i in $(ls -d */); do echo ${i%/}; done) )
+
 # delete existing dotifles and create dotfiles symlinks with Stow
 install_dotfiles() {
     local PACKAGES=$@
@@ -28,14 +30,11 @@ clean_dotifles() {
     done
 }
 
-## main
 # do not run as root or with sudo
 if [[ $EUID -eq 0 ]]; then
    echo "Error: you must not be root to run this script."
    exit 1
 fi
-
-PACKAGES=( $(for i in $(ls -d */); do echo ${i%/}; done) )
 
 case "$1" in
     install)
