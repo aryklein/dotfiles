@@ -1,6 +1,9 @@
-## Vars
-ZSH_DIR=$HOME/.zsh
-ZSH_PLUGINS_DIR=$ZSH_DIR/plugins
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 ## History
 HISTFILE=~/.zsh_history
@@ -10,19 +13,8 @@ SAVEHIST=2500
 ## Set vi mode
 bindkey -v
 
-## The following lines wasadded by compinstall
+## The following lines was added by compinstall
 zstyle :compinstall filename "'$HOME/.zshrc'"
-
-## Prompt configuration
-autoload -U colors && colors
-# Load git plugin for prompt (https://github.com/woefe/git-prompt.zsh)
-source ${ZSH_PLUGINS_DIR}/git-prompt.zsh/git-prompt.zsh
-# Set some plugin variables
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[green]%}("
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[green]%})"
-#
-#PROMPT='%B%{$fg[green]%}[%n@%M %{$fg[white]%}%1~%{$reset_color%}$(gitprompt)%B%{$fg[green]%}]%(?:%{$fg[green]%}$:%{$fg[red]%}$)%b%{$reset_color%} '
-PROMPT='%B%{$fg[cyan]%}%1~%{$reset_color%}$(gitprompt) %B%(?:%{$fg[green]%}➜:%{$fg[red]%}➜)%b%{$reset_color%} '
 
 ## Basic auto/tab completion with menu style
 autoload -Uz compinit
@@ -208,3 +200,7 @@ path+=$HOME/bin
 # set Vim as default editor for gh
 export EDITOR=nvim
 
+## powerline10k
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
