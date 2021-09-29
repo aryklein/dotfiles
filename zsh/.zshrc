@@ -44,6 +44,8 @@ fi
 ## Enable syntax-highlighting plugin
 if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    # No colors for comments
+    export ZSH_HIGHLIGHT_STYLES[comment]="none"
 fi
 
 ## Enable and configure fzf
