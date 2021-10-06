@@ -144,8 +144,10 @@ alias history='history 0'
 alias ip='ip -color=auto'
 # Terminal issues with SSH in Kitty
 alias ssh='TERM="xterm-256color" ssh'
-# replace vim by nvim only if it is installed
+# replace vim by nvim if it is installed
 if [[ -x /usr/bin/nvim ]]; then alias vim='nvim'; fi
+# replace cat with bat if it is installed
+if [[ -x /usr/bin/bat ]]; then alias cat='bat -pp'; fi
 
 # k8s aliases
 alias k='kubectl'
