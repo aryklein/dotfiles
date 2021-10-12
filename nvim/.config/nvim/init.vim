@@ -95,7 +95,14 @@ let g:netrw_liststyle = 3
 "" gruvbox theme config
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_italic = 1
+
+"" Theme
+" Contrast should be set before colorscheme gruvbox
+"(https://github.com/gruvbox-community/gruvbox/wiki/Troubleshooting#2-cannot-set-contrast)
 colorscheme gruvbox
+
+" enable 24-bit color
+set termguicolors
 
 "" telescope things
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
