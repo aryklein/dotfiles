@@ -27,11 +27,11 @@ nnoremap <silent> <C-k> :resize +3<CR>
 nnoremap <silent> <C-l> :vertical resize -3<CR>
 nnoremap <silent> <C-h> :vertical resize +3<CR>
 " open a terminal inside VIM
-noremap <Leader>ht :sp \| :terminal<CR>
+nnoremap <Leader>ht :sp \| :terminal<CR>
 " open a vertical terminal inside VIM
-noremap <Leader>vt :vsp \| :terminal<CR>
+nnoremap <Leader>vt :vsp \| :terminal<CR>
 " shortcut for vertical Explore
-noremap <Leader>e :NERDTreeToggle<CR>
+nnoremap <F9> :NERDTreeToggle<CR>
 " Esc key for normal mode in terminal
 tnoremap <Esc> <C-\><C-n>
 " toggle line numbering
