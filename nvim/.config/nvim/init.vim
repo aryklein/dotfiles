@@ -100,6 +100,7 @@ let g:gruvbox_italic = 1
 " Contrast should be set before colorscheme gruvbox
 "(https://github.com/gruvbox-community/gruvbox/wiki/Troubleshooting#2-cannot-set-contrast)
 colorscheme gruvbox
+set background=dark
 
 " enable 24-bit color
 set termguicolors
