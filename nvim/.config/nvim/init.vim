@@ -38,8 +38,6 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <silent><F6> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 " toggle vim-gitgutter
 nnoremap <silent><F7> :GitGutterToggle<CR>
-" toggle indentline plugin
-nnoremap <silent><F8> :IndentLinesToggle<CR>
 
 " removes pipes | that act as separators on splits
 " (commented out - this option mess up gruvbox)
@@ -63,11 +61,8 @@ runtime ./plug.vim
 let g:airline#extensions#hunks#enabled = 1
 let g:airline_extensions = ['branch', 'tabline']
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox'
-
-"" indentline plugin config
-let g:indentLine_char = '▏'
-"let g:indentLine_setConceal = 0
+"let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'dracula'
 
 "" NERDCommenter config
 let g:NERDDefaultAlign = 'left'
@@ -77,23 +72,18 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
 "" gruvbox theme config
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_italic = 1
+"let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_italic = 1
+"" Contrast should be set before colorscheme gruvbox
+""(https://github.com/gruvbox-community/gruvbox/wiki/Troubleshooting#2-cannot-set-contrast)
+"colorscheme gruvbox
 
-"" Theme
-" Contrast should be set before colorscheme gruvbox
-"(https://github.com/gruvbox-community/gruvbox/wiki/Troubleshooting#2-cannot-set-contrast)
-colorscheme gruvbox
+" Dracula theme
+colorscheme dracula
 set background=dark
 
 " enable 24-bit color
 set termguicolors
-
-"" telescope things
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 "" remap to move block of text
 vnoremap J :m '>+1<CR>gv=gv

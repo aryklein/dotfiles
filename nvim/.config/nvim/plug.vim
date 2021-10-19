@@ -4,7 +4,8 @@ if has("nvim")
 endif
 
 call plug#begin()
-Plug 'gruvbox-community/gruvbox'
+"Plug 'gruvbox-community/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'hashivim/vim-terraform'
 Plug 'pearofducks/ansible-vim'
 Plug 'preservim/nerdtree'
@@ -13,7 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'yggdroot/indentline'
+"Plug 'yggdroot/indentline'
 Plug 'preservim/nerdcommenter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "" Telescope
