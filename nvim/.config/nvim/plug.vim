@@ -15,6 +15,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'yggdroot/indentline'
 Plug 'preservim/nerdcommenter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "" Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
