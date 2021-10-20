@@ -4,8 +4,7 @@ if has("nvim")
 endif
 
 call plug#begin()
-"Plug 'gruvbox-community/gruvbox'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'gruvbox-community/gruvbox'
 Plug 'hashivim/vim-terraform'
 Plug 'pearofducks/ansible-vim'
 Plug 'preservim/nerdtree'
