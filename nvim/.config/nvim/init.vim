@@ -1,4 +1,6 @@
-" A customized init.vim for neovim (https://neovim.io/) 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" A customized init.vim for neovim (https://neovim.io/)""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " enable syntax
 syntax on
@@ -84,3 +86,7 @@ set termguicolors
 "" remap to move block of text
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+"" remap to shift blocks visually
+vnoremap > >gv
+vnoremap < <gv
