@@ -63,7 +63,7 @@ runtime ./plug.vim
 let g:airline#extensions#hunks#enabled = 1
 let g:airline_extensions = ['branch', 'tabline']
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'dracula'
 
 "" NERDCommenter config
 let g:NERDDefaultAlign = 'left'
@@ -73,11 +73,15 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
 "" gruvbox theme config
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_italic = 1
+"let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_italic = 1
 "" Contrast should be set before colorscheme gruvbox
 ""(https://github.com/gruvbox-community/gruvbox/wiki/Troubleshooting#2-cannot-set-contrast)
-colorscheme gruvbox
+"colorscheme gruvbox
+
+colorscheme dracula
+
+" adjust the default color groups for dark background
 set background=dark
 
 " enable 24-bit color
