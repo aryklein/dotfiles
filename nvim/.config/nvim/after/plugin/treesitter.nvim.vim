@@ -21,7 +21,8 @@ require'nvim-treesitter.configs'.setup {
     "json",
     "vim",
     "lua",
-    "dockerfile"
+    "dockerfile",
+    "go"
   },
 }
 EOF
