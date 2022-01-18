@@ -160,9 +160,6 @@ alias k='kubectl'
 alias kns='kubectl config set-context --current --namespace'
 alias kuc='kubectl config use-context'
 alias kgc='kubectl config get-contexts'
-# Aliases for my work
-alias vault-dev='export VAULT_ADDR="https://vaultdev.internal.telnyx.com"'
-alias vault-prod='export VAULT_ADDR="https://vault.internal.telnyx.com"'
 
 # Numpad keys (bindkey to do the mapping)
 # 0 . Enter
