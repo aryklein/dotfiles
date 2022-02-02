@@ -125,7 +125,7 @@ function xterm_title_precmd () {
     [[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
 }
 
-if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*) ]]; then
+if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*) ]] && [[ "$TERM" != (xterm-kitty) ]]; then
     add-zsh-hook -Uz precmd xterm_title_precmd
 fi
 
