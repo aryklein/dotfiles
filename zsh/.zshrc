@@ -143,7 +143,7 @@ function man() {
 }
 
 ## Aliases
-alias ls='ls --color=auto'
+if [[ -x /usr/bin/exa ]]; then alias ls='exa'; else alias ls='ls --color=auto'; fi
 alias grep='grep --color=auto'
 alias diff='colordiff'
 alias history='history 0'
