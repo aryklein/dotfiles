@@ -143,7 +143,7 @@ function man() {
 }
 
 ## Aliases
-if [[ -x /usr/bin/exa ]]; then alias ls='exa'; else alias ls='ls --color=auto'; fi
+if [[ -x /usr/bin/exa ]]; then alias ls='exa --binary --group --git'; else alias ls='ls --color=auto'; fi
 alias grep='grep --color=auto'
 alias diff='colordiff'
 alias history='history 0'
@@ -197,9 +197,6 @@ bindkey '^H' backward-kill-word
 
 # ls file type colors
 [ -r /etc/DIR_COLORS ] && eval `dircolors /etc/DIR_COLORS`
-
-# set KUBECONFIG environment variable with a list of all kubeconfig yaml files in the ~/.kube directory
-export KUBECONFIG=$(echo $(find ~/.kube -regextype posix-extended -regex '.*config\..+\.(yml|yaml)') | sed 's/[[:space:]]/:/g')
 
 # Add $HOME/bin to the PATH variable
 path+=$HOME/bin
