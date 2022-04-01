@@ -8,7 +8,7 @@ set $up k
 set $right l
 
 # default terminal emulator
-set $term alacritty
+set $term kitty
 
 # application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -22,9 +22,9 @@ set $laptop-display eDP-1
 set $locking swaylock --daemonize --color "#282a2b" --inside-color "#282a2b" --inside-clear-color "#282a2b" --ring-color "#3B758C" --ring-clear-color "#9fca56" --ring-ver-color "#55b5db" --show-failed-attempts --fade-in 0.2 --grace 2 --effect-vignette 0.5:0.5 --effect-blur 7x5 --ignore-empty-password --screenshots --clock
 #
 set $idle swayidle -w \
-    timeout 10 'light -G > /tmp/brightness && light -S 10' resume 'light -S $([ -f /tmp/brightness ] && cat /tmp/brightness || echo 100%)' \
-    timeout 30 'exec $locking' \
-    timeout 35 'swaymsg "output * dpms off"' \
+    timeout 100 'light -G > /tmp/brightness && light -S 10' resume 'light -S $([ -f /tmp/brightness ] && cat /tmp/brightness || echo 100%)' \
+    timeout 300 'exec $locking' \
+    timeout 330 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'exec $locking'
 
@@ -54,5 +54,9 @@ set $volume_mute $onscreen_bar $(pactl set-sink-mute @DEFAULT_SINK@ toggle && pa
 set $mic_mute $onscreen_bar $(pactl set-source-mute @DEFAULT_SOURCE@ toggle && pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p")
 
 # notifications
-set $notifications make --sort=-time --layer=overlay --background-color=#2e3440 --width=300 --height=230 --border-size=2 --border-color=#88c0d0 --border-radius=15 --default-timeout=300
-#set $notifications mako --border-color "#141a1b" --background-color "#5ca5ed" --border-size 3 --width 400 --height 200 --padding 20 --margin 20 --default-timeout 15000
+#set $notifications mako --sort=-time --layer=overlay --background-color=#2e3440 --width=300 --height=230 --border-size=2 --border-color=#88c0d0 --border-radius=15 --default-timeout=300
+set $notification mako
+
+# fonts
+set $font Noto Sans Regular 11 
+

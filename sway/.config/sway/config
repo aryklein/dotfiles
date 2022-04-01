@@ -208,6 +208,10 @@ bindsym --locked XF86MonBrightnessDown exec $brightness_down
 #default_border pixel 2
 default_border none
 gaps inner 3
+font pango:$font
 
+#
+# Include extra config:
+#
 include ./config.d/*
 include /etc/sway/config.d/*
