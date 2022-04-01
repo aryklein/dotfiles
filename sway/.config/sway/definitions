@@ -1,6 +1,4 @@
 #
-### Variables
-#
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -9,12 +7,14 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu wofi --show run
 #
+set $laptop-display eDP-1
+
 #
 set $locking swaylock --daemonize --color "#282a2b" --inside-color "#282a2b" --inside-clear-color "#282a2b" --ring-color "#3B758C" --ring-clear-color "#9fca56" --ring-ver-color "#55b5db" --show-failed-attempts --fade-in 0.2 --grace 2 --effect-vignette 0.5:0.5 --effect-blur 7x5 --ignore-empty-password --screenshots --clock
 #
@@ -26,7 +26,7 @@ set $idle swayidle -w \
     before-sleep 'exec $locking'
 
 # onscreen bar
-set $onscreen_bar bash $HOME/.config/sway/scripts/wob.sh "$accent-colorFF" "$background-colorFF"
+set $onscreen_bar bash $HOME/.config/sway/scripts/wob.sh "#5ca5edFF" "#141a1bFF"
 
 set $term_float footclient -a floating_shell
 set $calendar $term_float khal interactive
@@ -38,10 +38,13 @@ set $brightness_down light -r -U $($brightness_step) && $onscreen_bar $(light -G
 
 # pulseaudio command
 #set $pulseaudio $term_float pulsemixer
-set $pulseaudio $term_float pavucontrol
-
+set $pulseaudio pavucontrol
+set $sink_volume pactl get-sink-volume @DEFAULT_SINK@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
+set $source_volume pactl get-source-volume @DEFAULT_SOURCE@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
 set $volume_down $onscreen_bar $(pactl set-sink-volume @DEFAULT_SINK@ -5% && $sink_volume)
 set $volume_up $onscreen_bar $(pactl set-sink-volume @DEFAULT_SINK@ +5% && $sink_volume)
+set $volume_mute $onscreen_bar $(pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-mute @DEFAULT_SINK@ | sed -En "/no/ s/.*/$($sink_volume)/p; /yes/ s/.*/0/p")
+set $mic_mute $onscreen_bar $(pactl set-source-mute @DEFAULT_SOURCE@ toggle && pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p")
 
 # clipboard history
 set $clipboard cliphist list | rofi -dmenu -font "$gui-font" -p "Select item to copy" -lines 10 -width 35 -theme-str $rofi_theme | cliphist decode | wl-copy
