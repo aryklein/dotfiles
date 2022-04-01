@@ -217,7 +217,9 @@ bindsym XF86AudioLowerVolume exec $volume_down
 bindsym --locked XF86MonBrightnessUp exec $brightness_up
 bindsym --locked XF86MonBrightnessDown exec $brightness_down
 
-default_border pixel 2
+#default_border pixel 2
+default_border none
+gaps inner 3
 
 include ./config.d/*
 include /etc/sway/config.d/*
