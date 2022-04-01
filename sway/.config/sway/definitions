@@ -1,18 +1,21 @@
-#
-# Logo key. Use Mod1 for Alt.
+# logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
+
+# home row direction keys, like nvim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+
+# default terminal emulator
 set $term alacritty
-# Your preferred application launcher
+
+# application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu wofi --show run
-#
+
+# laptop's display
 set $laptop-display eDP-1
 
 #
@@ -28,7 +31,10 @@ set $idle swayidle -w \
 # onscreen bar
 set $onscreen_bar bash $HOME/.config/sway/scripts/wob.sh "#5ca5edFF" "#141a1bFF"
 
+# floating terminal, used for waybar on-click
 set $term_float footclient -a floating_shell
+
+# waybar calendar
 set $calendar $term_float khal interactive
 
 # brightness control
@@ -37,8 +43,9 @@ set $brightness_up light -r -A $($brightness_step) && $onscreen_bar $(light -G |
 set $brightness_down light -r -U $($brightness_step) && $onscreen_bar $(light -G | cut -d'.' -f1)
 
 # pulseaudio command
-#set $pulseaudio $term_float pulsemixer
 set $pulseaudio pavucontrol
+
+# audio control
 set $sink_volume pactl get-sink-volume @DEFAULT_SINK@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
 set $source_volume pactl get-source-volume @DEFAULT_SOURCE@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
 set $volume_down $onscreen_bar $(pactl set-sink-volume @DEFAULT_SINK@ -5% && $sink_volume)
@@ -46,6 +53,6 @@ set $volume_up $onscreen_bar $(pactl set-sink-volume @DEFAULT_SINK@ +5% && $sink
 set $volume_mute $onscreen_bar $(pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-mute @DEFAULT_SINK@ | sed -En "/no/ s/.*/$($sink_volume)/p; /yes/ s/.*/0/p")
 set $mic_mute $onscreen_bar $(pactl set-source-mute @DEFAULT_SOURCE@ toggle && pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p")
 
-# clipboard history
-set $clipboard cliphist list | rofi -dmenu -font "$gui-font" -p "Select item to copy" -lines 10 -width 35 -theme-str $rofi_theme | cliphist decode | wl-copy
-set $clipboard-del cliphist list | rofi -dmenu -font "$gui-font" -p "Select item to delete" -lines 10 -width 35 -theme-str $rofi_theme | cliphist delete
+# notifications
+set $notifications make --sort=-time --layer=overlay --background-color=#2e3440 --width=300 --height=230 --border-size=2 --border-color=#88c0d0 --border-radius=15 --default-timeout=300
+#set $notifications mako --border-color "#141a1b" --background-color "#5ca5ed" --border-size 3 --width 400 --height 200 --padding 20 --margin 20 --default-timeout 15000
