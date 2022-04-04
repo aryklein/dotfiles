@@ -207,7 +207,8 @@ bindsym --locked XF86MonBrightnessDown exec $brightness_down
 #
 #default_border pixel 2
 default_border none
-gaps inner 3
+smart_gaps on
+gaps inner 5
 font pango:$font
 
 #

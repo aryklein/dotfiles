@@ -13,7 +13,7 @@ set $term kitty
 # application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --show run
+set $menu wofi --allow-images --show drun
 
 # laptop's display
 set $laptop-display eDP-1
