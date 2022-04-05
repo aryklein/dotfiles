@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-PACKAGES=( $(for i in $(ls -d */); do echo ${i%/}; done) )
-
 # delete existing dotifles and create dotfiles symlinks with Stow
 install_dotfiles() {
     local PACKAGES=$@
@@ -36,11 +34,57 @@ if [[ $EUID -eq 0 ]]; then
    exit 1
 fi
 
+# environment definition
 case "$1" in
     install)
+        if [[ "${2}" == "laptop1" ]]; then
+            PACKAGES=(
+                alacritty
+                bash
+                brave
+                desktop-shortcut
+                fontconfig
+                foot
+                git
+                gtk
+                kitty
+                mako
+                nvim
+                ssh
+                sway
+                tfswitch
+                tmux
+                vim
+                waybar
+                zsh
+            )
+        elif [[ "${2}" == "laptop2" ]]; then
+            PACKAGES=(
+                bash
+                brave
+                desktop-shortcut
+                git
+                kitty
+                nvim
+                ssh
+                tfswitch
+                tmux
+                vim
+                zsh
+            )
+        else
+            # deploy ALL config files
+            read -r -p "Wrong or no environment defined. Do you want to deploy ALL config files? [Y/n] " RESPONSE
+            if [[ ! $RESPONSE =~ ^(y|Y|yes|)$ ]]; then
+                echo No change was made. Bye!
+                exit 1
+            fi
+            PACKAGES=( $(for i in $(ls -d */); do echo ${i%/}; done) )
+        fi
         install_dotfiles ${PACKAGES[@]}
         ;;
     clean)
+        PACKAGES=( $(for i in $(ls -d */); do echo ${i%/}; done) )
         clean_dotifles ${PACKAGES[@]}
         ;;
     *)
