@@ -5,7 +5,8 @@ include ./definitions
 ### Output configuration
 #
 # wallpaper
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/ary/Pictures/wallpaper_02.jpg fill
 
 # laptop lid behavior
 bindswitch --reload --locked lid:on output $laptop-display disable
@@ -119,6 +120,8 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
+bindsym $mod+tab workspace next
+bindsym $mod+Shift+tab workspace prev
 # Layout stuff:
 #
 # You can "split" the current object of your focus with
