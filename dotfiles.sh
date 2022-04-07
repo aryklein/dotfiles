@@ -57,6 +57,7 @@ case "$1" in
                 vim
                 waybar
                 zsh
+                flameshot
             )
         elif [[ "${2}" == "laptop2" ]]; then
             PACKAGES=(
@@ -71,6 +72,7 @@ case "$1" in
                 tmux
                 vim
                 zsh
+                flameshot
             )
         else
             # deploy ALL config files
