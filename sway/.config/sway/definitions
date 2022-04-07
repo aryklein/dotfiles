@@ -60,3 +60,5 @@ set $notification mako
 # fonts
 set $font Noto Sans Regular 11 
 
+# screenshot command
+set $screenshot grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%F-%T).png

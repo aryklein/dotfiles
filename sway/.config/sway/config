@@ -5,8 +5,7 @@ include ./definitions
 ### Output configuration
 #
 # wallpaper
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/ary/Pictures/wallpaper_02.jpg fill
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 # laptop lid behavior
 bindswitch --reload --locked lid:on output $laptop-display disable
@@ -205,13 +204,16 @@ bindsym XF86AudioLowerVolume exec $volume_down
 bindsym --locked XF86MonBrightnessUp exec $brightness_up
 bindsym --locked XF86MonBrightnessDown exec $brightness_down
 
+# screenshot
+bindsym Print exec $screenshot
+
 #
 # Style:
 #
-#default_border pixel 2
-default_border none
+default_border pixel 2
+default_floating_border normal
 smart_gaps on
-gaps inner 5
+gaps inner 10
 font pango:$font
 
 #
