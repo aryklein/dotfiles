@@ -35,19 +35,20 @@
     min-height: 0;
     margin: 0;
     padding: 0;
-/*    font-family: "RobotoMono Nerd Font", "Roboto Mono", sans-serif; */
+    font-family: "DejaVuSansMono Nerd Font";
+    color: #f8f8f2;
 }
 
 /* The whole bar */
 #waybar {
-    background: @theme_bg_color;
+    /*background: @theme_bg_color;*/
+    background:rgba (0, 0, 0, 0.70);
     color: @wm_icon_bg;
     font-size: 14px;
 }
 
 /* Each module */
 #custom-menu,
-#custom-clipboard,
 #bluetooth,
 #battery,
 #clock,
@@ -67,6 +68,9 @@
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
+#tray {
+    background-color: #6272a4;
+}
 
 #battery {
     animation-timing-function: linear;
@@ -94,7 +98,8 @@
 
 #clock {
     font-weight: bold;
-    background-color: @theme_selected_bg_color;
+    background-color: #bd93f9;
+    color: #282a36;
 }
 
 #cpu.warning {
@@ -106,7 +111,8 @@
 }
 
 #custom-menu {
-    background-color: @theme_selected_bg_color;
+    background-color: #bd93f9;
+    color: #282a36;
     padding-left: 10px;
     padding-right: 14px;
 }
@@ -146,7 +152,7 @@
 #window {
     font-weight: bold;
     margin-right: 25px;
-    color: @theme_selected_bg_color;
+    color: #6272a4;
 }
 
 #workspaces button {
@@ -156,12 +162,14 @@
     padding-left: 10px;
     padding-right: 10px;
     color: @theme_selected_bg_color;
+    background-color: #282a36;
 }
 
 #workspaces button.focused {
     border-color: @theme_selected_bg_color;
     color: @wm_icon_bg;
-    background-color: @theme_selected_bg_color;
+    background-color: #6272a4
+
 }
 
 #workspaces button.urgent {

@@ -10,22 +10,24 @@
     "position": "top",
 
     "modules-left": ["custom/menu", "sway/workspaces" ],
-    "modules-center": [],
+    "modules-center": [
+	"sway/window",
+    ],
     "modules-right": [
         // informational
         "custom/clipboard",
         "cpu",
         "memory",
-        "battery",
         "temperature",
-
-        // connecting
-        "network",
-        "bluetooth",
+        "battery",
 
         // media
         "pulseaudio",
         "backlight",
+
+        // connecting
+        "network",
+        "bluetooth",
 
         // system
         "tray",
@@ -115,6 +117,7 @@
     },
 
     "temperature": {
+	"hwmon-path": "/sys/class/hwmon/hwmon8/temp1_input",
         "critical-threshold": 90,
         "interval": 5,
         "format": "{icon} {temperatureC}°C",
@@ -143,28 +146,5 @@
         },
         "on-click": "blueberry",
         "tooltip-format": "{}"
-    },
-
-    "custom/wf-recorder": {
-        "interval": "once",
-        "return-type": "json",
-        "format": "{}",
-        "tooltip-format": "{tooltip}",
-        "exec": "echo '{\"class\": \"recording\",\"text\":\"雷\",\"tooltip\":\"press $mod+Esc to stop recording\"}'",
-        "exec-if": "pgrep wf-recorder",
-        "on-click": "killall -s SIGINT wf-recorder",
-        "signal": 8
-    },
-
-    "custom/clipboard": {
-        "format": "",
-        "interval": "once",
-        "return-type": "json",
-        "on-click": "swaymsg -q exec '$clipboard'; pkill -RTMIN+9 waybar",
-        "on-click-right": "swaymsg -q exec '$clipboard-del'; pkill -RTMIN+9 waybar",
-        "on-click-middle": "rm -f ~/.cache/cliphist/db; pkill -RTMIN+9 waybar",
-        "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)",
-        "exec-if": "[ -x \"$(command -v cliphist)\" ] && [ $(cliphist list | wc -l) -gt 0 ]",
-        "signal": 9
     },
 }

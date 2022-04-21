@@ -5,7 +5,11 @@ include ./definitions
 ### Output configuration
 #
 # wallpaper
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/.backgrounds/arch_dracula_01.png fill
+
+# display position
+output eDP-1 position 2560,0
+output DP-2 position 0,0
 
 # laptop lid behavior
 bindswitch --reload --locked lid:on output $laptop-display disable
@@ -47,7 +51,7 @@ input type:keyboard {
 bindsym $mod+Return exec $term
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start auncher
 bindsym $mod+d exec $menu
@@ -160,6 +164,8 @@ bindsym $mod+minus scratchpad show
 #
 # Resizing containers:
 #
+bindsym $mod+r mode "resize"
+
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
@@ -180,8 +186,6 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-bindsym $mod+r mode "resize"
 
 #
 # Status Bar:
@@ -211,8 +215,9 @@ bindsym Shift+Print exec $flameshot
 #
 # Style:
 #
-default_border pixel 2
+default_border pixel 3
 default_floating_border normal
+client.focused #6272a4 #6272a4 #f8f8f2
 smart_gaps on
 gaps inner 10
 font pango:$font
@@ -220,5 +225,4 @@ font pango:$font
 #
 # Include extra config:
 #
-include ./config.d/*
-include /etc/sway/config.d/*
+include config.d/*
