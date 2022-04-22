@@ -217,7 +217,6 @@ bindsym Shift+Print exec $flameshot
 #
 default_border pixel 3
 default_floating_border normal
-#client.focused #6272a4 #6272a4 #f8f8f2
 smart_gaps on
 gaps inner 10
 font pango:$font
