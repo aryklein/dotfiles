@@ -1,25 +1,14 @@
-markup=1
-actions=1
-
-# Format
-font= Noto Sans Regular 10
-text-color=#fdf6e3
-#format=<b>%s</b> <span color="#93a1a1">(%a)</span>\n%b
-
-# icons
-icon-path=/usr/share/icons/Papirus-Dark
-
-background-color=#282936
-text-color=#e9e9f4
-border-color=#62d6e8
-border-size=1
+font=Noto Sans Regular 10
+border-radius=10
+background-color=#282a36
+text-color=#f8f8f2
+border-color=#282a36
 
 [urgency=low]
-background-color=#282936
-text-color=#00f769
-border-color=#62d6e8
+border-color=#8be9fd
+
+[urgency=normal]
+border-color=#6272a4
 
 [urgency=high]
-background-color=#282936
-text-color=#ea51b2
-border-color=#62d6e8
+border-color=#ff5555
