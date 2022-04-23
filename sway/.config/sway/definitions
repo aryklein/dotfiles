@@ -19,15 +19,15 @@ set $menu wofi --allow-images --show drun
 set $laptop-display eDP-1
 
 #
-set $locking swaylock --daemonize --color "#282a2b" --inside-color "#282a2b" --inside-clear-color "#282a2b" --ring-color "#3B758C" --ring-clear-color "#9fca56" --ring-ver-color "#55b5db" --show-failed-attempts --fade-in 0.2 --grace 2 --effect-vignette 0.5:0.5 --effect-blur 7x5 --ignore-empty-password --screenshots --clock
+set $lock swaylock
 #
 set $idle swayidle -w \
-    timeout 100 'light -G > /tmp/brightness && light -S 10' \
+    timeout 120 'light -G > /tmp/brightness && light -S 10' \
     resume 'light -S $([ -f /tmp/brightness ] && cat /tmp/brightness || echo 100%)' \
-    timeout 300 'exec $locking' \
-    timeout 330 'swaymsg "output * dpms off"' \
+    timeout 290 'exec $lock' \
+    timeout 310 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'exec $locking'
+    before-sleep 'exec $lock'
 
 # onscreen bar
 set $onscreen_bar bash $HOME/.config/sway/scripts/wob.sh "#bd93f9FF" "#44475aFF"
