@@ -3,6 +3,7 @@ border-radius=10
 background-color=#282a36
 text-color=#f8f8f2
 border-color=#282a36
+icon-path=/usr/share/icons/Papirus-Dark
 
 [urgency=low]
 border-color=#8be9fd
