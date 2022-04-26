@@ -12,7 +12,8 @@ font:
     style: Bold 
   italic:
     family: DejaVuSansMono Nerd Font Mono
-    style: Italic 
+#    style: Italic
+    style: Oblique 
 
 colors:
   primary:
