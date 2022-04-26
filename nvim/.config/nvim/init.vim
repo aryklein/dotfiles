@@ -94,7 +94,3 @@ vnoremap K :m '<-2<CR>gv=gv
 "" remap to shift blocks visually
 vnoremap > >gv
 vnoremap < <gv
-
-" nvim changes default cursor style in terminal
-" disable cursor changing
-set guicursor=
