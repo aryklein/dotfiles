@@ -4,23 +4,23 @@
 
 @keyframes blink-warning {
     70% {
-        color: @wm_icon_bg;
+        color: #f8f8f2;
     }
 
     to {
-        color: @wm_icon_bg;
-        background-color: @warning_color;
+        color: #f8f8f2;
+        background-color: #ffb86c;
     }
 }
 
 @keyframes blink-critical {
     70% {
-      color: @wm_icon_bg;
+      color: #f8f8f2;
     }
 
     to {
-        color: @wm_icon_bg;
-        background-color: @error_color;
+        color: #f8f8f2;
+        background-color: #ff5555;
     }
 }
 
@@ -79,11 +79,11 @@
 }
 
 #battery.warning {
-    color: @warning_color;
+    color: #ffb86c;
 }
 
 #battery.critical {
-    color: @error_color;
+    color: #ff5555;
 }
 
 #battery.warning.discharging {
