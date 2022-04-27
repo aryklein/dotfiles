@@ -37,12 +37,12 @@ fi
 # environment definition
 case "$1" in
     install)
-        if [[ "${2}" == "laptop1" ]]; then
+        if [[ "${2}" == "swaywm" ]]; then
             PACKAGES=(
                 alacritty
                 bash
                 brave
-                desktop-shortcut
+                obsproject
                 fontconfig
                 foot
                 git
@@ -58,12 +58,16 @@ case "$1" in
                 waybar
                 zsh
                 flameshot
+                zoom
+                slack
             )
-        elif [[ "${2}" == "laptop2" ]]; then
+        elif [[ "${2}" == "gnome" ]]; then
             PACKAGES=(
+                alacritty
                 bash
                 brave
-                desktop-shortcut
+                obsproject
+                fontconfig
                 git
                 kitty
                 nvim
@@ -73,6 +77,7 @@ case "$1" in
                 vim
                 zsh
                 flameshot
+                slack
             )
         else
             # deploy ALL config files
