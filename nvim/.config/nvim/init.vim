@@ -78,7 +78,8 @@ let g:netrw_liststyle = 3
 "" Contrast should be set before colorscheme gruvbox
 ""(https://github.com/gruvbox-community/gruvbox/wiki/Troubleshooting#2-cannot-set-contrast)
 "colorscheme gruvbox
-
+"
+"" Dracula theme
 colorscheme dracula
 
 " adjust the default color groups for dark background
