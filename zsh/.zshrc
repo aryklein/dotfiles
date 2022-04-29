@@ -57,11 +57,8 @@ if type fd > /dev/null; then
     # To apply the fd to CTRL-T as well
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     # Dracula theme for fzf
-    export FZF_DEFAULT_OPTS='
-    --color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9
-    --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9
-    --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6
-    --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
+    source .config/fzf/dracula-theme.conf
+#    source .config/fzf/solarized-dark-theme.conf
 fi
 
 ## Key bindings (https://wiki.archlinux.org/index.php/Zsh#Key_bindings)
@@ -153,7 +150,7 @@ alias ssh='TERM="xterm-256color" ssh'
 # replace vim by nvim if it is installed
 if [[ -x /usr/bin/nvim ]]; then alias vim='nvim'; fi
 # replace cat with bat if it is installed
-if [[ -x /usr/bin/bat ]]; then alias cat='bat -pp'; fi
+if [[ -x /usr/bin/bat ]]; then alias cat='bat -pp' && export BAT_THEME="Dracula"; fi
 
 # k8s aliases
 alias k='kubectl'
