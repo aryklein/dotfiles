@@ -1,7 +1,8 @@
 show-failed-attempts
 daemonize
 
-image=~/.backgrounds/arch_dracula_01.png
+image=~/.backgrounds/solarized_01.png
+
 scaling=fill
 
 inside-color=#282a36

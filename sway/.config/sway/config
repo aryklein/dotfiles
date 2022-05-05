@@ -5,7 +5,7 @@ include ./definitions
 ### Output configuration
 #
 # wallpaper
-output * bg ~/.backgrounds/arch_dracula_01.png fill
+output * bg ~/.backgrounds/solarized_01.png fill
 
 # display position
 output eDP-1 position 2560,0
