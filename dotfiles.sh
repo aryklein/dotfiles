@@ -40,12 +40,12 @@ case "$1" in
         if [[ "${2}" == "swaywm" ]]; then
             PACKAGES=(
                 alacritty bash brave obsproject fontconfig foot git gtk kitty mako nvim
-                ssh sway tfswitch tmux vim waybar zsh flameshot zoom
+                ssh sway tfswitch tmux vim waybar zsh flameshot zoom fzf
             )
         elif [[ "${2}" == "gnome" ]]; then
             PACKAGES=(
                 alacritty bash brave obsproject fontconfig git kitty nvim ssh tfswitch
-                tmux vim zsh flameshot
+                tmux vim zsh flameshot fzf
             )
         else
             # deploy ALL config files
