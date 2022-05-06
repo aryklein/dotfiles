@@ -2,6 +2,7 @@
 
 STOW_ZSH_PACKAGE=zsh
 ZSH_PATH=/usr/bin/zsh
+ZSH_POWELEVEL10K_PKG=zsh-theme-powerlevel10k-git
 ZSH_PLUGINS=(
     zsh-autosuggestions
     zsh-completions
