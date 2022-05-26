@@ -6,7 +6,6 @@
     "layer": "top",
 
     // If height property would be not present, it'd be calculated dynamically
-    "height": 30,
     "position": "top",
 
     "modules-left": ["custom/menu", "sway/workspaces" ],
@@ -140,10 +139,9 @@
     "bluetooth": {
         "format": "{icon}",
         "interval": 30,
-        "format-icons": {
-            "enabled": "",
-            "disabled": ""
-        },
+        "format-off": "",
+        "format-on": "",
+        "format-connected": "",
         "on-click": "blueberry",
         "tooltip-format": "{}"
     },
