@@ -67,7 +67,7 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut' -B 'Logout' 'swaymsg exit' -b 'Suspend' 'swaymsg exec systemctl suspend' -b 'Reboot' 'systemctl reboot' -b 'Shutdown' 'systemctl poweroff' -e bottom --background 282a36 --button-background 282a36 --text f8f8f2 --button-text f8f8f2 --border-bottom 282a36 --border bd93f9
 
 #
 # Moving around:

@@ -59,17 +59,25 @@
 #pulseaudio,
 #temperature,
 #backlight,
+#custom-power,
 #tray {
     padding-left: 10px;
     padding-right: 10px;
+    background-color: #282a36;
 }
-
 
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
 #tray {
-    background-color: #6272a4;
+    background-color: #44475a;
+}
+
+#custom-power {
+    /* I don't know why I had to add 4px padding right to have this button centered */
+    padding-right: 14px;
+    background-color: #bd93f9;
+    color: #282a36;
 }
 
 #battery {
@@ -98,8 +106,7 @@
 
 #clock {
     font-weight: bold;
-    background-color: #bd93f9;
-    color: #282a36;
+    background-color: #6272a4;
 }
 
 #cpu.warning {

@@ -9,7 +9,10 @@
     "height": 30,
     "position": "top",
 
-    "modules-left": ["custom/menu", "sway/workspaces" ],
+    "modules-left": [
+	"custom/menu",
+	"sway/workspaces"
+    ],
     "modules-center": [
 	"sway/window",
     ],
@@ -31,7 +34,8 @@
 
         // system
         "tray",
-        "clock"
+        "clock",
+	"custom/power"
     ],
 
     // -------------------------------------------------------------------------
@@ -148,4 +152,9 @@
         "on-click": "blueberry",
         "tooltip-format": "{}"
     },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Suspend' 'swaymsg exec systemctl suspend' -b 'shutdown' 'systemctl shutdown' -e bottom --background 282a36 --button-background 282a36 --text f8f8f2 --button-text f8f8f2 --border-bottom 282a36 --border bd93f9"
+     }
 }
