@@ -1,7 +1,7 @@
 show-failed-attempts
 daemonize
 
-image=~/.backgrounds/solarized_01.png
+image=~/.backgrounds/lock-background
 
 scaling=fill
 
