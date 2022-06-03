@@ -152,11 +152,19 @@ if [[ -x /usr/bin/nvim ]]; then alias vim='nvim'; fi
 # replace cat with bat if it is installed
 if [[ -x /usr/bin/bat ]]; then alias cat='bat -pp' && export BAT_THEME="Dracula"; fi
 
-# k8s aliases
-alias k='kubectl'
-alias kns='kubectl config set-context --current --namespace'
-alias kuc='kubectl config use-context'
-alias kgc='kubectl config get-contexts'
+## k8s aliases
+# Get current context
+alias krc='kubectl config current-context'
+# List all contexts
+alias klc='kubectl config get-contexts -o name | sed "s/^/  /;\|^  $(krc)$|s/ /*/"'
+# Change current context
+alias kcc='kubectl config use-context "$(klc | fzf -e | sed "s/^..//")"'
+# Get current namespace
+alias krn='kubectl config get-contexts --no-headers "$(krc)" | awk "{print \$5}" | sed "s/^$/default/"'
+# List all namespaces
+alias kln='kubectl get -o name ns | sed "s|^.*/|  |;\|^  $(krn)$|s/ /*/"'
+# Change current namespace
+alias kcn='kubectl config set-context --current --namespace "$(kln | fzf -e | sed "s/^..//")"'
 
 # Numpad keys (bindkey to do the mapping)
 # 0 . Enter
