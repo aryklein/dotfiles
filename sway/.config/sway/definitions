@@ -19,15 +19,13 @@ set $menu wofi --allow-images --show drun
 set $laptop-display eDP-1
 
 #
-set $lock swaylock
-#
 set $idle swayidle -w \
     timeout 120 'light -G > /tmp/brightness && light -S 10' \
     resume 'light -S $([ -f /tmp/brightness ] && cat /tmp/brightness || echo 100%)' \
     timeout 300 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    timeout 360 'exec $lock' \
-    before-sleep 'exec $lock'
+    timeout 360 'exec swaylock' \
+    before-sleep 'exec swaylock'
 
 # onscreen bar
 set $onscreen_bar bash $HOME/.config/sway/scripts/wob.sh "#bd93f9FF" "#44475aFF"
@@ -63,3 +61,6 @@ set $font Noto Sans Regular 11
 # screenshot commands
 set $screenshot grim -g "$(slurp)" ~/Pictures/$(date +%F_%H-%M-%S).png
 set $flameshot flameshot gui
+
+# exit
+set $exit swaynag -t warning -m 'Power menu options' -b 'Logout' 'swaymsg exit' -b 'Suspend' 'systemctl suspend' -b 'Reboot' 'systemctl reboot' -b 'Shutdown' 'systemctl poweroff' -e bottom --background 282a36 --button-background 282a36 --text f8f8f2 --button-text f8f8f2 --border-bottom 282a36 --border bd93f9

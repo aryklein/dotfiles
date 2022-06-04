@@ -155,6 +155,6 @@
 
     "custom/power": {
         "format": "",
-        "on-click": "swaynag -t warning -m 'Power Menu Options' -B 'Logout' 'swaymsg exit' -b 'Reboot' 'systemctl reboot' -b 'Suspend' 'systemctl suspend' -b 'Shutdown' 'systemctl poweroff' -e bottom --background 282a36 --button-background 282a36 --text f8f8f2 --button-text f8f8f2 --border-bottom 282a36 --border bd93f9"
+        "on-click": "swaymsg exec \\$exit"
      }
 }
