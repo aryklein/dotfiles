@@ -153,6 +153,7 @@ if [[ -x /usr/bin/nvim ]]; then alias vim='nvim'; fi
 if [[ -x /usr/bin/bat ]]; then alias cat='bat -pp' && export BAT_THEME="Dracula"; fi
 
 ## k8s aliases
+alias k='kubectl'
 # Get current context
 alias krc='kubectl config current-context'
 # List all contexts
