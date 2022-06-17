@@ -42,7 +42,7 @@ set $brightness_up light -r -A $($brightness_step) && $onscreen_bar $(light -G |
 set $brightness_down light -r -U $($brightness_step) && $onscreen_bar $(light -G | cut -d'.' -f1)
 
 # pulseaudio command
-set $pulseaudio pavucontrol
+set $pulseaudio pulsemixer
 
 # audio control
 set $sink_volume pactl get-sink-volume @DEFAULT_SINK@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
