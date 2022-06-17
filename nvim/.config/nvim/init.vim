@@ -21,6 +21,8 @@ autocmd FileType c set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType sh set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType python set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+ " setting for go
+autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 " syntax highlighting for groovy (Jenkinsfile)
 autocmd BufNewFile,BufRead Jenkinsfile setf groovy
 " make adjusing split sizes a bit more friendly - resize current split by +/- 3 
