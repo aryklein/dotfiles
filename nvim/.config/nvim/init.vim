@@ -1,5 +1,5 @@
 "" --- General 
-
+"
 syntax on
 set tabstop=4 
 set softtabstop=4
@@ -27,13 +27,19 @@ autocmd BufReadPost *
 " --- syntax highlighting for groovy (Jenkinsfile)
 autocmd BufNewFile,BufRead Jenkinsfile setf groovy
 
-"" --- Plugins
+"" --- plugins
 "
 " import plugins with vim-plug
 runtime ./plug.vim
 
-"" --- Plugins configuration
+"" --- plugins configuration
 "
+" --- Telescope
+lua require('config.telescope')
+
+" --- Treesitter
+lua require('config.treesitter')
+
 " --- airline config
 let g:airline#extensions#hunks#enabled = 1
 let g:airline_extensions = ['branch', 'tabline']
@@ -47,12 +53,12 @@ let g:NERDDefaultAlign = 'left'
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
-"" --- Color scheme
+"" --- color scheme
 "
 " --- Dracula theme
 colorscheme dracula
 
-"" --- Remaps
+"" --- remaps
 "
 " make adjusing split sizes a bit more friendly
 nnoremap <silent> <C-j> :resize -3<CR>
@@ -77,3 +83,9 @@ vnoremap K :m '<-2<CR>gv=gv
 " remap to shift blocks visually
 vnoremap > >gv
 vnoremap < <gv
+" Telescope remap
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+

@@ -1,11 +1,6 @@
-"" telescope remap
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+local telescope = require('telescope')
 
-lua << EOF
-require('telescope').setup{
+telescope.setup{
   defaults = {
     file_ignore_patterns = { '.git/*', 'env/*', '.env/*' },
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
@@ -31,5 +26,4 @@ require('telescope').setup{
 }
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-require('telescope').load_extension('fzf')
-EOF
+telescope.load_extension('fzf')
