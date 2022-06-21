@@ -40,6 +40,9 @@ lua require('config.telescope')
 " --- Treesitter
 lua require('config.treesitter')
 
+" --- LSP
+lua require('config.lspconfig')
+
 " --- airline config
 let g:airline#extensions#hunks#enabled = 1
 let g:airline_extensions = ['branch', 'tabline']
