@@ -1,5 +1,5 @@
 local nvim_lsp = require('lspconfig')
-local server = { 'gopls', 'pyright' }
+local servers = { 'gopls', 'pyright', 'ansiblels' }
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -40,9 +40,17 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-for _, lsp in ipairs(server) do
-    nvim_lsp[lsp].setup{
+for _, lsp in ipairs(servers) do
+    nvim_lsp[lsp].setup {
         on_attach = on_attach,
         flags = lsp_flags,
     }
+end
+
+--
+--Change diagnostic symbols in the sign column (gutter)
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end

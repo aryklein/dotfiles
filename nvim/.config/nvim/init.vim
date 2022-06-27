@@ -35,13 +35,19 @@ runtime ./plug.vim
 "" --- plugins configuration
 "
 " --- Telescope
-lua require('config.telescope')
+lua require('telescope-config')
 
 " --- Treesitter
-lua require('config.treesitter')
+lua require('treesitter-config')
 
 " --- LSP
-lua require('config.lspconfig')
+lua require('lspconfig-config')
+
+" --- Completion
+lua require('completion-config')
+
+" --- Autopairs
+lua require('autopairs-config')
 
 " --- airline config
 let g:airline#extensions#hunks#enabled = 1
