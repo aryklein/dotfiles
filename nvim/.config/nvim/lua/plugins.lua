@@ -4,7 +4,7 @@ return require('packer').startup(function()
 
   -- -- dracula color scheme
   -- use {
-  --   'dracula/vim', 
+  --   'dracula/vim',
   --   as = 'dracula'
   -- }
 
@@ -70,20 +70,29 @@ return require('packer').startup(function()
   -- Configurations for Nvim LSP
   use 'neovim/nvim-lspconfig'
 
-  -- completion plugin for neovim.
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use 'onsails/lspkind.nvim'
+  -- completion plugins for neovim.
+  use {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/nvim-cmp',
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip',
+      'onsails/lspkind.nvim',
+  }
 
   -- autopairs for neovim written in LUA
   use 'windwp/nvim-autopairs'
 
   use 'tpope/vim-fugitive'
-  use 'airblade/vim-gitgutter'
+
+  -- git decorations
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 
 end)
