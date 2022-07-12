@@ -1,0 +1,11 @@
+# swaymsg -t get_outputs
+
+profile {
+	output eDP-1 position 0,0
+}
+
+profile {
+#    output eDP-1 position 2560,0
+    output eDP-1 disable
+    output DP-2 position 0,0
+}
