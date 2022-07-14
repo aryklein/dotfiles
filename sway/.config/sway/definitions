@@ -20,7 +20,7 @@ set $laptop-display eDP-1
 
 #
 set $idle swayidle -w \
-    timeout 120 'light -G > /tmp/brightness && light -S 10' \
+    timeout 120 'grep 0 /sys/class/power_supply/AC/online && light -G > /tmp/brightness && light -S 10' \
     resume 'light -S $([ -f /tmp/brightness ] && cat /tmp/brightness || echo 100%)' \
     timeout 300 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
