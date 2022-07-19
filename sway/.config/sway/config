@@ -9,8 +9,8 @@ output * bg ~/.backgrounds/desktop-background fill
 
 # display position
 #output eDP-1 position 2560,0
-#output DP-2 position 0,0
-exec_always pkill kanshi; exec kanshi
+#output DP-1 position 0,0
+exec_always "pkill kanshi; kanshi"
 
 # laptop lid behavior
 bindswitch --reload --locked lid:on output $laptop-display disable
