@@ -1,27 +1,27 @@
 -- plugins
-require('plugins')
+require('ary.plugins')
 
 -- general nvim settings
-require('nvim-settings')
+require('ary.settings')
 
 -- plugins configuration
 -- Telescope
-require('telescope-config')
+require('ary.telescope')
 
 -- Treesitter
-require('treesitter-config')
+require('ary.treesitter')
 
 -- LSP
-require('lspconfig-config')
+require('ary.lspconfig')
 
 -- Completion
-require('completion-config')
+require('ary.completion')
 
 -- Autopairs
-require('autopairs-config')
+require('ary.autopairs')
 
 -- nvim-tree
-require('nvim-tree-config')
+require('ary.nvim-tree')
 
 -- nvim-web-devicons
-require('nvim-web-devicons-config')
+require('ary.nvim-web-devicons')

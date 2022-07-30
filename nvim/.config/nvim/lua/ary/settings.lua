@@ -54,9 +54,6 @@ cmd [[
 g['netrw_banner'] = 0
 g['netrw_liststyle'] = 3
 
--- color scheme
-vim.cmd('colorscheme nightfox')
-
 ------------- remaps 
 -- 
 -- split resize
