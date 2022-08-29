@@ -41,12 +41,12 @@ case "$1" in
             PACKAGES=(
                 alacritty bash brave obsproject fontconfig foot git gtk kitty mako nvim
                 ssh sway tfswitch tmux vim waybar zsh flameshot zoom fzf vscode swaylock
-                chromium electron kanshi
+                chromium electron kanshi paru
             )
         elif [[ "${2}" == "gnome" ]]; then
             PACKAGES=(
                 alacritty bash brave obsproject fontconfig git kitty nvim ssh tfswitch
-                tmux vim zsh flameshot fzf vscode chromium electron
+                tmux vim zsh flameshot fzf vscode chromium electron paru
             )
         else
             # deploy ALL config files
