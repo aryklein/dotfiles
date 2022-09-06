@@ -51,6 +51,9 @@ input type:keyboard {
 # start a terminal
 bindsym $mod+Return exec $term
 
+# browser
+bindsym $mod+Shift+Return exec $browser
+
 # kill focused window
 bindsym $mod+q kill
 

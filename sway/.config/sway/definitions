@@ -10,6 +10,8 @@ set $right l
 # default terminal emulator
 set $term kitty
 
+set $browser brave --ozone-platform-hint=auto
+
 # application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
