@@ -29,8 +29,8 @@
         "backlight",
 
         // connecting
-        "network",
         "bluetooth",
+        "network",
 
         // system
         "tray",
