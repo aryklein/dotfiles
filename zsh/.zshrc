@@ -56,8 +56,9 @@ if type fd > /dev/null; then
     export FZF_DEFAULT_COMMAND='fd --type f'
     # To apply the fd to CTRL-T as well
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-    # Dracula theme for fzf
-    source ${HOME}/.config/fzf/dracula-theme.conf
+    # Carbonfox theme for fzf
+    source ${HOME}/.config/fzf/carbonfox-theme.conf
+#    source ${HOME}/.config/fzf/dracula-theme.conf
 #    source .config/fzf/solarized-dark-theme.conf
 fi
 

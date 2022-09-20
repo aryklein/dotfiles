@@ -2,12 +2,6 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- -- dracula color scheme
-  -- use {
-  --   'dracula/vim',
-  --   as = 'dracula'
-  -- }
-
   -- nightfox color scheme
   use "EdenEast/nightfox.nvim"
 
@@ -18,9 +12,8 @@ return require('packer').startup(function()
   use {
     'kyazdani42/nvim-tree.lua',
     require = {
-       'kyazdani42/nvim-web-devicons', -- optional, for file icons'
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons'
     },
-    tag = 'nightly' -- optional, updated every week.
   }
 
   -- status line (vim-airline replacement)
@@ -28,11 +21,7 @@ return require('packer').startup(function()
     'nvim-lualine/lualine.nvim',
     requires = { 
       'kyazdani42/nvim-web-devicons',
-      opt = true 
     },
-    config = function()
-      require('lualine').setup()
-    end
   }
   
   -- tree-sitter for Neovim
@@ -58,7 +47,8 @@ return require('packer').startup(function()
   -- telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { 'nvim-lua/plenary.nvim'
+    }
   }
 
   -- FZF sorter for telescope written in C

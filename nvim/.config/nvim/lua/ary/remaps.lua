@@ -30,9 +30,23 @@ vim.keymap.set('v', 'K', "'<-2<CR>gv=gv")
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('v', '<', '<gv')
 
--- Telescope remap
-vim.keymap.set('n','<Leader>ff', '<cmd>Telescope find_files<CR>')
-vim.keymap.set('n','<Leader>fg', '<cmd>Telescope live_grep<CR>')
-vim.keymap.set('n','<Leader>fb', '<cmd>Telescope buffers<CR>')
-vim.keymap.set('n','<Leader>fh', '<cmd>Telescope help_tags<CR>')
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
+-- Telescope remap using command-line
+-- vim.keymap.set('n','<Leader>ff', '<cmd>Telescope find_files<CR>')
+-- vim.keymap.set('n','<Leader>fg', '<cmd>Telescope live_grep<CR>')
+-- vim.keymap.set('n','<Leader>fb', '<cmd>Telescope buffers<CR>')
+
+-- -- Telescope remap using lua function
+vim.keymap.set('n','<Leader>ff', function()
+    require('telescope.builtin').find_files()
+end)
+
+vim.keymap.set('n','<Leader>lg', function()
+    require('telescope.builtin').live_grep()
+end)
+
+vim.keymap.set('n','<Leader>fb', function()
+    require('telescope.builtin').buffers()
+end)

@@ -25,3 +25,6 @@ require('ary.nvim-tree')
 
 -- nvim-web-devicons
 require('ary.nvim-web-devicons')
+
+-- remaps
+require('ary.remaps')
