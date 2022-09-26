@@ -128,17 +128,18 @@ if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*) ]] && [[ "$
 fi
 
 ## Colored Man Pages
-function man() {
-    env \
-    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-    LESS_TERMCAP_md=$(printf "\e[1;31m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[1;32m") \
-    man "$@"
-}
+export MANPAGER="less -R --use-color -Dd+r -Du+b" 
+# function man() {
+#     env \
+#     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+#     LESS_TERMCAP_md=$(printf "\e[1;31m") \
+#     LESS_TERMCAP_me=$(printf "\e[0m") \
+#     LESS_TERMCAP_se=$(printf "\e[0m") \
+#     LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+#     LESS_TERMCAP_ue=$(printf "\e[0m") \
+#     LESS_TERMCAP_us=$(printf "\e[1;32m") \
+#     man "$@"
+# }
 
 ## Aliases
 if [[ -x /usr/bin/exa ]]; then alias ls='exa --binary --group --git'; else alias ls='ls --color=auto'; fi
@@ -153,7 +154,7 @@ alias ssh='TERM="xterm-256color" ssh'
 # replace vim by nvim if it is installed
 if [[ -x /usr/bin/nvim ]]; then alias vim='nvim'; fi
 # replace cat with bat if it is installed
-if [[ -x /usr/bin/bat ]]; then alias cat='bat -pp' && export BAT_THEME="Dracula"; fi
+if [[ -x /usr/bin/bat ]]; then alias cat='bat -pp' && export BAT_THEME="base16"; fi
 
 ## k8s aliases
 alias k='kubectl'
