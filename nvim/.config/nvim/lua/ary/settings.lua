@@ -27,6 +27,8 @@ set.tabstop = 4
 set.backup = false
 set.background = dark
 set.numberwidth = 1
+-- disable mouse
+set.mouse = nil
 
 -- Remember last cursor position 
 cmd [[
