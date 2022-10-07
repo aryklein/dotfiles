@@ -27,6 +27,7 @@
         // media
         "pulseaudio",
         "backlight",
+        "idle_inhibitor",
 
         // connecting
         "bluetooth",
@@ -41,6 +42,13 @@
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
 
     "battery": {
         "interval": 30,
