@@ -5,9 +5,6 @@ return require('packer').startup(function()
   -- nightfox color scheme
   use "EdenEast/nightfox.nvim"
 
-  -- Ansible VIM plugin
-  use 'pearofducks/ansible-vim'
-
   -- file explorer for Neovim written in Lua
   use {
     'kyazdani42/nvim-tree.lua',
