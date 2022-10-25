@@ -11,5 +11,5 @@ profile external_display_1 {
 
 profile external_display_2 {
     output eDP-1 disable
-    output DP-1 enable position 0,0
+    output DP-2 enable position 0,0
 }
