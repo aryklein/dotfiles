@@ -28,3 +28,5 @@ require('ary.nvim-web-devicons')
 
 -- remaps
 require('ary.remaps')
+
+require('ary.filetype')
