@@ -13,7 +13,8 @@ treesitter.setup {
     "vim",
     "lua",
     "dockerfile",
-    "go"
+    "go",
+    "hcl"
   },
 
 }

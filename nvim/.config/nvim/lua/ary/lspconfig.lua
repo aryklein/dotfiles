@@ -1,5 +1,5 @@
 local nvim_lsp = require('lspconfig')
-local servers = { 'gopls', 'pyright', 'ansiblels' }
+local servers = { 'gopls', 'pyright', 'ansiblels', 'terraformls' }
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
