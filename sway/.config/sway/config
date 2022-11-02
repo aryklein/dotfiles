@@ -40,7 +40,7 @@ input type:touchpad {
 }
 
 # keyboard setup
-input type:keyboard { 
+input type:keyboard {
       xkb_layout "us"
       xkb_variant "altgr-intl"
       repeat_rate 35
@@ -72,6 +72,8 @@ bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec $exit
+
+bindsym --release $mod+i exec $idle_now
 
 #
 # Moving around:
