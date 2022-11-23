@@ -1,0 +1,7 @@
+max = 100
+bar_color = be95ff
+border_color = be95ff
+overflow_mode = wrap
+overflow_bar_color = ee5396
+overflow_border_color = f16da6
+background_color = 282828

@@ -32,7 +32,7 @@ set $idle swayidle -w \
 set $idle_now sleep 1 && killall -SIGUSR1 swayidle
 
 # onscreen bar
-set $onscreen_bar bash $HOME/.config/sway/scripts/wob.sh "#bd93f9FF" "#44475aFF"
+set $onscreen_bar bash $HOME/.config/sway/scripts/wob.sh
 
 # floating terminal, used for waybar on-click
 set $term_float footclient -a floating_shell
