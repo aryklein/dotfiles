@@ -73,7 +73,7 @@ bindsym $mod+Shift+c reload
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec $exit
 
-bindsym --release $mod+i exec $idle_now
+bindsym $mod+i exec $idle_now
 
 #
 # Moving around:
