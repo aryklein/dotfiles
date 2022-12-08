@@ -30,8 +30,13 @@ vim.keymap.set('v', 'K', "'<-2<CR>gv=gv")
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('v', '<', '<gv')
 
+-- remap to center C-d and C-u
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- remap to center the search line
+vim.keymap.set('n', 'n', 'nzz')
+vim.keymap.set('n', 'N', 'Nzz')
 
 -- Telescope remap using command-line
 -- vim.keymap.set('n','<Leader>ff', '<cmd>Telescope find_files<CR>')
