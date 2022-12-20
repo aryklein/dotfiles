@@ -41,7 +41,7 @@ case "$1" in
             PACKAGES=(
                 alacritty bash brave obsproject fontconfig foot git gtk kitty mako nvim
                 ssh sway tfswitch tmux vim waybar zsh flameshot zoom fzf vscode swaylock
-                chromium electron kanshi paru
+                chromium electron kanshi paru wob
             )
         elif [[ "${2}" == "gnome" ]]; then
             PACKAGES=(
