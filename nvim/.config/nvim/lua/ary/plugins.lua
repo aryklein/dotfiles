@@ -7,9 +7,9 @@ return require('packer').startup(function()
 
   -- file explorer for Neovim written in Lua
   use {
-    'kyazdani42/nvim-tree.lua',
-    require = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons'
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
   }
 
@@ -17,7 +17,7 @@ return require('packer').startup(function()
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 
-      'kyazdani42/nvim-web-devicons',
+      'nvim-tree/nvim-web-devicons',
     },
   }
   
