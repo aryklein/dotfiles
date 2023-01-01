@@ -1,0 +1,10 @@
+[Default]
+save_dir=$HOME/Pictures
+save_filename_format=%Y-%m-%d_%H-%M-%S.png
+show_panel=true
+line_size=3
+text_size=15
+text_font=sans-serif
+paint_mode=arrow
+early_exit=true
+fill_shape=false

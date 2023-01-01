@@ -5,7 +5,7 @@ include ./definitions
 ### Output configuration
 #
 # wallpaper
-output * bg ~/.backgrounds/desktop-background fill
+#output * bg ~/.backgrounds/desktop-background fill
 
 # display position
 #output eDP-1 position 2560,0
@@ -217,7 +217,7 @@ bindsym --locked XF86MonBrightnessDown exec $brightness_down
 
 # screenshot
 bindsym Print exec $screenshot
-bindsym Shift+Print exec $flameshot
+bindsym Shift+Print exec $swappy
 
 # screen lock
 
