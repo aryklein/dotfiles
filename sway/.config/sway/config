@@ -5,7 +5,7 @@ include ./definitions
 ### Output configuration
 #
 # wallpaper
-#output * bg ~/.backgrounds/desktop-background fill
+output * bg ~/.backgrounds/desktop-background fill
 
 # display position
 #output eDP-1 position 2560,0
