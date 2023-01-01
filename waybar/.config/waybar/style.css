@@ -64,21 +64,21 @@
 #tray {
     padding-left: 10px;
     padding-right: 10px;
-    background-color: #282a36;
+    background-color: #282828;
 }
 
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
 #tray {
-    background-color: #44475a;
+    background-color: #ee5396;
 }
 
 #custom-power {
     /* I don't know why I had to add 4px padding right to have this button centered */
     padding-right: 14px;
-    background-color: #bd93f9;
-    color: #282a36;
+    background-color: #08bdba;
+    color: #282828;
 }
 
 #battery {
@@ -107,7 +107,7 @@
 
 #clock {
     font-weight: bold;
-    background-color: #6272a4;
+    background-color: #484848;
 }
 
 #cpu.warning {
@@ -119,8 +119,8 @@
 }
 
 #custom-menu {
-    background-color: #bd93f9;
-    color: #282a36;
+    background-color: #08bdba;
+    color: #282828;
     padding-left: 10px;
     padding-right: 14px;
 }
@@ -160,7 +160,7 @@
 #window {
     font-weight: bold;
     margin-right: 25px;
-    color: #6272a4;
+    color: #08bdba;
 }
 
 #workspaces button {
@@ -169,14 +169,13 @@
     padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
-    color: @theme_selected_bg_color;
-    background-color: #282a36;
+/*    color: @theme_selected_bg_color; */
+    background-color: #484848;
 }
 
 #workspaces button.focused {
-    border-color: @theme_selected_bg_color;
-    color: @wm_icon_bg;
-    background-color: #6272a4
+    border-color: #ee5396;
+    background-color: #ee5396;
 
 }
 
