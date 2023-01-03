@@ -71,13 +71,13 @@
  * Module styles
  * -------------------------------------------------------------------------- */
 #tray {
-    background-color: #6b6969;
+    background-color: #484848;
 }
 
 #custom-power {
     /* I don't know why I had to add 4px padding right to have this button centered */
     padding-right: 14px;
-    background-color: #08bdba;
+    background-color: #f16da6;
     color: #282828;
 }
 
@@ -107,7 +107,8 @@
 
 #clock {
     font-weight: bold;
-    background-color: #484848;
+    background-color: #78a9ff;
+    color: #282828;
 }
 
 #cpu.warning {
@@ -119,7 +120,7 @@
 }
 
 #custom-menu {
-    background-color: #08bdba;
+    background-color: #f16da6;
     color: #282828;
     padding-left: 10px;
     padding-right: 14px;
@@ -160,7 +161,7 @@
 #window {
     font-weight: bold;
     margin-right: 25px;
-    color: #08bdba;
+    color: #78a9ff;
 }
 
 #workspaces button {
@@ -174,9 +175,8 @@
 }
 
 #workspaces button.focused {
-    border-color: #ee5396;
-    background-color: #ee5396;
-
+    border-color: #78a9ff;
+    background-color: #282828;
 }
 
 #workspaces button.urgent {
