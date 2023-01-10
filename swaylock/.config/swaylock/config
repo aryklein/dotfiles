@@ -1,6 +1,6 @@
 show-failed-attempts
 daemonize
-image=~/.backgrounds/lock-background
+image=~/.config/backgrounds/lock-background
 scaling=fill
 inside-ver-color=#282a36
 inside-clear-color=#282828
