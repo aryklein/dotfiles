@@ -59,7 +59,8 @@
         "format-charging": " {capacity}%",
         "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", "", ""],
-        "tooltip": true
+        "tooltip": true,
+        "bat": "BAT0"
     },
 
     "clock": {
