@@ -35,35 +35,19 @@ if [[ $EUID -eq 0 ]]; then
 fi
 
 # environment definition
+PACKAGES=(
+    alacritty bash brave obsproject fontconfig foot git gtk kitty mako nvim
+    ssh sway tfswitch tmux vim waybar zsh flameshot zoom fzf vscode swaylock
+    chromium electron kanshi paru wob swappy backgrounds
+)
+
 case "$1" in
     install)
-        if [[ "${2}" == "swaywm" ]]; then
-            PACKAGES=(
-                alacritty bash brave obsproject fontconfig foot git gtk kitty mako nvim
-                ssh sway tfswitch tmux vim waybar zsh flameshot zoom fzf vscode swaylock
-                chromium electron kanshi paru wob swappy backgrounds
-            )
-        elif [[ "${2}" == "gnome" ]]; then
-            PACKAGES=(
-                alacritty bash brave obsproject fontconfig git kitty nvim ssh tfswitch
-                tmux vim zsh flameshot fzf vscode chromium electron paru
-            )
-        else
-            # deploy ALL config files
-            read -r -p "Wrong or no environment defined. Do you want to deploy ALL config files? [Y/n] " RESPONSE
-            if [[ ! $RESPONSE =~ ^(y|Y|yes|)$ ]]; then
-                echo No change was made. Bye!
-                exit 1
-            fi
-            PACKAGES=( $(for i in $(ls -d */); do echo ${i%/}; done) )
-        fi
         install_dotfiles ${PACKAGES[@]}
         ;;
     clean)
-        PACKAGES=( $(for i in $(ls -d */); do echo ${i%/}; done) )
         clean_dotifles ${PACKAGES[@]}
         ;;
     *)
         echo "Usage: $0 [install|clean]"
 esac
-
