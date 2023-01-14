@@ -44,3 +44,6 @@ cmd [[
 -- netrw configuration
 g['netrw_banner'] = 0
 g['netrw_liststyle'] = 3
+
+-- avoid pop ups sign_icons to moves your screer
+vim.opt.signcolumn = 'yes'

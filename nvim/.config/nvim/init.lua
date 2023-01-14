@@ -11,17 +11,14 @@ require('ary.telescope')
 -- Treesitter
 require('ary.treesitter')
 
--- LSP
-require('ary.lspconfig')
 
--- Completion
-require('ary.completion')
-
--- Autopairs
-require('ary.autopairs')
+require('ary.lsp-zero')
 
 -- nvim-tree
 require('ary.nvim-tree')
+
+-- Autopairs
+--require('ary.autopairs')
 
 -- nvim-web-devicons
 require('ary.nvim-web-devicons')
