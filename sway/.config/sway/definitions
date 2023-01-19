@@ -60,7 +60,8 @@ set $mic_mute $onscreen_bar $(pactl set-source-mute @DEFAULT_SOURCE@ toggle && p
 set $notification mako
 
 # fonts
-set $font Noto Sans Regular 11 
+#set $font Noto Sans Regular 11
+set $font Hack Nerd Font 11
 
 # screenshot commands
 set $screenshot grim -g "$(slurp)" ~/Pictures/$(date +%F_%H-%M-%S).png
