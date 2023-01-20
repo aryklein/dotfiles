@@ -224,12 +224,16 @@ bindsym Shift+Print exec $swappy
 #
 # Style:
 #
-default_border pixel 3
+default_border pixel 2
 default_floating_border normal
 smart_gaps on
 gaps inner 10
 font pango:$font
 
+# class                 border  backgr. text    indicator child_border
+client.focused          #78a9ff #484848 #e4e4e5 #2e9ef4   #78a9ff
+client.focused_inactive #484848 #484848 #dfdfe0 #484e50   #484848 
+client.unfocused        #484848 #282828 #6e6b6b #292d2e   #484848
 #
 # Include extra config:
 #
