@@ -148,7 +148,8 @@ alias diff='colordiff'
 alias history='history 0'
 alias ip='ip -color=auto'
 alias lg='lazygit'
-alias v='nvim'
+alias ya='ykman oath accounts code'
+
 # Terminal issues with SSH in Kitty
 alias ssh='TERM="xterm-256color" ssh'
 # replace vim by nvim if it is installed
