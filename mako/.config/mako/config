@@ -1,17 +1,17 @@
-font=Noto Sans Regular 10
+font=Hack Nerd Font 10
 border-radius=10
-background-color=#192330AA
-text-color=#f8f8f2
-border-color=#282a36
+background-color=#282828
+text-color=#dfdfe0
+border-color=#78a9ff
 icon-path=/usr/share/icons/Papirus-Dark
 max-history=10
 default-timeout=15000
 
 [urgency=low]
-border-color=#8be9fd
+border-color=#25be6a
 
 [urgency=normal]
-border-color=#6272a4
+border-color=#78a9ff
 
 [urgency=high]
-border-color=#ff5555
+border-color=#ee5396
