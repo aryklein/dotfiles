@@ -75,6 +75,9 @@ return require('packer').startup(function()
           {'L3MON4D3/LuaSnip'},
           -- Snippet Collection (Optional)
           {'rafamadriz/friendly-snippets'},
+
+          -- lspkind
+          {'onsails/lspkind-nvim'},
       }
   }
 
