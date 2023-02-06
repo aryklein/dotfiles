@@ -14,7 +14,9 @@ treesitter.setup {
     "lua",
     "dockerfile",
     "go",
-    "hcl"
+    "hcl",
+    "comment",
+    "sql"
   },
 
 }
