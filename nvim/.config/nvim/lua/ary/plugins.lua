@@ -1,63 +1,73 @@
-return require('packer').startup(function()
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+
+require('lazy').setup({
 
   -- nightfox color scheme
-  use "EdenEast/nightfox.nvim"
+  'EdenEast/nightfox.nvim',
 
   -- file explorer for Neovim written in Lua
-  use {
-      'nvim-tree/nvim-tree.lua',
-      requires = {
+  { 'nvim-tree/nvim-tree.lua',
+      dependencies = {
           'nvim-tree/nvim-web-devicons', -- optional, for file icons
-      },
-  }
+      }
+  },
 
   -- status line (vim-airline replacement)
-  use {
+  {
       'nvim-lualine/lualine.nvim',
-      requires = { 
+      dependencies = {
           'nvim-tree/nvim-web-devicons',
-      },
-  }
+      }
+  },
 
   -- tree-sitter for Neovim
-  use {
+  {
       'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-  }
+      build = ':TSUpdate'
+  },
 
   -- smart and powerful comment plugin 
-  use {
+  {
       'numToStr/Comment.nvim',
       config = function()
           require('Comment').setup()
       end
-  }
+  },
 
   -- Go language support for Vim
-  use {
+  {
       'fatih/vim-go',
-      run = ':GoUpdateBinaries'
-  }
+      build = ':GoUpdateBinaries'
+  },
 
   -- telescope
-  use {
+  {
       'nvim-telescope/telescope.nvim',
-      requires = { 'nvim-lua/plenary.nvim'
+      dependencies = { 'nvim-lua/plenary.nvim'
       }
-  }
+  },
 
   -- FZF sorter for telescope written in C
-  use {
-      'nvim-telescope/telescope-fzf-native.nvim', 
-      run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-  }
+  {
+      'nvim-telescope/telescope-fzf-native.nvim',
+      build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+  },
 
-  use {
+  {
       'VonHeikemen/lsp-zero.nvim',
-      requires = {
+      dependencies = {
           -- LSP Support
           {'neovim/nvim-lspconfig'},
           {'williamboman/mason.nvim'},
@@ -79,21 +89,21 @@ return require('packer').startup(function()
           -- lspkind
           {'onsails/lspkind-nvim'},
       }
-  }
+  },
 
---  -- autopairs for neovim written in LUA
---  use 'windwp/nvim-autopairs'
 
-  use 'tpope/vim-fugitive'
+  'tpope/vim-fugitive',
 
   -- git decorations
-  use {
+  {
       'lewis6991/gitsigns.nvim',
       config = function()
           require('gitsigns').setup()
       end
+  },
+
+  'github/copilot.vim',
+
   }
 
-  use 'github/copilot.vim'
-
-end)
+)

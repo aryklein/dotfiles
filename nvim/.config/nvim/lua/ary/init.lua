@@ -1,8 +1,8 @@
--- plugins manged with packer.nvim
-require('ary.plugins')
-
 -- general nvim settings
 require('ary.settings')
+
+-- plugins manged with packer.nvim
+require('ary.plugins')
 
 -- Telescope
 require('ary.telescope')

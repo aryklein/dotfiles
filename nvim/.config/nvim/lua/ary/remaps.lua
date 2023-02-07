@@ -1,6 +1,3 @@
--- remap leader key
-vim.g.mapleader = ' '
---
 -- split resize
 vim.keymap.set('n','<C-j>',':resize -3<CR>', { silent = true })
 vim.keymap.set('n','<C-k>',':resize +3<CR>', { silent = true })
