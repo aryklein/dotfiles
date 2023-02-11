@@ -6,3 +6,5 @@ require('ary.filetype')
 require('ary.lazy')
 -- remaps
 require('ary.remaps')
+-- useful LUA functions for debugging
+require('ary.debug')

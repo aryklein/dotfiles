@@ -15,20 +15,21 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
 vim.opt.backup = false
-vim.opt.background = dark
+vim.opt.background = 'dark'
 vim.opt.numberwidth = 1
 -- disable mouse
 vim.opt.mouse = nil
 
--- Remember last cursor position 
+-- enable syntax
+-- jump to last position when opening a file
+-- remove trailing whitespace on save
 vim.cmd [[
     syntax enable
-    autocmd BufNewFile,BufRead Jenkinsfile setf groovy
-
-    autocmd BufReadPost * 
+    autocmd BufReadPost *
       \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
       \ |   exe "normal! g`\""
       \ | endif
+    autocmd BufWritePre * :%s/\s\+$//e
 ]]
 
 -- netrw configuration
@@ -40,3 +41,7 @@ vim.opt.signcolumn = 'yes'
 
 -- set leader key
 vim.g.mapleader = ' '
+
+-- show whitespace
+vim.opt.list = true
+vim.opt.listchars = 'tab:▸ ,trail:.,nbsp:␣,extends:❯,precedes:❮'
