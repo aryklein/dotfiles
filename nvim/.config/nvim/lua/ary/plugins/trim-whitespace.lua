@@ -1,6 +1,7 @@
 return {
     'aryklein/trim-whitespace.vim',
+    -- dir = "~/code/trim-whitespace.vim",
     config = true,
     lazy = true,
-    cmd = {"TrimWhitespace", "HighlightWhitespace"},
+    cmd = {"WhitespaceTrim", "WhitespaceHighlightToggle"},
 }
