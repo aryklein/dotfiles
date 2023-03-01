@@ -16,7 +16,14 @@ treesitter.setup {
     "go",
     "hcl",
     "comment",
-    "sql"
+    "sql",
+    "toml",
+    "c",
+    "terraform",
+    "gitcommit",
+    "gitignore",
+    "markdown",
+    "make"
   },
 
 }
