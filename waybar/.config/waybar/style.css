@@ -62,8 +62,8 @@
 #custom-power,
 #idle_inhibitor,
 #tray {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
     background-color: #282828;
 }
 
