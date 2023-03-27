@@ -15,7 +15,7 @@ install_dotfiles() {
         fi
 
         stow -v -D -t $HOME $PACKAGE
-        stow -v -t $HOME $PACKAGE 
+        stow -v -t $HOME $PACKAGE
 
     done
 }
@@ -38,7 +38,7 @@ fi
 PACKAGES=(
     alacritty bash brave obsproject fontconfig foot git gtk kitty mako nvim
     ssh sway tfswitch tmux vim waybar zsh flameshot zoom fzf vscode swaylock
-    chromium electron kanshi paru wob swappy backgrounds
+    chromium electron kanshi paru wob swappy backgrounds slack
 )
 
 case "$1" in
