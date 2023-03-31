@@ -32,6 +32,14 @@ vim.cmd [[
     autocmd BufWritePre * :%s/\s\+$//e
 ]]
 
+-- set cursor shape to beam when exit Neovim
+vim.cmd [[
+    augroup CursorShape
+        autocmd!
+        autocmd VimLeave,VimSuspend * set guicursor=a:ver25
+    augroup END
+]]
+
 -- netrw configuration
 vim.g['netrw_banner'] = 0
 vim.g['netrw_liststyle'] = 3
