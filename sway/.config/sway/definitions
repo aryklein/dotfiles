@@ -8,7 +8,7 @@ set $up k
 set $right l
 
 # default terminal emulator
-set $term kitty
+set $term alacritty
 
 set $browser brave --ozone-platform-hint=auto
 
