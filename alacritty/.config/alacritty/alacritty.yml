@@ -2,9 +2,11 @@ cursor:
   style:
     blinking: Always
     shape: Beam
+  vi_mode_style:
+    blinking: Always
+    shape: Block
   thickness: 0.2
   unfocused_hollow: true
-
 
 window:
   padding:
