@@ -38,7 +38,7 @@ fi
 PACKAGES=(
     alacritty bash brave obsproject fontconfig foot git gtk kitty mako nvim
     ssh sway tfswitch tmux vim waybar zsh flameshot zoom fzf vscode swaylock
-    chromium electron kanshi paru wob swappy backgrounds slack
+    chromium electron kanshi paru wob swappy backgrounds slack fuzzel
 )
 
 case "$1" in
