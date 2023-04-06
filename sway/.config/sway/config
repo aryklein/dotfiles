@@ -232,7 +232,7 @@ font pango:$font
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #78a9ff #78a9ff #282828 #2e9ef4   #78a9ff
-client.focused_inactive #484848 #484848 #dfdfe0 #484e50   #484848 
+client.focused_inactive #484848 #484848 #dfdfe0 #484e50   #484848
 client.unfocused        #484848 #282828 #6e6b6b #292d2e   #484848
 #
 # Include extra config:

@@ -36,7 +36,7 @@ set $idle_now sleep 2 && killall -SIGUSR1 swayidle
 set $onscreen_bar bash $HOME/.config/sway/scripts/wob.sh
 
 # floating terminal, used for waybar on-click
-set $term_float footclient -a floating_shell
+set $term_float kitty --class floating_shell
 
 # waybar calendar
 set $calendar $term_float khal interactive
