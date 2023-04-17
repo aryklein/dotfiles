@@ -14,7 +14,7 @@
 	"sway/workspaces"
     ],
     "modules-center": [
-	"sway/window",
+	"sway/window"
     ],
     "modules-right": [
         // informational
@@ -164,6 +164,14 @@
 
     "custom/power": {
         "format": "",
-        "on-click": "swaymsg exec \\$exit"
-     }
+        "on-click": "swaymsg exec \\$exit",
+        "tooltip": false
+
+    },
+
+    "custom/world-clock": {
+        "format": "",
+        "on-click": "notify-send \"$(bash /home/ary/word_clock.sh)\"",
+        "tooltip": "false"
+    }
 }

@@ -4,6 +4,9 @@ vim.keymap.set('n','<C-k>',':resize +3<CR>', { silent = true })
 vim.keymap.set('n','<C-l>',':vertical resize -3<CR>', { silent = true })
 vim.keymap.set('n','<C-h>',':vertical resize +3<CR>', { silent = true })
 
+-- remove highlight on search
+vim.keymap.set('n', '<Leader>h', ':noh<CR>', { silent = true })
+
 -- open a terminal inside NVim
 vim.keymap.set('n', '<Leader>ht', ':sp \\| :terminal<CR>')
 

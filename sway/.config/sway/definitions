@@ -70,4 +70,4 @@ set $flameshot flameshot gui
 set $swappy grim -g "$(slurp)" - | swappy -f -
 
 # exit
-set $exit swaynag -t warning -m 'Power menu options' -b 'Logout' 'swaymsg exit' -b 'Suspend' 'systemctl suspend' -b 'Reboot' 'systemctl reboot' -b 'Shutdown' 'systemctl poweroff' -e bottom --background 282a36 --button-background 282a36 --text f8f8f2 --button-text f8f8f2 --border-bottom 282a36 --border bd93f9
+set $exit swaynag --font 'Hack Nerd Font' -t warning -m 'Power menu options' -b '󰍃' 'swaymsg exit' -b '󰤄' 'systemctl suspend' -b '' 'systemctl reboot' -b '' 'systemctl poweroff' -e bottom --background 282828 --button-background 282828 --text dfdfe0 --button-text 46c880 --border-bottom  282828 --border 282828
