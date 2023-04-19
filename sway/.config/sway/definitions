@@ -15,8 +15,8 @@ set $browser brave --ozone-platform-hint=auto
 # application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#set $menu wofi --allow-images --show drun
-set $menu fuzzel --show drun
+set $menu wofi
+#set $menu fuzzel --show drun
 
 # laptop's display
 set $laptop-display eDP-1

@@ -1,0 +1,8 @@
+# General settings
+mode=drun
+allow_images=true
+lines=10
+columns=1
+scrollbar=false
+width=20%
+icon_theme=Papirus-Dark

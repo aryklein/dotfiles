@@ -1,7 +1,9 @@
 window {
     margin: 0px;
-    border: 2px solid #08bdba;
+    border: 2px solid #46c880;
     background-color: #282828;
+    border-radius: 10px;
+    opacity: 0.93;
 }
 
 #input {
@@ -9,6 +11,9 @@ window {
     border: none;
     color: #dfdfe0;
     background-color: #484848;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Hack Nerd Font";
 }
 
 #inner-box {
@@ -32,8 +37,15 @@ window {
     margin: 5px;
     border: none;
     color: #dfdfe0;
-} 
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Hack Nerd Font";
+}
 
 #entry:selected {
-    background-color: #484848;
+    background-color: #46c880;
+}
+
+#text:selected {
+    color: #282828;
 }
