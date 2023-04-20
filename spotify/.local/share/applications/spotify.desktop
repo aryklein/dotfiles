@@ -3,7 +3,7 @@ Type=Application
 Name=Spotify
 GenericName=Music Player
 Icon=spotify-client
-TryExec=spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
+TryExec=spotify
 Exec=spotify --enable-features=UseOzonePlatform --ozone-platform=wayland --uri=%U
 Terminal=false
 MimeType=x-scheme-handler/spotify;
