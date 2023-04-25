@@ -1,30 +1,30 @@
 return {
-  'VonHeikemen/lsp-zero.nvim',
-  branch = 'v1.x',
-  lazy = false,
-  priority = 51,
-  dependencies = {
-    -- LSP Support
-    {'williamboman/mason.nvim'},           -- Optional
-    {'williamboman/mason-lspconfig.nvim'}, -- Optional
-    {'neovim/nvim-lspconfig'},             -- Required
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    lazy = false,
+    priority = 51,
+    dependencies = {
+        -- LSP Support
+        {'neovim/nvim-lspconfig'},             -- Required
+        {                                      -- Optional
+        'williamboman/mason.nvim',
+        build = function()
+            pcall(vim.cmd, 'MasonUpdate')
+        end,
+        },
+        {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-    -- Autocompletion
-    {'hrsh7th/nvim-cmp'},         -- Required
-    {'hrsh7th/cmp-nvim-lsp'},     -- Required
-    {'hrsh7th/cmp-buffer'},       -- Optional
-    {'hrsh7th/cmp-path'},         -- Optional
-    {'saadparwaiz1/cmp_luasnip'}, -- Optional
-    {'hrsh7th/cmp-nvim-lua'},     -- Optional
+        -- Autocompletion
+        -- Required
+        {'hrsh7th/nvim-cmp'},                  -- Required
+        {'hrsh7th/cmp-nvim-lsp'},              -- Required
+        {'L3MON4D3/LuaSnip'},                  -- Required
 
-    -- Snippets
-    {'L3MON4D3/LuaSnip'},             -- Required
-    {'rafamadriz/friendly-snippets'}, -- Optional
+        -- lspkind
+        {'onsails/lspkind.nvim'},              -- Optional
+    },
 
-    -- lspkind
-    {'onsails/lspkind.nvim'}, -- Optional'},
-  },
-  config = function()
-      require('ary.lsp-zero')
-  end
+    config = function()
+        require('ary.lsp-zero')
+    end
 }

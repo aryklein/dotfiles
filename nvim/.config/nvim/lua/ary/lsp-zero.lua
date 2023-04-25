@@ -1,12 +1,18 @@
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
-local lsp = require('lsp-zero')
-lsp.preset('recommended')
+local lsp = require('lsp-zero').preset('recommended')
 
--- only for lskind-nvim
--- See https://github.com/VonHeikemen/lsp-zero.nvim/discussions/143#discussioncomment-4845982
--- block taken from here: https://github.com/onsails/lspkind.nvim#option-2-nvim-cmp
-lsp.setup_nvim_cmp({
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+lsp.setup()
+
+local cmp = require('cmp')
+cmp.setup({
+    window = {
+--        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+    -- only for lskind-nvim
     formatting = {
         fields = {'abbr', 'kind', 'menu'},
         format = require('lspkind').cmp_format({
@@ -15,24 +21,4 @@ lsp.setup_nvim_cmp({
             ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
         })
     }
-})
-
-lsp.nvim_workspace()
-lsp.setup()
-
--- diagnostic config
-vim.diagnostic.config({
-    virtual_text = true,
-    signs = true,
-    update_in_insert = false,
-    underline = true,
-    severity_sort = false,
-    float = {
-        focusable = false,
-        style = 'minimal',
-        border = 'rounded',
-        source = 'always',
-        header = '',
-        prefix = '',
-    },
 })
