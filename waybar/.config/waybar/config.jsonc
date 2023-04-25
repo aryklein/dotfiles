@@ -10,15 +10,14 @@
     "position": "top",
 
     "modules-left": [
-	"custom/menu",
-	"sway/workspaces"
+        "custom/menu",
+        "sway/workspaces"
     ],
     "modules-center": [
-	"sway/window"
+        "sway/window"
     ],
     "modules-right": [
         // informational
-        "custom/clipboard",
         "cpu",
         "memory",
         "temperature",
@@ -36,7 +35,7 @@
         // system
         "tray",
         "clock",
-	"custom/power"
+        "custom/power"
     ],
 
     // -------------------------------------------------------------------------
@@ -167,12 +166,5 @@
         "format": "",
         "on-click": "swaymsg exec \\$exit",
         "tooltip": false
-
-    },
-
-    "custom/world-clock": {
-        "format": "",
-        "on-click": "notify-send \"$(bash /home/ary/word_clock.sh)\"",
-        "tooltip": "false"
     }
 }
