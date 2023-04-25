@@ -4,12 +4,19 @@ local lsp = require('lsp-zero').preset('recommended')
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+lsp.set_sign_icons({
+    error = '✘',
+    warn = '▲',
+    hint = '⚑',
+    info = '»'
+})
+
 lsp.setup()
 
 local cmp = require('cmp')
 cmp.setup({
     window = {
---        completion = cmp.config.window.bordered(),
+        --        completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
     -- only for lskind-nvim
