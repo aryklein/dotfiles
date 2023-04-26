@@ -47,8 +47,8 @@ vim.g['netrw_liststyle'] = 3
 -- avoid pop ups sign_icons to moves your screer
 vim.opt.signcolumn = 'yes'
 
--- set leader key
-vim.g.mapleader = ' '
+-- set space for leader key
+--vim.g.mapleader = ' '
 
 -- show whitespace
 vim.opt.list = true

@@ -4,18 +4,18 @@ telescope.setup{
   defaults = {
     prompt_prefix = " ",
     selection_caret = " ",
-    file_ignore_patterns = { '.git/*', 'env/*', '.env/*' },
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
-    file_ignore_patterns = {".env/*", "%.jpeg", "%.png", "%.jpg", "%.mkv"},
+    file_ignore_patterns = {".git/*", ".env/*", "%.jpeg", "%.png", "%.jpg", "%.mkv"},
     color_devicons= false,
-    use_less = true
+    use_less = true,
+    -- sort results by name from top to bottom
+    sorting_strategy = "ascending",
   },
-
   extensions = {
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
@@ -28,4 +28,7 @@ telescope.setup{
 }
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
-telescope.load_extension('fzf')
+telescope.load_extension("fzf")
+
+-- Telescope extension for browsing the file system, and picking files.
+telescope.load_extension("file_browser")

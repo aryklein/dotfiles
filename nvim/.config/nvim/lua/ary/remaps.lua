@@ -60,5 +60,8 @@ vim.keymap.set('n','<Leader>fb', function()
     require('telescope.builtin').buffers()
 end)
 
+-- Telescope file browser
+vim.keymap.set('n','<Leader>te', ':Telescope file_browser<CR>')
+
 -- help for world sustitution
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
