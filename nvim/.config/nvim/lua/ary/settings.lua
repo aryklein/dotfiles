@@ -7,9 +7,9 @@ vim.opt.splitright = true
 vim.opt.cursorline = true
 -- Enable colors in terminal
 vim.opt.termguicolors = true
- -- Set highlight on search
+-- Set highlight on search
 vim.opt.hlsearch = true
- -- use space instead of tab by default
+-- use space instead of tab by default
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
@@ -24,20 +24,20 @@ vim.opt.mouse = nil
 -- jump to last position when opening a file
 -- remove trailing whitespace on save
 vim.cmd [[
-    syntax enable
-    autocmd BufReadPost *
-      \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-      \ |   exe "normal! g`\""
-      \ | endif
-    autocmd BufWritePre * :%s/\s\+$//e
+syntax enable
+autocmd BufReadPost *
+\ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+\ |   exe "normal! g`\""
+\ | endif
+autocmd BufWritePre * :%s/\s\+$//e
 ]]
 
 -- set cursor shape to beam when exit Neovim
 vim.cmd [[
-    augroup CursorShape
-        autocmd!
-        autocmd VimLeave,VimSuspend * set guicursor=a:ver25
-    augroup END
+  augroup CursorShape
+  autocmd!
+  autocmd VimLeave,VimSuspend * set guicursor=a:ver25
+  augroup END
 ]]
 
 -- netrw configuration

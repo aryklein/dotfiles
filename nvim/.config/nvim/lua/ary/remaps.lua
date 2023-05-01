@@ -47,17 +47,17 @@ vim.keymap.set('x', '<Leader>p', '"_dP')
 -- -- Telescope remap using lua function
 -- Telescope find files
 vim.keymap.set('n','<Leader>ff', function()
-    require('telescope.builtin').find_files()
+  require('telescope.builtin').find_files()
 end)
 
 -- Telescope live grep
 vim.keymap.set('n','<Leader>lg', function()
-    require('telescope.builtin').live_grep()
+  require('telescope.builtin').live_grep()
 end)
 
 -- Telescope buffers
 vim.keymap.set('n','<Leader>fb', function()
-    require('telescope.builtin').buffers()
+  require('telescope.builtin').buffers()
 end)
 
 -- Telescope file browser

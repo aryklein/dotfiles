@@ -1,10 +1,10 @@
 local treesitter = require('nvim-treesitter.configs')
 
 treesitter.setup {
-    highlight = {
-        enable = true
-    },
-    ensure_installed = {
+  highlight = {
+    enable = true
+  },
+  ensure_installed = {
     "bash",
     "yaml",
     "html",
