@@ -27,6 +27,7 @@
         "pulseaudio",
         "backlight",
         "idle_inhibitor",
+        "custom/dnd",
 
         // connecting
         "bluetooth",
@@ -55,9 +56,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format-charging": " {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
         "format": "{icon} {capacity}%",
-        "format-icons": ["", "", "", "", "", ""],
+        "format-icons": ["󰂃", "󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
         "tooltip": true,
         "bat": "BAT0"
     },
@@ -72,7 +73,7 @@
 
     "cpu": {
         "interval": 5,
-        "format": "﬙ {usage}%",
+        "format": "󰻠 {usage}%",
         "states": {
             "warning": 70,
             "critical": 90
@@ -82,7 +83,7 @@
 
     "memory": {
         "interval": 5,
-        "format": " {}%",
+        "format": "󰍛 {}%",
         "states": {
             "warning": 70,
             "critical": 90
@@ -93,8 +94,8 @@
     "network": {
         "interval": 5,
         "format-wifi": " ",
-        "format-ethernet": "",
-        "format-disconnected": "睊",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪 ",
         "tooltip-format": "{ifname} ({essid}): {ipaddr}",
         "on-click": "swaymsg exec \\$term_float nmtui"
     },
@@ -106,7 +107,7 @@
 
     "backlight": {
         "format": "{icon} {percent}%",
-        "format-icons": ["", "", ""],
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
         "on-scroll-up": "swaymsg exec \\$brightness_up",
         "on-scroll-down": "swaymsg exec \\$brightness_down"
     },
@@ -114,13 +115,13 @@
     "pulseaudio": {
         "scroll-step": 5,
         "format": "{icon} {volume}%{format_source}",
-        "format-muted": "婢 {format_source}",
+        "format-muted": "󰝟 {format_source}",
         "format-source": "",
-        "format-source-muted": " ",
+        "format-source-muted": " 󰍭",
         "format-icons": {
-            "headphone": "",
-            "headset": "",
-            "default": ["奄", "奔", "墳"]
+            "headphone": "󰋋",
+            "headset": "󰋎",
+            "default": ["󰕿", "󰖀", "󰕾"]
         },
         "tooltip-format": "{icon} {volume}% {format_source}",
         "on-click": "swaymsg exec \"\\$term_float \\$pulseaudio\"",
@@ -129,9 +130,9 @@
     },
 
     "temperature": {
-	//"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-	"hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon/",
-	"input-filename": "temp1_input",
+    //"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon/",
+    "input-filename": "temp1_input",
         "critical-threshold": 90,
         "interval": 5,
         "format": "{icon} {temperatureC}°C",
@@ -154,10 +155,10 @@
     "bluetooth": {
         "format": "{icon}",
         "interval": 30,
-        "format-off": "",
-        "format-on": "",
-        "format-connected": "",
-        "format-disabled": "",
+        "format-off": "󰂲",
+        "format-on": "󰂯",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
         "on-click": "blueberry",
         "tooltip-format": "{}"
     },
@@ -166,5 +167,19 @@
         "format": "",
         "on-click": "swaymsg exec \\$exit",
         "tooltip": false
+    },
+
+    "custom/dnd": {
+        "interval": "once",
+        "return-type": "json",
+        "format": "{}{icon}",
+        "format-icons": {
+            "default": "󰍡",
+            "dnd": "󱙍"
+        },
+        "on-click": "makoctl mode | grep 'do-not-disturb' && makoctl mode -r do-not-disturb || makoctl mode -a do-not-disturb; pkill -RTMIN+11 waybar",
+        "on-click-right": "makoctl restore",
+        "exec": "printf '{\"alt\":\"%s\",\"tooltip\":\"mode: %s\"}' $(makoctl mode | grep -q 'do-not-disturb' && echo dnd || echo default) $(makoctl mode | tail -1)",
+        "signal": 11
     }
 }
