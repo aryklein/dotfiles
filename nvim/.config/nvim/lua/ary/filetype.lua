@@ -1,11 +1,17 @@
--- Ansible
+-- Add colorcolumn to YAML files
+vim.cmd([[autocmd FileType yaml setlocal colorcolumn=120]])
+
+-- Ansible files should be set to yaml.ansible
 vim.cmd [[
 autocmd BufNewFile,BufRead *.yaml,*.yml
 \ if search('ansible\|hosts:\|tasks:\|loop:\|tags:', 'nw')
 \ |   set ft=yaml.ansible
-\ |   set colorcolumn=160
+\ |   set colorcolumn=120
 \ | endif
 ]]
+
+-- Add colorcolumn to MD files
+vim.cmd([[autocmd FileType markdown setlocal colorcolumn=80 formatoptions+=w textwidth=80]])
 
 -- Terraform and Hashicorp files
 vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
