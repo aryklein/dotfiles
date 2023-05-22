@@ -128,7 +128,7 @@ if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*) ]] && [[ "$
 fi
 
 ## Colored Man Pages
-export MANPAGER="less -R --use-color -Dd+r -Du+b" 
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
 # function man() {
 #     env \
 #     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -149,6 +149,7 @@ alias history='history 0'
 alias ip='ip -color=auto'
 alias lg='lazygit'
 alias ya='ykman oath accounts code'
+alias sudo='doas'
 
 # Terminal issues with SSH in Kitty
 alias ssh='TERM="xterm-256color" ssh'

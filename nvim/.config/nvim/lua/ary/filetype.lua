@@ -1,12 +1,12 @@
 -- Add colorcolumn to YAML files
-vim.cmd([[autocmd FileType yaml setlocal colorcolumn=120]])
+vim.cmd([[autocmd FileType yaml setlocal colorcolumn=160]])
 
 -- Ansible files should be set to yaml.ansible
 vim.cmd [[
 autocmd BufNewFile,BufRead *.yaml,*.yml
 \ if search('ansible\|hosts:\|tasks:\|loop:\|tags:', 'nw')
 \ |   set ft=yaml.ansible
-\ |   set colorcolumn=120
+\ |   set colorcolumn=160
 \ | endif
 ]]
 
