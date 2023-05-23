@@ -48,7 +48,7 @@ vim.g['netrw_liststyle'] = 3
 vim.opt.signcolumn = 'yes'
 
 -- set space for leader key
---vim.g.mapleader = ' '
+vim.g.mapleader = ' '
 
 -- show whitespace
 vim.opt.list = true
