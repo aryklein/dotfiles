@@ -1,6 +1,7 @@
 return {
     { -- telescope
         'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
         lazy = true,
         cmd = { 'Telescope' },
         dependencies = {
