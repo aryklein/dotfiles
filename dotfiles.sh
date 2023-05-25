@@ -36,8 +36,8 @@ fi
 
 # environment definition
 PACKAGES=(
-    alacritty bash brave obsproject fontconfig foot git gtk kitty mako nvim
-    ssh sway tfswitch tmux vim waybar zsh flameshot zoom fzf vscode swaylock
+    alacritty bash brave obsproject fontconfig git gtk kitty mako nvim
+    ssh sway tfswitch tmux waybar zsh flameshot zoom fzf vscode swaylock
     chromium electron kanshi paru wob swappy backgrounds slack fuzzel spotify
 )
 
