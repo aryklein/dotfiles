@@ -162,7 +162,7 @@
 #window {
     font-weight: bold;
     margin-right: 25px;
-    color: #46c880;
+    color: #78a9ff;
 }
 
 #workspaces button {
@@ -175,6 +175,11 @@
 }
 
 #workspaces button.focused {
+    border-color: #78a9ff;
+    background-color: #282828;
+}
+
+#workspaces button.active {
     border-color: #78a9ff;
     background-color: #282828;
 }

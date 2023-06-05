@@ -11,10 +11,10 @@
 
     "modules-left": [
         "custom/menu",
-        "sway/workspaces"
+        "wlr/workspaces"
     ],
     "modules-center": [
-        "sway/window"
+        "hyprland/window"
     ],
     "modules-right": [
         // informational
@@ -50,6 +50,17 @@
         }
     },
 
+    "wlr/workspaces": {
+        "sort-by-number": true,
+        "on-click": "activate",
+        "format": "{icon}"
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 60
+    },
+
     "battery": {
         "interval": 30,
         "states": {
@@ -68,7 +79,7 @@
         "format": "{:%e %b %Y %H:%M}",
         "tooltip": true,
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
-        "on-click": "swaymsg exec \\$calendar"
+        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell khal interactive\""
     },
 
     "cpu": {
@@ -78,7 +89,7 @@
             "warning": 70,
             "critical": 90
         },
-        "on-click": "swaymsg exec \\$term_float htop"
+        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell htop\""
     },
 
     "memory": {
@@ -88,7 +99,7 @@
             "warning": 70,
             "critical": 90
         },
-        "on-click": "swaymsg exec \\$term_float htop"
+        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell htop\""
     },
 
     "network": {
@@ -97,12 +108,7 @@
         "format-ethernet": "󰈀",
         "format-disconnected": "󰖪 ",
         "tooltip-format": "{ifname} ({essid}): {ipaddr}",
-        "on-click": "swaymsg exec \\$term_float nmtui"
-    },
-
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>",
-        "tooltip": false
+        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell nmtui\""
     },
 
     "backlight": {
@@ -124,13 +130,12 @@
             "default": ["󰕿", "󰖀", "󰕾"]
         },
         "tooltip-format": "{icon} {volume}% {format_source}",
-        "on-click": "swaymsg exec \"\\$term_float \\$pulseaudio\"",
-        "on-scroll-up": "swaymsg exec \\$volume_up",
-        "on-scroll-down": "swaymsg exec \\$volume_down"
+        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell pulsemixer\"",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
     },
 
     "temperature": {
-    //"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
     "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon/",
     "input-filename": "temp1_input",
         "critical-threshold": 90,
@@ -138,7 +143,7 @@
         "format": "{icon} {temperatureC}°C",
         "format-icons": ["", "", ""],
         "tooltip": false,
-        "on-click": "swaymsg exec \"\\$term_float watch sensors\""
+        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell watch sensors\""
     },
 
     "tray": {
@@ -148,7 +153,7 @@
 
     "custom/menu": {
         "format": "",
-        "on-click": "swaymsg exec \\$menu",
+        "on-click": "hyprctl dispatch exec \"fuzzel --show drun\"",
         "tooltip": false
     },
 
@@ -165,7 +170,8 @@
 
     "custom/power": {
         "format": "",
-        "on-click": "swaymsg exec \\$exit",
+        "on-click": "hyprctl dispatch exec poweroff",
+        "on-click-right": "hyprctl dispatch exec reboot",
         "tooltip": false
     },
 
