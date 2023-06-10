@@ -211,7 +211,7 @@ bindkey '^H' backward-kill-word
 [ -r /etc/DIR_COLORS ] && eval `dircolors /etc/DIR_COLORS`
 
 # Add $HOME/bin to the PATH variable
-path+=$HOME/bin
+path+=$HOME/.bin
 
 # set Vim as default editor for gh
 export EDITOR=nvim
