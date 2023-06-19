@@ -1,9 +1,9 @@
 window {
     margin: 0px;
-    border: 2px solid #46c880;
+    border: 2px solid #78a9ff;
     background-color: #282828;
     border-radius: 10px;
-    opacity: 0.93;
+    opacity: 0.97;
 }
 
 #input {
@@ -43,7 +43,7 @@ window {
 }
 
 #entry:selected {
-    background-color: #46c880;
+    background-color: #52bdff;
 }
 
 #text:selected {
