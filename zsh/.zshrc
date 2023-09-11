@@ -142,7 +142,7 @@ export MANPAGER="less -R --use-color -Dd+r -Du+b"
 # }
 
 ## Aliases
-if [[ -x /usr/bin/exa ]]; then alias ls='exa --binary --group --git'; else alias ls='ls --color=auto'; fi
+if [[ -x /usr/bin/eza ]]; then alias ls='eza --binary --group --git'; else alias ls='ls --color=auto'; fi
 alias grep='grep --color=auto'
 alias diff='colordiff'
 alias history='history 0'
