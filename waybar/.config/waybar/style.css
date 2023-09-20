@@ -89,11 +89,11 @@
 }
 
 #battery.warning {
-    color: #ffb86c;
+    color: #f1fa8c;
 }
 
 #battery.critical {
-    color: #ff5555;
+    color: #ee5396;
 }
 
 #battery.warning.discharging {
@@ -113,7 +113,7 @@
 }
 
 #cpu.warning {
-    color: #ffb86c;
+    color: #f1fa8c;
 }
 
 #cpu.critical {
@@ -138,7 +138,7 @@
 }
 
 #memory.critical {
-    color: #f1fa8c;
+    color: #ee5396;
     animation-name: blink-critical;
     animation-duration: 2s;
 }

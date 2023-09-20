@@ -138,7 +138,7 @@
     "temperature": {
     "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon/",
     "input-filename": "temp1_input",
-        "critical-threshold": 90,
+        "critical-threshold": 70,
         "interval": 5,
         "format": "{icon} {temperatureC}°C",
         "format-icons": ["", "", ""],
