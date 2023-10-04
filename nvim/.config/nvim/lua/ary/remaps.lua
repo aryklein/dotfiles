@@ -41,6 +41,9 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzz')
 vim.keymap.set('n', 'N', 'Nzz')
 
+-- gitsigns preview hunk
+vim.keymap.set('n', '<Leader>gh', ':Gitsigns preview_hunk<CR>', { silent = true })
+
 -- keep paste text in the buffer
 vim.keymap.set('x', '<Leader>p', '"_dP')
 
