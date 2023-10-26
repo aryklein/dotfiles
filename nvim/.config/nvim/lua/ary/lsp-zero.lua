@@ -1,22 +1,35 @@
 -- Learn the keybindings, see :help lsp-zero-keybindings
--- Learn to configure LSP servers, see :help lsp-zero-api-showcase
-local lsp = require('lsp-zero').preset('recommended')
+local lsp_zero = require('lsp-zero')
 
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+lsp_zero.on_attach(function(client, bufnr)
+  -- see :help lsp-zero-keybindings
+  -- to learn the available actions
+  lsp_zero.default_keymaps({buffer = bufnr})
+end)
 
-lsp.set_sign_icons({
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {},
+  handlers = {
+    lsp_zero.default_setup,
+  },
+})
+
+
+lsp_zero.set_sign_icons({
     error = '✘',
     warn = '▲',
     hint = '⚑',
     info = '»'
 })
 
-lsp.setup()
-
 local cmp = require('cmp')
 cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+      ['<CR>'] = cmp.mapping.confirm({select = false}),
+    }),
     window = {
-        --        completion = cmp.config.window.bordered(),
+        -- completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
     -- only for lskind-nvim
@@ -28,10 +41,4 @@ cmp.setup({
             ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
         })
     },
-    -- Use Enter key to select completion item
-    -- mapping = {
-    --    ['<CR>'] = cmp.mapping.confirm({select = true})
-    -- },
 })
-
-
