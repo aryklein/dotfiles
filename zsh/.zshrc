@@ -149,6 +149,7 @@ alias history='history 0'
 alias ip='ip -color=auto'
 alias lg='lazygit'
 alias ya='ykman oath accounts code'
+alias rm='rm -i'
 #alias sudo='doas'
 
 # Terminal issues with SSH in Kitty
