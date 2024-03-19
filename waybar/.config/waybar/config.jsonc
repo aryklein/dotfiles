@@ -76,6 +76,7 @@
 
     "clock": {
         "interval": 60,
+        "timezone": "America/Argentina/Cordoba",
         "format": "{:%e %b %Y %H:%M}",
         "tooltip": true,
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
