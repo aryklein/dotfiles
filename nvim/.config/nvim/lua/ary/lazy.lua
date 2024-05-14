@@ -1,4 +1,5 @@
--- lazy plugin manager
+-- [[ Install `lazy.nvim` plugin manager ]]
+--    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -11,4 +12,6 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
+-- every plugin is configured in `~/.config/nvim/lua/ary/plugins/<plugin>.lua`
 require('lazy').setup('ary.plugins')

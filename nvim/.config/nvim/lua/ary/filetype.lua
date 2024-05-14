@@ -13,6 +13,9 @@ autocmd BufNewFile,BufRead *.yaml,*.yml
 -- Add colorcolumn to MD files
 vim.cmd([[autocmd FileType markdown setlocal colorcolumn=80 formatoptions+=w textwidth=80]])
 
+-- Add colorcolumn to Python files
+vim.cmd([[autocmd FileType python setlocal colorcolumn=79]])
+
 -- Terraform and Hashicorp files
 vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
 vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
