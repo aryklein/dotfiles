@@ -132,15 +132,7 @@ export MANPAGER="less -R --use-color -Dd+r -Du+b"
 export MANROFFOPT="-P -c"
 
 ## Aliases
-if [[ -x /usr/bin/eza ]]; then alias ls='eza --binary --group --git'; else alias ls='ls --color=auto'; fi
-alias grep='grep --color=auto'
-alias diff='colordiff'
-alias history='history 0'
-alias ip='ip -color=auto'
-alias lg='lazygit'
-alias ya='ykman oath accounts code'
-alias rm='rm -i'
-#alias sudo='doas'
+[[ ! -f ~/.my_aliases.zsh ]] || source ~/.my_aliases.zsh
 
 # Terminal issues with SSH in Kitty
 alias ssh='TERM="xterm-256color" ssh'
