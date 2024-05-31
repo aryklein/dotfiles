@@ -26,7 +26,7 @@ vim.opt.backup = false
 vim.opt.numberwidth = 1
 
 -- disable mouse
-vim.opt.mouse = nil
+vim.opt.mouse = ""
 
 -- sync clipboard between OS and Neovim
 vim.opt.clipboard = 'unnamedplus'
