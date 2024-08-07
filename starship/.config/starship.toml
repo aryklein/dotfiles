@@ -1,0 +1,80 @@
+add_newline = false
+format = """
+$directory\
+$git_branch\
+$git_status\
+$character\
+"""
+
+right_format = """
+$python\
+$kubernetes\
+$terraform\
+$status\
+$cmd_duration\
+$time"""
+
+[status]
+format = '[$symbol$status]($style) '
+style = 'bold red'
+symbol = '✘ '
+disabled = false
+
+[directory]
+truncation_length = 1
+
+[terraform]
+style = "bold purple"
+symbol = "󱁢 "
+format = '[$symbol$version \($workspace\)]($style) '
+disabled = false
+
+[git_branch]
+format = "[ $symbol$branch(:$remote_branch)]($style)"
+style = "bold purple"
+symbol = " "
+
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+style = 'bold green'
+up_to_date = ''
+conflicted = ' [={count}](red)'
+untracked = ' [?${count}](red)'
+ahead = ' ${count}'
+diverged = ' ${ahead_count} ${behind_count}'
+behind = ' ${count}'
+stashed = ' [$${count}](green)'
+modified = ' [${count}](yellow)'
+staged = ' [+${count}](green)'
+renamed = ' [»${count}](yellow)'
+deleted = ' [✘${count}](red)'
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold yellow)"
+disabled = false
+
+[cmd_duration]
+format = "[ $duration ]($style)"
+style = "dimmed yellow"
+
+[time]
+time_format = "%T"
+format = "[ $time]($style) "
+disabled = false
+style = "dimmed white"
+
+[kubernetes]
+symbol = "󱃾 "
+format = " [$symbol$context/$namespace]($style) "
+style = "bright-blue"
+disabled = true
+
+[python]
+format = "[$symbol$virtualenv]($style) "
+symbol = " "
+style = "yellow"
+detect_files = []
+detect_extensions = []
+disabled = false
