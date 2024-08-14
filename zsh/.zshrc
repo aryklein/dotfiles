@@ -57,7 +57,7 @@ if type fd > /dev/null; then
     # To apply the fd to CTRL-T as well
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     # Carbonfox theme for fzf
-    source ${HOME}/.config/fzf/carbonfox-theme.conf
+    source ${HOME}/.config/fzf/cappuccin-mocha-theme.conf
 #    source ${HOME}/.config/fzf/dracula-theme.conf
 #    source .config/fzf/solarized-dark-theme.conf
 fi
@@ -139,7 +139,7 @@ alias ssh='TERM="xterm-256color" ssh'
 # replace vim by nvim if it is installed
 if [[ -x /usr/bin/nvim ]]; then alias vim='nvim'; fi
 # replace cat with bat if it is installed
-if [[ -x /usr/bin/bat ]]; then alias cat='bat -pp' && export BAT_THEME="base16"; fi
+if [[ -x /usr/bin/bat ]]; then alias cat='bat -pp' && export BAT_THEME="Catppuccin Mocha"; fi
 
 ## k8s aliases
 alias k='kubectl'

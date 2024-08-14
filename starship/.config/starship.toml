@@ -69,7 +69,7 @@ style = "dimmed white"
 symbol = "󱃾 "
 format = " [$symbol$context/$namespace]($style) "
 style = "bright-blue"
-disabled = true
+disabled = false
 
 [python]
 format = "[$symbol$virtualenv]($style) "

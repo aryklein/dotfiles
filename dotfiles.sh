@@ -39,7 +39,7 @@ PACKAGES=(
     alacritty bash brave obsproject fontconfig git gtk kitty mako nvim
     ssh sway tfswitch tmux waybar zsh flameshot zoom fzf vscode swaylock
     chromium electron kanshi paru wob swappy backgrounds slack fuzzel spotify
-    pcmanfm tgswitch audacity
+    pcmanfm tgswitch audacity bat starship
 )
 
 case "$1" in

@@ -1,26 +1,27 @@
+@import "mocha.css";
 /* -----------------------------------------------------------------------------
  * Keyframes
  * -------------------------------------------------------------------------- */
 
 @keyframes blink-warning {
     70% {
-        color: #f8f8f2;
+        color: @text;
     }
 
     to {
-        color: #f8f8f2;
-        background-color: #f1fa8c;
+        color: @text;
+        background-color: @yellow;
     }
 }
 
 @keyframes blink-critical {
     70% {
-      color: #f8f8f2;
+      color: @text;
     }
 
     to {
-        color: #f8f8f2;
-        background-color: #ee5396;
+        color: @text;
+        background-color: @red;
     }
 }
 
@@ -36,14 +37,14 @@
     margin: 0;
     padding: 0;
     font-family: "Hack Nerd Font";
-    color: #f8f8f2;
+    color: @text;
 }
 
 /* The whole bar */
 #waybar {
     /*background: @theme_bg_color;*/
     background:rgba (0, 0, 0, 0.70);
-    color: #282828;
+    color: @surface1;
     font-size: 14px;
 }
 
@@ -65,21 +66,21 @@
 #tray {
     padding-left: 8px;
     padding-right: 8px;
-    background-color: #282828;
+    background-color: @surface0;
 }
 
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
 #tray {
-    background-color: #484848;
+    background-color: @surface1;
 }
 
 #custom-power {
     /* I don't know why I had to add 4px padding right to have this button centered */
     padding-right: 14px;
-    background-color: #46c880;
-    color: #282828;
+    background-color: @pink;
+    color: @crust;
 }
 
 #battery {
@@ -89,11 +90,11 @@
 }
 
 #battery.warning {
-    color: #f1fa8c;
+    color: @yellow;
 }
 
 #battery.critical {
-    color: #ee5396;
+    color: @red;
 }
 
 #battery.warning.discharging {
@@ -108,21 +109,21 @@
 
 #clock {
     font-weight: bold;
-    background-color: #6b6b6b;
-    color: #f8f8f2;
+    background-color: @surface2;
+    color: @text;
 }
 
 #cpu.warning {
-    color: #f1fa8c;
+    color: @yellow;
 }
 
 #cpu.critical {
-    color: #ee5396;
+    color: @red;
 }
 
 #custom-menu {
-    background-color: #46c880;
-    color: #282828;
+    background-color: @pink;
+    color: @crust;
     padding-left: 10px;
     padding-right: 14px;
 }
@@ -134,29 +135,29 @@
 }
 
 #memory.warning {
-    color: #f1fa8c;
+    color: @yellow;
 }
 
 #memory.critical {
-    color: #ee5396;
+    color: @red;
     animation-name: blink-critical;
     animation-duration: 2s;
 }
 
 #mode {
-    background: #282828;
+    background: @surface0;
 }
 
 #network.disconnected {
-    color: #f1fa8c;
+    color: @yellow;
 }
 
 #pulseaudio.muted {
-    color: #f1fa8c;
+    color: @yellow;
 }
 
 #temperature.critical {
-    color: #ee5396;
+    color: @red;
 }
 
 #window {
@@ -170,24 +171,24 @@
     padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: #484848;
+    background-color: @surface0;
 }
 
 #workspaces button.focused {
-    border-color: #78a9ff;
-    background-color: #282828;
+    border-color: @red;
+    background-color: @surface2;
 }
 
 #workspaces button.active {
-    border-color: #78a9ff;
-    background-color: #282828;
+    border-color: @green;
+    background-color: @overlay0;
 }
 
 #workspaces button.urgent {
-    border-color: #ee5396;
-    color: #ee5396;
+    border-color: @red;
+    color: @red;
 }
 
 #bluetooth.disabled {
-    color: #f1fa8c;
+    color: @yellow;
 }

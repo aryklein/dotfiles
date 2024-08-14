@@ -154,7 +154,7 @@
 
     "custom/menu": {
         "format": "",
-        "on-click": "sleep 0.1 && hyprctl dispatch exec wofi",
+        "on-click": "sleep 0.1 && hyprctl dispatch exec fuzzel",
         "tooltip": false
     },
 
