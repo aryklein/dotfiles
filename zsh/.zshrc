@@ -199,6 +199,9 @@ bindkey '^H' backward-kill-word
 # set Vim as default editor for gh
 export EDITOR=nvim
 
+# tenv auto install
+export TENV_AUTO_INSTALL=true
+
 ## powerline10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
