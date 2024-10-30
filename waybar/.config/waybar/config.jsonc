@@ -1,187 +1,69 @@
 {
-    // -------------------------------------------------------------------------
-    // Global configuration
-    // -------------------------------------------------------------------------
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["tray", "backlight", "bluetooth", "network", "pulseaudio", "battery", "clock", "custom/dnd"],
 
-    "layer": "top",
-
-    // If height property would be not present, it'd be calculated dynamically
-    "height": 30,
-    "position": "top",
-
-    "modules-left": [
-        "custom/menu",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "hyprland/window"
-    ],
-    "modules-right": [
-        // informational
-        "cpu",
-        "memory",
-        "temperature",
-        "battery",
-
-        // media
-        "pulseaudio",
-        "backlight",
-        "idle_inhibitor",
-        "custom/dnd",
-
-        // connecting
-        "bluetooth",
-        "network",
-
-        // system
-        "tray",
-        "clock",
-        "custom/power"
-    ],
-
-    // -------------------------------------------------------------------------
-    // Modules
-    // -------------------------------------------------------------------------
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
+  "clock": {
+    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "timezone": "America/Argentina/Cordoba"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
     },
-
-    "wlr/workspaces": {
-        "sort-by-number": true,
-        "on-click": "activate",
-        "format": "{icon}"
-    },
-
-    "hyprland/window": {
-        "format": "{}",
-        "max-length": 60
-    },
-
-    "battery": {
-        "interval": 30,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format-charging": "󰂄 {capacity}%",
-        "format": "{icon} {capacity}%",
-        "format-icons": ["󰂃", "󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
-        "tooltip": true,
-        "bat": "BAT0"
-    },
-
-    "clock": {
-        "interval": 60,
-        "timezone": "America/Argentina/Cordoba",
-        "format": "{:%e %b %Y %H:%M}",
-        "tooltip": true,
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
-        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell khal interactive\""
-    },
-
-    "cpu": {
-        "interval": 5,
-        "format": "󰻠 {usage}%",
-        "states": {
-            "warning": 70,
-            "critical": 90
-        },
-        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell htop\""
-    },
-
-    "memory": {
-        "interval": 5,
-        "format": "󰍛 {}%",
-        "states": {
-            "warning": 70,
-            "critical": 90
-        },
-        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell htop\""
-    },
-
-    "network": {
-        "interval": 5,
-        "format-wifi": " ",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "󰖪 ",
-        "tooltip-format": "{ifname} ({essid}): {ipaddr}",
-        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell nmtui\""
-    },
-
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "on-scroll-up": "swaymsg exec \\$brightness_up",
-        "on-scroll-down": "swaymsg exec \\$brightness_down"
-    },
-
-    "pulseaudio": {
-        "scroll-step": 5,
-        "format": "{icon} {volume}%{format_source}",
-        "format-muted": "󰝟 {format_source}",
-        "format-source": "",
-        "format-source-muted": " 󰍭",
-        "format-icons": {
-            "headphone": "󰋋",
-            "headset": "󰋎",
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "tooltip-format": "{icon} {volume}% {format_source}",
-        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell pulsemixer\"",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
-    },
-
-    "temperature": {
-    "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon/",
-    "input-filename": "temp1_input",
-        "critical-threshold": 70,
-        "interval": 5,
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", ""],
-        "tooltip": false,
-        "on-click": "hyprctl dispatch exec \"kitty --class floating_shell watch sensors\""
-    },
-
-    "tray": {
-        "icon-size": 21,
-        "spacing": 5
-    },
-
-    "custom/menu": {
-        "format": "",
-        "on-click": "sleep 0.1 && hyprctl dispatch exec fuzzel",
-        "tooltip": false
-    },
-
-    "bluetooth": {
-        "format": "{icon}",
-        "interval": 30,
-        "format-off": "󰂲",
-        "format-on": "󰂯",
-        "format-connected": "󰂱",
-        "format-disabled": "󰂲",
-        "on-click": "blueberry",
-        "tooltip-format": "{}"
-    },
-
-    "custom/power": {
-        "format": "",
-        "on-click": "hyprctl dispatch exec wlogout",
-        "tooltip": false
-    },
-
-    "custom/dnd": {
+    "format": "<span size='13000'>{icon} </span>{capacity}%",
+    "format-warning": "<span size='13000'>{icon} </span>{capacity}%",
+    "format-critical": "<span size='13000'>{icon} </span>{capacity}%",
+    "format-charging": "<span size='13000''> </span>{capacity}%",
+    "format-plugged": "<span size='13000'> </span>{capacity}%",
+    "format-alt": "<span size='13000'>{icon} </span> {time}",
+    "format-full": "<span size='13000'>  </span>{capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time}"
+  },
+  "network": {
+    "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
+    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭  </span> Disconnected",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+  },
+  "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-muted": "",
+      "format-icons": {
+          "default": ["", "", " "]
+      },
+      "on-click": "hyprctl dispatch exec \"kitty --class floating_shell pulsemixer\""
+  },
+  "tray": {
+      "icon-size": 21,
+      "spacing": 5
+  },
+  "bluetooth": {
+      "format": "{icon}",
+      "interval": 30,
+      "format-off": "<span size='13000'>󰂲</span>",
+      "format-on": "<span size='13000'>󰂱</span>",
+      "format-connected": "<span size='13000'>󰂱</span>",
+      "format-disabled": "<span size='13000'>󰂲</span>",
+      "on-click": "blueberry",
+      "tooltip-format": "{}"
+  },
+  "backlight": {
+        "format": "<span size='13000'>{icon} </span>{percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+  },
+  "custom/dnd": {
         "interval": "once",
         "return-type": "json",
-        "format": "{}{icon}",
+        "format": "{icon}",
         "format-icons": {
-            "default": "󰍡",
-            "dnd": "󱙍"
+            "default": "<span size='13000'>󰍡</span>",
+            "dnd": "<span size='13000'>󱙍</span>"
         },
         "on-click": "makoctl mode | grep 'do-not-disturb' && makoctl mode -r do-not-disturb || makoctl mode -a do-not-disturb; pkill -RTMIN+11 waybar",
         "on-click-right": "makoctl restore",
