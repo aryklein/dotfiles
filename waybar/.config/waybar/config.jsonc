@@ -17,7 +17,7 @@
     "format": "<span size='13000'>{icon} </span>{capacity}%",
     "format-warning": "<span size='13000'>{icon} </span>{capacity}%",
     "format-critical": "<span size='13000'>{icon} </span>{capacity}%",
-    "format-charging": "<span size='13000''> </span>{capacity}%",
+    "format-charging": "<span size='13000' foreground='#f9e2af'>  </span>{capacity}%",
     "format-plugged": "<span size='13000'> </span>{capacity}%",
     "format-alt": "<span size='13000'>{icon} </span> {time}",
     "format-full": "<span size='13000'>  </span>{capacity}%",
@@ -25,10 +25,10 @@
     "tooltip-format": "{time}"
   },
   "network": {
-    "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
-    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭  </span> Disconnected",
+    "format-wifi": "<span size='13000' foreground='#fab387'>  </span>{essid}",
+    "format-ethernet": "<span size='13000' foreground='#f2cdcd'>󰤭  </span> Disconnected",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
+    "format-disconnected": "<span size='13000' foreground='#f38ba8'>  </span>Disconnected",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
   },
   "pulseaudio": {
@@ -63,7 +63,7 @@
         "format": "{icon}",
         "format-icons": {
             "default": "<span size='13000'>󰍡</span>",
-            "dnd": "<span size='13000'>󱙍</span>"
+            "dnd": "<span size='13000' foreground='#f38ba8'>󱙍</span>"
         },
         "on-click": "makoctl mode | grep 'do-not-disturb' && makoctl mode -r do-not-disturb || makoctl mode -a do-not-disturb; pkill -RTMIN+11 waybar",
         "on-click-right": "makoctl restore",

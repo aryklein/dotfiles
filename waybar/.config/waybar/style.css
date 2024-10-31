@@ -160,8 +160,8 @@ button:hover {
 }
 
 #custom-dnd {
-    color: @peach;
-    border-bottom: 2px solid @peach;
+    color: @mauve;
+    border-bottom: 2px solid @mauve;
 }
 
 #tray {
