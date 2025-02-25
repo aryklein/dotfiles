@@ -1,4 +1,4 @@
--- Copilot plugin 
+-- Copilot plugin
 return {
     'github/copilot.vim',
     config = function()
