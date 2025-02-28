@@ -7,6 +7,7 @@ return {
     }
   },
   name = 'lualine',
+  event = "VeryLazy",
   opts = {
     config = {
       theme = 'auto',
