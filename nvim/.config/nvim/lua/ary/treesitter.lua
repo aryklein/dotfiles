@@ -1,29 +1,28 @@
 local treesitter = require('nvim-treesitter.configs')
 
-treesitter.setup {
+treesitter.setup({
   highlight = {
-    enable = true
+    enable = true,
   },
   ensure_installed = {
-    "bash",
-    "yaml",
-    "html",
-    "python",
-    "json",
-    "vim",
-    "lua",
-    "dockerfile",
-    "go",
-    "hcl",
-    "comment",
-    "sql",
-    "toml",
-    "c",
-    "terraform",
-    "gitcommit",
-    "gitignore",
-    "markdown",
-    "make"
+    'bash',
+    'yaml',
+    'html',
+    'python',
+    'json',
+    'vim',
+    'lua',
+    'dockerfile',
+    'go',
+    'hcl',
+    'comment',
+    'sql',
+    'toml',
+    'c',
+    'terraform',
+    'gitcommit',
+    'gitignore',
+    'markdown',
+    'make',
   },
-
-}
+})

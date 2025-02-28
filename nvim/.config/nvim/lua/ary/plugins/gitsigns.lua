@@ -1,7 +1,7 @@
 return {
   'lewis6991/gitsigns.nvim',
-  event = { "BufReadPre", "BufNewFile" },
+  event = { 'BufReadPre', 'BufNewFile' },
   config = function()
-      require('ary.gitsigns')
-  end
+    require('ary.gitsigns')
+  end,
 }

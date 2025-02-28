@@ -3,11 +3,11 @@ return {
   dependencies = {
     {
       'nvim-tree/nvim-web-devicons',
-       config = true,
-    }
+      config = true,
+    },
   },
   name = 'lualine',
-  event = "VeryLazy",
+  event = 'VeryLazy',
   opts = {
     config = {
       theme = 'auto',
