@@ -136,6 +136,8 @@ export MANROFFOPT="-P -c"
 
 # Terminal issues with SSH in Kitty
 alias ssh='TERM="xterm-256color" ssh'
+# Terminal issues with SSH in Kitty for strongDM
+alias s='TERM="xterm-256color" /home/ary/.bin/sdm ssh wrapped-run'
 # replace vim by nvim if it is installed
 if [[ -x /usr/bin/nvim ]]; then alias vim='nvim'; fi
 # replace cat with bat if it is installed
@@ -194,13 +196,17 @@ bindkey '^H' backward-kill-word
 [ -r /etc/DIR_COLORS ] && eval `dircolors /etc/DIR_COLORS`
 
 # Add $HOME/bin to the PATH variable
-#path+=$HOME/.bin
+path+=("$HOME/.bin")
+path+=("$HOME/.npm-global/bin")
 
 # set Vim as default editor for gh
 export EDITOR=nvim
 
 # tenv auto install
 export TENV_AUTO_INSTALL=true
+
+# load secrets
+[[ -f "$HOME/.zsh_secrets" ]] && source "$HOME/.zsh_secrets"
 
 ## powerline10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
