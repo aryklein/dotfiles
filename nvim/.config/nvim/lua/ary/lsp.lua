@@ -1,4 +1,17 @@
 --- LSP configuration for Neovim
+
+-- This is copied straight from blink
+-- https://cmp.saghen.dev/installation#merging-lsp-capabilities
+local capabilities = {
+    textDocument = {
+		foldingRange = {
+			dynamicRegistration = false,
+			lineFoldingOnly = true,
+		},
+	},
+}
+capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+
 -- Enable servers with specific overrides for Lua
 vim.lsp.enable({
   "lua",
