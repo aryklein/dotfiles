@@ -8,3 +8,5 @@ require('ary.lazy')
 require('ary.remaps')
 -- useful LUA functions for debugging
 require('ary.debug')
+--- lsp
+require('ary.lsp')
