@@ -3,12 +3,12 @@
 -- This is copied straight from blink
 -- https://cmp.saghen.dev/installation#merging-lsp-capabilities
 local capabilities = {
-    textDocument = {
-		foldingRange = {
-			dynamicRegistration = false,
-			lineFoldingOnly = true,
-		},
-	},
+  textDocument = {
+    foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    },
+  },
 }
 capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 

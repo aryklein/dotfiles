@@ -107,16 +107,16 @@ vim.opt.winborder = "rounded"
 
 -- Inline hints
 vim.diagnostic.config({
-    signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = "󰅚",
-            [vim.diagnostic.severity.WARN] = "󰀪",
-            [vim.diagnostic.severity.HINT] = "󰌶",
-            [vim.diagnostic.severity.INFO] = "",
-        },
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "󰅚",
+      [vim.diagnostic.severity.WARN] = "󰀪",
+      [vim.diagnostic.severity.HINT] = "󰌶",
+      [vim.diagnostic.severity.INFO] = "",
     },
-    virtual_text = true,
-    virtual_lines = false,
+  },
+  virtual_text = true,
+  virtual_lines = false,
 })
 
 -- Set completeopt to have a better completion experience
@@ -125,12 +125,12 @@ vim.opt.completeopt = "menuone,noselect"
 
 -- Hobo way to to force ansiblels being used for Ansible files
 vim.filetype.add({
-    pattern = {
-        [".*/.*playbook.*.ya?ml"] = "yaml.ansible",
-        [".*/.*tasks.*/.*ya?ml"] = "yaml.ansible",
-        [".*/.*group_vars.*/.*ya?ml"] = "yaml.ansible",
-        [".*/.*host_vars.*/.*ya?ml"] = "yaml.ansible",
-        [".*/local.ya?ml"] = "yaml.ansible",
-        [".*-ansible/.*ya?ml"] = "yaml.ansible",
-    },
+  pattern = {
+    [".*/.*playbook.*.ya?ml"] = "yaml.ansible",
+    [".*/.*tasks.*/.*ya?ml"] = "yaml.ansible",
+    [".*/.*group_vars.*/.*ya?ml"] = "yaml.ansible",
+    [".*/.*host_vars.*/.*ya?ml"] = "yaml.ansible",
+    [".*/local.ya?ml"] = "yaml.ansible",
+    [".*-ansible/.*ya?ml"] = "yaml.ansible",
+  },
 })
