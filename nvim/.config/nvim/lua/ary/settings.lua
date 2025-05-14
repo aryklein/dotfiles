@@ -44,10 +44,6 @@ vim.g['netrw_liststyle'] = 3
 -- avoid pop ups sign_icons to moves your screer
 vim.opt.signcolumn = 'yes'
 
--- set <space> as the leader key
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- show whitespace
 vim.opt.list = true
 vim.opt.listchars = 'tab:▸ ,trail:.,nbsp:␣,extends:❯,precedes:❮'
@@ -122,15 +118,3 @@ vim.diagnostic.config({
 -- Set completeopt to have a better completion experience
 -- https://neovim.io/doc/user/options.html
 vim.opt.completeopt = "menuone,noselect"
-
--- Hobo way to to force ansiblels being used for Ansible files
-vim.filetype.add({
-  pattern = {
-    [".*/.*playbook.*.ya?ml"] = "yaml.ansible",
-    [".*/.*tasks.*/.*ya?ml"] = "yaml.ansible",
-    [".*/.*group_vars.*/.*ya?ml"] = "yaml.ansible",
-    [".*/.*host_vars.*/.*ya?ml"] = "yaml.ansible",
-    [".*/local.ya?ml"] = "yaml.ansible",
-    [".*-ansible/.*ya?ml"] = "yaml.ansible",
-  },
-})

@@ -1,30 +1,83 @@
 -- Add colorcolumn to YAML files
-vim.cmd([[autocmd FileType yaml setlocal colorcolumn=160]])
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "yaml",
+  callback = function()
+    vim.opt_local.colorcolumn = "160"
+  end,
+})
 
 -- Ansible files should be set to yaml.ansible
-vim.cmd [[
-autocmd BufNewFile,BufRead *.yaml,*.yml
-\ if search('hosts:\|tasks:\|loop:\|set_fact:', 'nw')
-\ |   set ft=yaml.ansible
-\ |   set colorcolumn=120
-\ | endif
-]]
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.yaml", "*.yml" },
+  callback = function()
+    -- Search for ansible-specific keywords
+    if vim.fn.search([[hosts:\|tasks:\|loop:\|set_fact:]], "nw") ~= 0 then
+      vim.bo.filetype = "yaml.ansible"
+      vim.opt_local.colorcolumn = "120"
+    end
+  end,
+})
 
--- Add colorcolumn to MD files
-vim.cmd([[autocmd FileType markdown setlocal colorcolumn=80 formatoptions+=w textwidth=80]])
+-- Add colorcolumn to Markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.colorcolumn = "80"
+    vim.opt_local.formatoptions:append("w")
+    vim.opt_local.textwidth = 80
+  end,
+})
 
 -- Add colorcolumn to Python files
-vim.cmd([[autocmd FileType python setlocal colorcolumn=79]])
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.opt_local.colorcolumn = "79"
+  end,
+})
 
 -- Terraform and Hashicorp files
-vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
-vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
-vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
-vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
-vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
+-- (First clear old filetypedetect for *.tf if needed)
+vim.api.nvim_clear_autocmds({
+  event = { "BufRead", "BufNewFile" },
+  pattern = "*.tf",
+})
 
--- LUA
--- use indentation of 2 spaces
-vim.cmd([[autocmd FileType lua setlocal shiftwidth=2 tabstop=2 softtabstop=2]])
--- use 2 spaces for tabs
-vim.cmd([[autocmd FileType lua setlocal expandtab]])
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.hcl",
+  callback = function()
+    vim.bo.filetype = "hcl"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { ".terraformrc", "terraform.rc" },
+  callback = function()
+    vim.bo.filetype = "hcl"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.tf", "*.tfvars" },
+  callback = function()
+    vim.bo.filetype = "terraform"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.tfstate", "*.tfstate.backup" },
+  callback = function()
+    vim.bo.filetype = "json"
+  end,
+})
+
+-- LUA settings: use indentation of 2 spaces
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "lua",
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.expandtab = true
+  end,
+})
