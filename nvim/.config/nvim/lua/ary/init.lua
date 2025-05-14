@@ -1,3 +1,4 @@
+-- must happen before anything else
 require('ary.early')
 -- plugins manged with Lazy
 require('ary.lazy')
