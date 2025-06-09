@@ -1,7 +1,7 @@
 return {
   { -- telescope
     'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
+    branch = 'master',
     lazy = true,
     cmd = { 'Telescope' },
     keys = {

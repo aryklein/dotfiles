@@ -18,6 +18,7 @@ vim.lsp.enable({
   "pyright",
   "ansiblels",
   "bashls",
+  "gols",
 })
 
 --- This file sets up the LSP client, key mappings, and autocommands for LSP features.
