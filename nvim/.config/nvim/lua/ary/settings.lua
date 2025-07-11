@@ -51,6 +51,8 @@ vim.opt.listchars = 'tab:▸ ,trail:.,nbsp:␣,extends:❯,precedes:❮'
 -- preview substitutions live, as you type
 vim.opt.inccommand = 'split'
 
+-- always show status line
+vim.opt.laststatus = 3
 
 -- [[ Basic Autocommands ]]
 -- See `:help lua-guide-autocommands`
