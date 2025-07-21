@@ -16,6 +16,6 @@ if [ $IS_ENABLED -eq 0 ]; then
     echo "disabled"
 else
     # Enable laptop display
-    hyprctl keyword monitor "$(grep monitor=eDP-1 .config/hypr/hyprland.conf | cut -d'=' -f2)" > /dev/null 2>&1
+    hyprctl keyword monitor "$(grep -e ^monitor=eDP-1 .config/hypr/hyprland.conf | cut -d'=' -f2)" > /dev/null 2>&1
     echo "enabled"
 fi
