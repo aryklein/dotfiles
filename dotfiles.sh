@@ -36,10 +36,41 @@ fi
 
 # environment definition
 PACKAGES=(
-    alacritty bash brave obsproject fontconfig git gtk kitty mako nvim
-    ssh sway tfswitch tmux waybar zsh flameshot zoom fzf vscode swaylock
-    chromium electron kanshi paru wob swappy backgrounds slack fuzzel spotify
-    pcmanfm tgswitch audacity bat starship
+    alacritty
+    atuin
+    audacity
+    backgrounds
+    bash
+    bat
+    brave
+    chromium
+    electron
+    flameshot
+    fontconfig
+    fuzzel
+    fzf
+    git
+    gtk
+    hypr
+    kanshi
+    kitty
+    mako
+    nvim
+    obsproject
+    paru
+    pcmanfm
+    slack
+    spotify
+    ssh
+    starship
+    swappy
+    tfswitch
+    tgswitch
+    tmux
+    waybar
+    wob
+    wofi
+    zsh
 )
 
 case "$1" in
