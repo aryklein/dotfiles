@@ -52,7 +52,7 @@ PACKAGES=(
     git
     gtk
     hypr
-    kanshi
+    k9s
     kitty
     mako
     nvim
