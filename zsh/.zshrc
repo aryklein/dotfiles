@@ -19,6 +19,8 @@ zstyle :compinstall filename "'$HOME/.zshrc'"
 ## Basic auto/tab completion with menu style
 autoload -Uz compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} 'di=01;34' 'ex=01;32' 'ma=48;2;108;112;134;38;2;205;214;244'
+zstyle ':completion:*:commands' list-colors '=*=01;32'
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # Include hidden files.
@@ -218,3 +220,7 @@ eval "$(starship init zsh)"
 
 # atuin shell integration
 eval "$(atuin init zsh --disable-up-arrow)"
+
+# zoxide
+export _ZO_ECHO=1
+eval "$(zoxide init zsh)"
