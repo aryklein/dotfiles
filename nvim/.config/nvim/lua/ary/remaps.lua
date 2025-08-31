@@ -13,8 +13,6 @@ vim.keymap.set('n', '<Leader>ht', ':sp \\| :terminal<CR>')
 -- open a vertical terminal inside VIM
 vim.keymap.set('n', '<Leader>vt', ':vsp \\| :terminal<CR>')
 
--- shortcut for vertical Explore
-vim.keymap.set('n', '<F9>', ':NvimTreeToggle<CR>')
 
 -- Esc key for normal mode in terminal
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
@@ -22,12 +20,10 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 -- toggle line numbering
 --nnoremap <silent><F6> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 
--- toggle vim-gitgutter
-vim.keymap.set('n', '<F7>', ':GitGutterToggle<CR>', { silent = true })
 
 -- remap to move block of text
-vim.keymap.set('v', 'J', "'>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', "'<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- remap to shift blocks visually
 vim.keymap.set('v', '>', '>gv')
@@ -54,7 +50,7 @@ vim.keymap.set('n','<Leader>ff', function()
 end)
 
 -- Telescope live grep
-vim.keymap.set('n','<Leader>lg', function()
+vim.keymap.set('n','<Leader>fg', function()
   require('telescope.builtin').live_grep()
 end)
 
@@ -64,7 +60,15 @@ vim.keymap.set('n','<Leader>fb', function()
 end)
 
 -- Telescope file browser
-vim.keymap.set('n','<Leader>te', ':Telescope file_browser<CR>')
+vim.keymap.set('n','<Leader>fe', ':Telescope file_browser<CR>')
+
+-- Telescope help tags
+vim.keymap.set('n','<Leader>fh', function()
+  require('telescope.builtin').help_tags()
+end)
 
 -- help for world sustitution
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Copilot Chat
+vim.keymap.set("n", "<Leader>cc", ":CopilotChatToggle<CR>", { silent = true })
