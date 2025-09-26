@@ -1,21 +1,35 @@
-#!/usr/bin/env bash
-# Description: Toggles laptop display on/off
-# Author: Ary Kleinerman
+#!/bin/bash
 
-# Laptop monitor name
-LAPTOP_MONITOR="eDP-1"
+# This script toggles the hyprland monitor
+# The script will get as argument the name of the monitor to toggle
 
-# Check if laptop display is enabled
-hyprctl monitors | grep $LAPTOP_MONITOR > /dev/null 2>&1
-IS_ENABLED=$?
+if [[  $# -ne 1 ]]; then
+    echo "Usage: $0 <monitor_name>"
+    exit 1
+fi
 
-# Toggle laptop display
-if [ $IS_ENABLED -eq 0 ]; then
-    # Disable laptop display
-    hyprctl keyword monitor "eDP-1, disable" > /dev/null 2>&1
-    echo "disabled"
+
+# List of embedded displays (laptop screens) and external displays
+ALL_MONITORS=$(hyprctl monitors all| grep Monitor | awk '{print $2}')
+ENABLED_MONITORS=$(hyprctl monitors | grep Monitor | awk '{print $2}')
+
+if echo "${ALL_MONITORS}" | grep -q "^${1}$"; then
+    echo "Toggling monitor: $1"
 else
-    # Enable laptop display
-    hyprctl keyword monitor "$(grep -e ^monitor=eDP-1 .config/hypr/hyprland.conf | cut -d'=' -f2)" > /dev/null 2>&1
-    echo "enabled"
+    echo "Monitor $1 not found"
+    exit 1
+fi
+
+# Check if the monitor name provided as argument is enabled
+if echo "${ENABLED_MONITORS}" | grep -q "^${1}$"; then
+    CURRENT_STATUS=$(hyprctl monitors -j | jq -r ".[] | select(.name==\"$1\") | \"$1,preferred,\(.x)x\(.y),\(.scale),transform,\(.transform)\"")
+    echo $CURRENT_STATUS > /tmp/monitor_status_$1.txt
+    hyprctl keyword monitor "$1, disable"
+else
+    read CURRENT_STATUS < /tmp/monitor_status_$1.txt
+    hyprctl keyword monitor "$CURRENT_STATUS"
+    # Remove the temporary file
+    if [[ -f /tmp/monitor_status_$1.txt ]]; then
+        rm /tmp/monitor_status_$1.txt
+    fi
 fi

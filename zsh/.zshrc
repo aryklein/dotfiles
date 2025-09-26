@@ -224,3 +224,8 @@ eval "$(atuin init zsh --disable-up-arrow)"
 # zoxide
 export _ZO_ECHO=1
 eval "$(zoxide init zsh)"
+
+# UV autocompletion
+if command -v uv >/dev/null 2>&1; then
+  eval "$(uv generate-shell-completion zsh)"
+fi
