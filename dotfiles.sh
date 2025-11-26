@@ -71,6 +71,7 @@ PACKAGES=(
     wob
     wofi
     zsh
+    opencode
 )
 
 case "$1" in
