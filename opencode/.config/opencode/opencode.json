@@ -14,7 +14,16 @@
       ],
       "enabled": true
     },
-  },
+    "atlassian": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "mcp-remote",
+        "https://mcp.atlassian.com/v1/sse"
+      ],
+      "enabled": true
+    },
   "provider": {
     "telnyx-litellm": {
       "npm": "@ai-sdk/openai-compatible",
