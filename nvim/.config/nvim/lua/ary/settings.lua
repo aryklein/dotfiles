@@ -120,3 +120,7 @@ vim.diagnostic.config({
 -- Set completeopt to have a better completion experience
 -- https://neovim.io/doc/user/options.html
 vim.opt.completeopt = "menuone,noselect"
+
+-- Persistent undo
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath('state') .. '/undo'

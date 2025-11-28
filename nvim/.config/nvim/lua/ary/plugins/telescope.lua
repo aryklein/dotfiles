@@ -9,6 +9,7 @@ return {
       { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = 'Grep' },
       { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = 'Buffers' },
       { '<leader>fh', '<cmd>Telescope help_tags<cr>', desc = 'Help Tags' },
+      { '<leader>fe', '<cmd>Telescope file_browser<cr>', desc = 'File Browser' },
     },
     dependencies = {
       'nvim-lua/plenary.nvim',
