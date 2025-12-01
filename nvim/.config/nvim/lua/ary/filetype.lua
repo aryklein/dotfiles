@@ -1,8 +1,12 @@
--- Add colorcolumn to YAML files
+-- YAML settings: use indentation of 2 spaces
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "yaml",
   callback = function()
     vim.opt_local.colorcolumn = "160"
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.expandtab = true
   end,
 })
 
@@ -14,6 +18,10 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     if vim.fn.search([[hosts:\|tasks:\|loop:\|set_fact:]], "nw") ~= 0 then
       vim.bo.filetype = "yaml.ansible"
       vim.opt_local.colorcolumn = "120"
+      vim.opt_local.shiftwidth = 2
+      vim.opt_local.tabstop = 2
+      vim.opt_local.softtabstop = 2
+      vim.opt_local.expandtab = true
     end
   end,
 })
@@ -71,6 +79,17 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
+-- Terraform/HCL settings: use indentation of 2 spaces
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "terraform", "hcl" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.expandtab = true
+  end,
+})
+
 -- LUA settings: use indentation of 2 spaces
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "lua",
@@ -79,5 +98,27 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.tabstop = 2
     vim.opt_local.softtabstop = 2
     vim.opt_local.expandtab = true
+  end,
+})
+
+-- JSON settings: use indentation of 2 spaces
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "json", "jsonc" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.expandtab = true
+  end,
+})
+
+-- Go settings: use tabs (gofmt standard)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "go",
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.expandtab = false
   end,
 })
