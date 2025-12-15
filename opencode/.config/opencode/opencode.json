@@ -3,6 +3,12 @@
   "keybinds": {
     "input_newline": "alt+enter"
   },
+  "tui": {
+    "scroll_speed": 3,
+    "scroll_acceleration": {
+      "enabled": true
+    }
+  },
   "mcp": {
     "tavily": {
       "type": "local",
@@ -23,7 +29,8 @@
         "https://mcp.atlassian.com/v1/sse"
       ],
       "enabled": true
-    },
+    }
+  },
   "provider": {
     "telnyx-litellm": {
       "npm": "@ai-sdk/openai-compatible",
