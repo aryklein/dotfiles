@@ -34,12 +34,9 @@ vim.opt.clipboard = 'unnamedplus'
 -- enable break indent
 vim.opt.breakindent = true
 
--- enable syntax highlighting
-vim.cmd('syntax enable')
-
 -- netrw configuration
-vim.g['netrw_banner'] = 0
-vim.g['netrw_liststyle'] = 3
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
 
 -- avoid pop ups sign_icons to moves your screer
 vim.opt.signcolumn = 'yes'
@@ -93,12 +90,12 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 
 -- set cursor shape to beam when exit Neovim
-vim.cmd [[
-  augroup CursorShape
-  autocmd!
-  autocmd VimLeave,VimSuspend * set guicursor=a:ver25
-  augroup END
-]]
+vim.api.nvim_create_autocmd({ 'VimLeave', 'VimSuspend' }, {
+  group = vim.api.nvim_create_augroup('CursorShape', { clear = true }),
+  callback = function()
+    vim.opt.guicursor = 'a:ver25'
+  end,
+})
 
 -- Rounded borders
 vim.opt.winborder = "rounded"

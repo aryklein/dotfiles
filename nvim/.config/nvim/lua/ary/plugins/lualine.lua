@@ -9,7 +9,7 @@ return {
   name = 'lualine',
   event = 'VeryLazy',
   opts = {
-    config = {
+    options = {
       theme = 'auto',
     },
   },

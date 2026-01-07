@@ -1,17 +1,17 @@
 -- split resize
-vim.keymap.set('n','<C-j>',':resize -3<CR>', { silent = true, desc = 'Decrease window height' })
-vim.keymap.set('n','<C-k>',':resize +3<CR>', { silent = true, desc = 'Increase window height' })
-vim.keymap.set('n','<C-l>',':vertical resize -3<CR>', { silent = true, desc = 'Decrease window width' })
-vim.keymap.set('n','<C-h>',':vertical resize +3<CR>', { silent = true, desc = 'Increase window width' })
+vim.keymap.set('n', '<C-j>', '<Cmd>resize -3<CR>', { silent = true, desc = 'Decrease window height' })
+vim.keymap.set('n', '<C-k>', '<Cmd>resize +3<CR>', { silent = true, desc = 'Increase window height' })
+vim.keymap.set('n', '<C-l>', '<Cmd>vertical resize -3<CR>', { silent = true, desc = 'Decrease window width' })
+vim.keymap.set('n', '<C-h>', '<Cmd>vertical resize +3<CR>', { silent = true, desc = 'Increase window width' })
 
 -- remove highlight on search
-vim.keymap.set('n', '<Esc><Esc>', ':noh<CR>', { silent = true, desc = 'Clear search highlight' })
+vim.keymap.set('n', '<Esc><Esc>', '<Cmd>noh<CR>', { silent = true, desc = 'Clear search highlight' })
 
 -- open a terminal inside NVim
-vim.keymap.set('n', '<Leader>ht', ':sp | terminal<CR>', { desc = 'Open horizontal terminal' })
+vim.keymap.set('n', '<Leader>ht', '<Cmd>sp | terminal<CR>', { desc = 'Open horizontal terminal' })
 
 -- open a vertical terminal inside VIM
-vim.keymap.set('n', '<Leader>vt', ':vsp | terminal<CR>', { desc = 'Open vertical terminal' })
+vim.keymap.set('n', '<Leader>vt', '<Cmd>vsp | terminal<CR>', { desc = 'Open vertical terminal' })
 
 -- Esc key for normal mode in terminal
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
@@ -32,8 +32,6 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up and center' })
 vim.keymap.set('n', 'n', 'nzz', { desc = 'Next search result and center' })
 vim.keymap.set('n', 'N', 'Nzz', { desc = 'Previous search result and center' })
 
-
-
 -- keep paste text in the buffer
 vim.keymap.set('x', '<Leader>p', '"_dP', { desc = 'Paste without yanking' })
 
@@ -41,4 +39,4 @@ vim.keymap.set('x', '<Leader>p', '"_dP', { desc = 'Paste without yanking' })
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Substitute word under cursor' })
 
 -- Copilot Chat
-vim.keymap.set("n", "<Leader>cc", ":CopilotChatToggle<CR>", { silent = true, desc = 'Toggle Copilot Chat' })
+vim.keymap.set("n", "<Leader>cc", "<Cmd>CopilotChatToggle<CR>", { silent = true, desc = 'Toggle Copilot Chat' })
