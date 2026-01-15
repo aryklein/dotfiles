@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
-  "modules-right": ["tray", "backlight", "bluetooth", "network", "pulseaudio", "battery", "clock", "custom/dnd"],
+  "modules-right": ["tray", "backlight", "network", "pulseaudio", "battery", "clock", "custom/dnd"],
 
   "clock": {
     "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
@@ -50,7 +50,7 @@
       "format-on": "<span size='13000'>󰂱</span>",
       "format-connected": "<span size='13000'>󰂱</span>",
       "format-disabled": "<span size='13000'>󰂲</span>",
-      "on-click": "blueberry",
+      "on-click": "blueman-manager",
       "tooltip-format": "{}"
   },
   "backlight": {
