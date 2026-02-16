@@ -30,12 +30,7 @@ vim.lsp.enable({
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
   callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
-
-    -- LSP keymaps
+    -- LSP keymaps (completion is handled by blink.cmp)
     local function map(mode, lhs, rhs, desc)
       vim.keymap.set(mode, lhs, rhs, { buffer = ev.buf, desc = desc })
     end
@@ -47,9 +42,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('n', 'K', vim.lsp.buf.hover, 'Hover documentation')
     map('n', '<leader>rn', vim.lsp.buf.rename, 'Rename symbol')
     map('n', '<leader>ca', vim.lsp.buf.code_action, 'Code action')
-    map('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, 'Format buffer')
-    map('n', '[d', vim.diagnostic.goto_prev, 'Previous diagnostic')
-    map('n', ']d', vim.diagnostic.goto_next, 'Next diagnostic')
+    map('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, 'Previous diagnostic')
+    map('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, 'Next diagnostic')
     map('n', '<leader>e', vim.diagnostic.open_float, 'Show diagnostic')
   end,
 })

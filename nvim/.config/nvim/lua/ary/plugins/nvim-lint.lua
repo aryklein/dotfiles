@@ -21,5 +21,8 @@ return {
         lint.try_lint()
       end,
     })
+
+    -- Lint the buffer that triggered the plugin load
+    lint.try_lint()
   end,
 }

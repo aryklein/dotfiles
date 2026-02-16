@@ -78,14 +78,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- remove trailing whitespace on save
+-- remove trailing whitespace on save (preserves cursor and search register)
 vim.api.nvim_create_autocmd('BufWritePre', {
   desc = 'Remove trailing whitespace on save',
   group = vim.api.nvim_create_augroup('remove-trailing-whitespace', { clear = true }),
   pattern = '*',
   callback = function()
-    vim.cmd [[%s/\s\+$//e]]
-    vim.cmd [[%s/\n\+\%$//e]]
+    local cursor = vim.api.nvim_win_get_cursor(0)
+    local search = vim.fn.getreg('/')
+    vim.cmd([[%s/\s\+$//e]])
+    vim.cmd([[%s/\n\+\%$//e]])
+    vim.fn.setreg('/', search)
+    pcall(vim.api.nvim_win_set_cursor, 0, cursor)
   end,
 })
 
@@ -113,10 +117,6 @@ vim.diagnostic.config({
   virtual_text = true,
   virtual_lines = false,
 })
-
--- Set completeopt to have a better completion experience
--- https://neovim.io/doc/user/options.html
-vim.opt.completeopt = "menuone,noselect"
 
 -- Persistent undo
 vim.opt.undofile = true
