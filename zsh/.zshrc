@@ -229,3 +229,8 @@ eval "$(zoxide init zsh)"
 if command -v uv >/dev/null 2>&1; then
   eval "$(uv generate-shell-completion zsh)"
 fi
+
+# go-task autocompletion
+if command -v go-task >/dev/null 2>&1; then
+  eval "$(go-task --completion zsh)"
+fi
