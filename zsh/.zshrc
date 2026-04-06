@@ -139,7 +139,7 @@ export MANROFFOPT="-P -c"
 # Terminal issues with SSH in Kitty
 alias ssh='TERM="xterm-256color" ssh'
 # Terminal issues with SSH in Kitty for strongDM
-alias s='TERM="xterm-256color" /home/ary/.bin/sdm ssh wrapped-run'
+alias s='TERM="xterm-256color" sdm ssh wrapped-run'
 # replace vim by nvim if it is installed
 if [[ -x /usr/bin/nvim ]]; then alias vim='nvim'; fi
 # replace cat with bat if it is installed
