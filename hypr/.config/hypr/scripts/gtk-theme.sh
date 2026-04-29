@@ -9,3 +9,4 @@ gsettings set org.gnome.desktop.interface font-hinting "slight"
 gsettings set org.gnome.desktop.interface font-antialiasing "rgba"
 gsettings set org.gnome.desktop.interface font-rgba-order "rgb"
 gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true
