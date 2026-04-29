@@ -117,6 +117,9 @@ style = "compact"
 #   "^/very/secret/area",
 # ]
 
+## Do not store commands that exit with a non-zero status.
+store_failed = false
+
 ## Configure the maximum height of the preview to show.
 ## Useful when you have long scripts in your history that you want to distinguish
 ## by more than the first few lines.
