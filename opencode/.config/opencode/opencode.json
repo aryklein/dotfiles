@@ -11,14 +11,9 @@
       ],
       "enabled": true
     },
-    "atlassian": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "mcp-remote",
-        "https://mcp.atlassian.com/v1/sse"
-      ],
+    "linear": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp",
       "enabled": true
     },
     "grafana": {
