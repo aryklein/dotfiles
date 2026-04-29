@@ -199,6 +199,7 @@ bindkey '^H' backward-kill-word
 
 # Add $HOME/bin to the PATH variable
 path+=("$HOME/.bin")
+path+=("$HOME/.local/bin")
 path+=("$HOME/.npm-global/bin")
 
 # set Vim as default editor for gh
