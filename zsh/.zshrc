@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 ## History
 HISTFILE=~/.zsh_history
 HISTSIZE=2500
@@ -13,7 +6,10 @@ SAVEHIST=2500
 ## Set vi mode
 bindkey -v
 
-## The following lines was added by compinstall
+# ls file type colors
+[ -r /etc/DIR_COLORS ] && eval "$(dircolors /etc/DIR_COLORS)"
+
+## The following lines were added by compinstall
 zstyle :compinstall filename "'$HOME/.zshrc'"
 
 ## Basic auto/tab completion with menu style
@@ -43,13 +39,6 @@ if [[ -f  /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]];
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
-## Enable syntax-highlighting plugin
-if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    # No colors for comments
-    export ZSH_HIGHLIGHT_STYLES[comment]="none"
-fi
-
 ## Enable and configure fzf
 [[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
 [[ -f /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
@@ -59,7 +48,7 @@ if type fd > /dev/null; then
     # To apply the fd to CTRL-T as well
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     # Carbonfox theme for fzf
-    source ${HOME}/.config/fzf/cappuccin-mocha-theme.conf
+    [[ -r "$HOME/.config/fzf/cappuccin-mocha-theme.conf" ]] && source "$HOME/.config/fzf/cappuccin-mocha-theme.conf"
 #    source ${HOME}/.config/fzf/dracula-theme.conf
 #    source .config/fzf/solarized-dark-theme.conf
 fi
@@ -82,7 +71,7 @@ key[PageUp]="${terminfo[kpp]}"
 key[PageDown]="${terminfo[knp]}"
 key[ShiftTab]="${terminfo[kcbt]}"
 
-# setup key accordinglydd
+# setup key accordingly
 [[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"      beginning-of-line
 [[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"       end-of-line
 [[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"    overwrite-mode
@@ -146,7 +135,7 @@ if [[ -x /usr/bin/nvim ]]; then alias vim='nvim'; fi
 if [[ -x /usr/bin/bat ]]; then alias cat='bat -pp' && export BAT_THEME="Catppuccin Mocha"; fi
 
 ## k8s aliases
-alias k='kubectl'
+alias k='kubecolor'
 # Get current context
 alias krc='kubectl config current-context'
 # List all contexts
@@ -194,10 +183,8 @@ bindkey "^[[3;5~" kill-word
 # ctrl+backspace
 bindkey '^H' backward-kill-word
 
-# ls file type colors
-[ -r /etc/DIR_COLORS ] && eval `dircolors /etc/DIR_COLORS`
-
 # Add $HOME/bin to the PATH variable
+typeset -U path PATH
 path+=("$HOME/.bin")
 path+=("$HOME/.local/bin")
 path+=("$HOME/.npm-global/bin")
@@ -217,14 +204,14 @@ export TENV_AUTO_INSTALL=true
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # starship prompt
-eval "$(starship init zsh)"
+command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 
 # atuin shell integration
-eval "$(atuin init zsh --disable-up-arrow)"
+command -v atuin >/dev/null 2>&1 && eval "$(atuin init zsh --disable-up-arrow)"
 
 # zoxide
 export _ZO_ECHO=1
-eval "$(zoxide init zsh)"
+command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
 
 # UV autocompletion
 if command -v uv >/dev/null 2>&1; then
@@ -234,4 +221,14 @@ fi
 # go-task autocompletion
 if command -v go-task >/dev/null 2>&1; then
   eval "$(go-task --completion zsh)"
+fi
+
+# Make "kubecolor" borrow the same completion logic as "kubectl"
+compdef kubecolor=kubectl
+
+## Enable syntax-highlighting plugin
+if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    # No colors for comments
+    ZSH_HIGHLIGHT_STYLES[comment]="none"
 fi
