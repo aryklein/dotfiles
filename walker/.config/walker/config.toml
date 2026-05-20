@@ -1,0 +1,7 @@
+close_when_open = true
+app_launch_prefix = "hyprctl dispatch exec -- "
+theme = "catppuccin-mocha"
+
+[providers.sets.clipboard]
+default = ["clipboard"]
+empty = ["clipboard"]
