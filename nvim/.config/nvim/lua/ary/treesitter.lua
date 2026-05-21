@@ -16,6 +16,7 @@ local parsers = {
   'gitcommit',
   'gitignore',
   'markdown',
+  'markdown_inline',
   'make',
   'diff',
 }
@@ -23,8 +24,7 @@ local parsers = {
 require('nvim-treesitter').setup()
 require('nvim-treesitter').install(parsers)
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = parsers,
+vim.api.nvim_create_autocmd('FileType', {
   callback = function()
     pcall(vim.treesitter.start)
   end,
