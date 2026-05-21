@@ -18,11 +18,11 @@ return {
     vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufWritePost' }, {
       group = vim.api.nvim_create_augroup('nvim-lint', { clear = true }),
       callback = function()
-        lint.try_lint()
+        lint.try_lint(nil, { ignore_errors = true })
       end,
     })
 
     -- Lint the buffer that triggered the plugin load
-    lint.try_lint()
+    lint.try_lint(nil, { ignore_errors = true })
   end,
 }

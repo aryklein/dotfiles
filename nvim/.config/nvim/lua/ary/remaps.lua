@@ -37,6 +37,3 @@ vim.keymap.set('x', '<Leader>p', '"_dP', { desc = 'Paste without yanking' })
 
 -- help for word substitution
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Substitute word under cursor' })
-
--- Copilot Chat
-vim.keymap.set("n", "<Leader>cc", "<Cmd>CopilotChatToggle<CR>", { silent = true, desc = 'Toggle Copilot Chat' })

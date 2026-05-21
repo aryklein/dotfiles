@@ -84,6 +84,10 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   group = vim.api.nvim_create_augroup('remove-trailing-whitespace', { clear = true }),
   pattern = '*',
   callback = function()
+    if vim.tbl_contains({ 'diff', 'gitcommit', 'markdown' }, vim.bo.filetype) then
+      return
+    end
+
     local cursor = vim.api.nvim_win_get_cursor(0)
     local search = vim.fn.getreg('/')
     vim.cmd([[%s/\s\+$//e]])

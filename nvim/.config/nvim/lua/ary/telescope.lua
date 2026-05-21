@@ -10,7 +10,7 @@ telescope.setup({
     file_previewer = require('telescope.previewers').vim_buffer_cat.new,
     grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
     qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
-    file_ignore_patterns = {'.git/*', '.env/*', '%.jpeg', '%.png', '%.jpg', '%.mkv'},
+    file_ignore_patterns = { '%.git/', '%.env/', '%.jpeg', '%.png', '%.jpg', '%.mkv' },
     color_devicons = false,
     use_less = true,
     -- sort results by name from top to bottom
