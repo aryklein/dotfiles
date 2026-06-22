@@ -32,12 +32,27 @@
         "apiKey": "{env:LITELLM_API_KEY}"
       },
       "models": {
-        "GLM-5": {
-          "name": "GLM 5 (Latest)",
+        "GLM-5.2-FP8": {
+          "name": "GLM-5.2-FP8 (Telnyx LiteLLM)",
+          "reasoning": true,
+          "interleaved": { "field": "reasoning_content" },
+          "tool_call": true,
+          "temperature": true,
+          "modalities": { "input": ["text"] },
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cache_read": 0,
+            "cache_write": 0
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 131072
+          }
         },
         "Kimi-K2.5": {
-          "name": "Kimi K2.5 (Code-focused)",
-        },
+          "name": "Kimi K2.5 (Code-focused)"
+        }
       }
     }
   }
