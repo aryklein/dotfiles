@@ -1,0 +1,68 @@
+[colors.bright]
+black = "0x585B70"
+blue = "0x89B4FA"
+cyan = "0x94E2D5"
+green = "0xA6E3A1"
+magenta = "0xF5C2E7"
+red = "0xF38BA8"
+white = "0xA6ADC8"
+yellow = "0xF9E2AF"
+
+[colors.cursor]
+cursor = "0xF5E0DC"
+text = "0x1E1E2E"
+
+[colors.normal]
+black = "0x45475A"
+blue = "0x89B4FA"
+cyan = "0x94E2D5"
+green = "0xA6E3A1"
+magenta = "0xF5C2E7"
+red = "0xF38BA8"
+white = "0xBAC2DE"
+yellow = "0xF9E2AF"
+
+[colors.primary]
+background = "0x1E1E2E"
+foreground = "0xCDD6F4"
+
+[colors.selection]
+background = "0x6C7086"
+text = "0xCDD6F4"
+
+[cursor]
+thickness = 0.2
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Always"
+shape = "Beam"
+
+[cursor.vi_mode_style]
+blinking = "Always"
+shape = "Block"
+
+[font]
+size = 11
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Medium"
+
+[window]
+decorations = "none"
+dynamic_padding = true
+startup_mode = "Maximized"
+title = "Alacritty"
+
+[window.padding]
+x = 1
+y = 1
