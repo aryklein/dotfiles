@@ -100,6 +100,7 @@ PACKAGES=(
     waybar
     wob
     wofi
+    yazi
     zsh
     opencode
 )
