@@ -196,6 +196,7 @@ fi
 
 # go-task autocompletion
 if command -v go-task >/dev/null 2>&1; then
+  export TASK_EXE='go-task'
   eval "$(go-task --completion zsh)"
 fi
 
