@@ -55,7 +55,7 @@ style = "Italic"
 
 [font.normal]
 family = "JetBrains Mono"
-style = "Medium"
+style = "SemiBold"
 
 [window]
 decorations = "none"
