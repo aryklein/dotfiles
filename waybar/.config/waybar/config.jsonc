@@ -37,7 +37,7 @@
       "format-icons": {
           "default": ["", "", " "]
       },
-      "on-click": "hyprctl dispatch exec \"kitty --class floating_shell pulsemixer\""
+      "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty --class floating_shell pulsemixer\")'"
   },
   "tray": {
       "icon-size": 21,
