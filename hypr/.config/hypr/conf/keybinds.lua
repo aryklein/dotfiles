@@ -11,6 +11,8 @@ hl.bind(mod .. " + s", hl.dsp.layout("togglesplit"))
 hl.bind(mod .. " + f", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mod .. " + ESCAPE", hl.dsp.focus({ workspace = "previous" }))
 hl.bind(mod .. " + v", hl.dsp.exec_cmd("killall fuzzel 2>/dev/null; cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"))
+hl.bind(mod .. " + SHIFT + p", hl.dsp.exec_cmd(programs.screenshot))
+hl.bind(mod .. " + p", hl.dsp.exec_cmd(programs.swappy))
 
 hl.bind(mod .. " + l", hl.dsp.focus({ direction = "right" }))
 hl.bind(mod .. " + h", hl.dsp.focus({ direction = "left" }))
