@@ -33,7 +33,7 @@ hl.bind(mod .. " + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
 hl.bind(mod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
 
-hl.bind(mod .. " + SHIFT + l", hl.dsp.exec_cmd("loginctl lock-session"), { release = true })
+hl.bind("CTRL + ALT + l", hl.dsp.exec_cmd("loginctl lock-session"))
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(programs.volume_up), { repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(programs.volume_down), { repeating = true })
