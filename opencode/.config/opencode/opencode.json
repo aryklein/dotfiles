@@ -21,6 +21,11 @@
       "type": "remote",
       "url": "http://grafana-mcp.query.prod.telnyx.io:8000/mcp",
       "enabled": true
+    },
+    "oneshape": {
+      "type": "remote",
+      "url": "https://fs-mcp.labs.onshape.app/mcp",
+      "enabled": true
     }
   },
   "provider": {
@@ -32,13 +37,22 @@
         "apiKey": "{env:LITELLM_API_KEY}"
       },
       "models": {
-        "GLM-5.2-NVFP4": {
-          "name": "GLM-5.2-NVFP4 (Telnyx LiteLLM)",
+        "GLM-5.3": {
+          "name": "GLM-5.3 (Telnyx LiteLLM)",
           "reasoning": true,
           "interleaved": { "field": "reasoning_content" },
           "tool_call": true,
           "temperature": true,
           "modalities": { "input": ["text"] },
+          "options": {
+            "thinking": { "type": "enabled" },
+            "reasoningEffort": "max"
+          },
+          "variants": {
+            "low": { "reasoningEffort": "low" },
+            "high": { "reasoningEffort": "high" },
+            "max": { "reasoningEffort": "max" }
+          },
           "cost": {
             "input": 0,
             "output": 0,
