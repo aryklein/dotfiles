@@ -21,11 +21,6 @@
       "type": "remote",
       "url": "http://grafana-mcp.query.prod.telnyx.io:8000/mcp",
       "enabled": true
-    },
-    "oneshape": {
-      "type": "remote",
-      "url": "https://fs-mcp.labs.onshape.app/mcp",
-      "enabled": true
     }
   },
   "provider": {
