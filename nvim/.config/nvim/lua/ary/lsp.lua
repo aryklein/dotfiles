@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     -- LSP keymaps (completion is handled by blink.cmp)
     local function map(mode, lhs, rhs, desc)
-      vim.keymap.set(mode, lhs, rhs, { buffer = ev.buf, desc = desc })
+      vim.keymap.set(mode, lhs, rhs, { buf = ev.buf, desc = desc })
     end
 
     map('n', 'gd', vim.lsp.buf.definition, 'Go to definition')

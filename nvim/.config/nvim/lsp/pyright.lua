@@ -15,7 +15,7 @@ local function set_python_path(path)
     else
       client.config.settings = vim.tbl_deep_extend('force', client.config.settings, { python = { pythonPath = path } })
     end
-    client.notify('workspace/didChangeConfiguration', { settings = nil })
+    client:notify('workspace/didChangeConfiguration', { settings = nil })
   end
 end
 
@@ -49,7 +49,9 @@ return {
     end, {
       desc = 'Organize Imports',
     })
-    vim.api.nvim_buf_create_user_command(bufnr, 'LspPyrightSetPythonPath', set_python_path, {
+    vim.api.nvim_buf_create_user_command(bufnr, 'LspPyrightSetPythonPath', function(opts)
+      set_python_path(opts.args)
+    end, {
       desc = 'Reconfigure pyright with the provided python path',
       nargs = 1,
       complete = 'file',
