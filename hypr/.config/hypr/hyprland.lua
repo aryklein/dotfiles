@@ -1,4 +1,4 @@
--- Hyprland Lua configuration entrypoint.
+-- Maintained Hyprland entrypoint (0.56.2). Edit conf/*.lua; see README.md.
 require("conf/env")
 require("conf/monitors")
 require("conf/autostart")

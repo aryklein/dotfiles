@@ -6,7 +6,7 @@ hl.bind(mod .. " + SHIFT + q", hl.dsp.window.close())
 hl.bind(mod .. " + SHIFT + e", hl.dsp.exit())
 hl.bind(mod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("brave"))
 hl.bind(mod .. " + SPACE", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mod .. " + d", hl.dsp.exec_cmd("killall " .. programs.menu .. " 2>/dev/null; " .. programs.menu))
+hl.bind(mod .. " + d", hl.dsp.exec_cmd("pkill -x -- " .. string.format("%q", programs.menu_process) .. " 2>/dev/null; " .. programs.menu))
 hl.bind(mod .. " + s", hl.dsp.layout("togglesplit"))
 hl.bind(mod .. " + f", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mod .. " + ESCAPE", hl.dsp.focus({ workspace = "previous" }))
@@ -35,9 +35,10 @@ hl.bind(mod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
 
 hl.bind("CTRL + ALT + l", hl.dsp.exec_cmd("loginctl lock-session"))
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(programs.volume_up), { repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(programs.volume_down), { repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(programs.volume_mute))
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(programs.volume_up), { repeating = true, locked = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(programs.volume_down), { repeating = true, locked = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(programs.volume_mute), { locked = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(programs.mic_mute), { locked = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(programs.brightness_up), { locked = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(programs.brightness_down), { locked = true })
 
@@ -56,19 +57,20 @@ end)
 
 local function toggle_monitor(output, enabled_config)
     if hl.get_monitor(output) then
-        hl.monitor({ output = output, disabled = true })
+        -- Keep at least one active output available for manual toggles.
+        if #hl.get_monitors() > 1 then
+            hl.monitor({ output = output, disabled = true })
+        end
     else
         hl.monitor(enabled_config)
     end
 end
 
-local laptop_monitor = {
-    output = "eDP-1",
-    mode = "preferred",
-    position = "2560x0",
-    scale = 1,
-    disabled = false,
-}
+local profiles = {}
+for _, profile in ipairs(require("conf/monitor-profiles")) do
+    profiles[profile.output] = profile
+end
+local laptop_monitor = profiles["eDP-1"]
 
 hl.bind("switch:on:Lid Switch", function()
     hl.monitor({ output = "eDP-1", disabled = true })
@@ -83,12 +85,5 @@ hl.bind("SUPER + minus", function()
 end)
 
 hl.bind("SUPER + equal", function()
-    toggle_monitor("HDMI-A-1", {
-        output = "HDMI-A-1",
-        mode = "preferred",
-        position = "-1080x-550",
-        scale = 1,
-        transform = 3,
-        disabled = false,
-    })
+    toggle_monitor("HDMI-A-1", profiles["HDMI-A-1"])
 end)

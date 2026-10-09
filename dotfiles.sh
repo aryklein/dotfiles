@@ -72,7 +72,6 @@ PACKAGES=(
     bat
     brave
     chromium
-    elephant
     electron
     flameshot
     fontconfig
@@ -96,7 +95,6 @@ PACKAGES=(
     tfswitch
     tgswitch
     tmux
-    walker
     waybar
     wob
     wofi
