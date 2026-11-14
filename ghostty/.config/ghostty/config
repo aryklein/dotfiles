@@ -1,0 +1,98 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /home/ary/.config/ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+
+theme = Catppuccin Mocha
+font-family = JetBrains Mono
+font-style = Regular
+font-size = 11
+font-thicken = false
+
+# Give light text on the dark background a brighter, fuller appearance.
+alpha-blending = linear
+
+# Match ~/.config/kitty/catppuccin-mocha-theme.conf exactly.
+# Explicit colors avoid differences between bundled theme versions.
+foreground = #CDD6F4
+background = #1E1E2E
+selection-foreground = #CDD6F4
+selection-background = #6C7086
+cursor-color = #F5E0DC
+cursor-text = #1E1E2E
+palette = 0=#45475A
+palette = 1=#F38BA8
+palette = 2=#A6E3A1
+palette = 3=#F9E2AF
+palette = 4=#89B4FA
+palette = 5=#F5C2E7
+palette = 6=#94E2D5
+palette = 7=#BAC2DE
+palette = 8=#585B70
+palette = 9=#F38BA8
+palette = 10=#A6E3A1
+palette = 11=#F9E2AF
+palette = 12=#89B4FA
+palette = 13=#F5C2E7
+palette = 14=#94E2D5
+palette = 15=#A6ADC8
+
+# Kitty uses an opaque background and one point of window padding.
+background-opacity = 1
+window-padding-x = 1
+window-padding-y = 1
+unfocused-split-opacity = 1
+split-divider-color = #6C7086
+scrollbar = never
+
+# Keep the terminal chrome compact under Hyprland, with tabs at the top.
+gtk-titlebar = false
+gtk-tabs-location = top
+gtk-wide-tabs = false
+gtk-toolbar-style = flat
+window-theme = ghostty

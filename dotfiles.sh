@@ -77,6 +77,7 @@ PACKAGES=(
     fontconfig
     fuzzel
     fzf
+    ghostty
     git
     gtk
     hypr
