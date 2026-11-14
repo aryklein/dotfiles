@@ -2,7 +2,7 @@ local menu_process = "fuzzel"
 
 local variables = {
     mod = "SUPER",
-    terminal = "kitty",
+    terminal = "ghostty",
     menu_process = menu_process,
     menu = menu_process,
     notification = "mako",
