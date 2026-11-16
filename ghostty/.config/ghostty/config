@@ -82,10 +82,10 @@ palette = 13=#F5C2E7
 palette = 14=#94E2D5
 palette = 15=#A6ADC8
 
-# Kitty uses an opaque background and one point of window padding.
+# Opaque background with a small inset between text and window edges.
 background-opacity = 1
-window-padding-x = 1
-window-padding-y = 1
+window-padding-x = 3
+window-padding-y = 3
 unfocused-split-opacity = 1
 split-divider-color = #6C7086
 scrollbar = never
