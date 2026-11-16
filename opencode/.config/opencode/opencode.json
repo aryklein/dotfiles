@@ -2,6 +2,15 @@
   "$schema": "https://opencode.ai/config.json",
   "lsp": true,
   "mcp": {
+    "fastvm": {
+      "type": "local",
+      "command": ["/home/ary/.local/bin/fastvm-mcp"],
+      "environment": {
+        "FASTVM_API": "http://10.242.128.198:8090",
+        "FASTVM_DEFAULT_USER": "ary"
+      },
+      "enabled": true
+    },
     "tavily": {
       "type": "local",
       "command": [
