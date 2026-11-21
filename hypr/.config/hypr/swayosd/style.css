@@ -1,0 +1,41 @@
+window#osd {
+    font-family: "Hack Nerd Font", monospace;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 18px;
+    border: 1px solid alpha(#b4befe, 0.25);
+    background: alpha(#1e1e2e, 0.94);
+}
+
+window#osd #container {
+    margin: 18px 24px;
+}
+
+window#osd image {
+    color: #cba6f7;
+}
+
+window#osd label {
+    color: #cdd6f4;
+}
+
+window#osd progressbar {
+    min-height: 8px;
+    border-radius: 999px;
+    background: transparent;
+    border: none;
+}
+
+window#osd trough {
+    min-height: 8px;
+    border-radius: 999px;
+    background: #313244;
+    border: none;
+}
+
+window#osd progress {
+    min-height: 8px;
+    border-radius: 999px;
+    background: #cba6f7;
+    border: none;
+}

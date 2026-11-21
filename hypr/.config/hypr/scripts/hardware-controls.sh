@@ -5,6 +5,26 @@ export LC_ALL=C
 # Feedback is optional: adjusting the hardware must not depend on notifications.
 notify() {
     local title=$1 value=$2
+    local icon progress
+    case "$title" in
+        Volume) icon=audio-volume-high-symbolic ;;
+        Microphone) icon=microphone-sensitivity-high-symbolic ;;
+        Brightness) icon=display-brightness-symbolic ;;
+    esac
+    if [[ $3 == Muted ]]; then
+        if [[ $title == Microphone ]]; then
+            icon=microphone-sensitivity-muted-symbolic
+        else
+            icon=audio-volume-muted-symbolic
+        fi
+    fi
+    if command -v swayosd-client >/dev/null && pgrep -x swayosd-server >/dev/null; then
+        progress=$(awk -v value="$value" 'BEGIN { printf "%.2f", (value > 100 ? 100 : value) / 100 }')
+        if swayosd-client --custom-icon "$icon" --custom-progress "$progress" \
+            --custom-progress-text "$3"; then
+            return 0
+        fi
+    fi
     command -v notify-send >/dev/null || return 0
     notify-send -a hypr-controls -t 1500 \
         -h "string:x-canonical-private-synchronous:$title" \
@@ -17,7 +37,20 @@ case "${1:-}" in
         target=@DEFAULT_SINK@
         title=Volume
         case "$1" in
-            volume-up) pactl set-sink-volume "$target" +5% ;;
+            volume-up)
+                volume=$(pactl get-sink-volume "$target")
+                # Use the loudest channel so neither channel exceeds 100%.
+                value=$(awk '{
+                    for (i = 1; i <= NF; i++)
+                        if ($i ~ /^[0-9]+%$/ && $i + 0 > max)
+                            max = $i + 0
+                } END { print max + 0 }' <<< "$volume")
+                if (( value >= 95 )); then
+                    pactl set-sink-volume "$target" 100%
+                else
+                    pactl set-sink-volume "$target" +5%
+                fi
+                ;;
             volume-down) pactl set-sink-volume "$target" -5% ;;
             volume-mute) pactl set-sink-mute "$target" toggle ;;
             mic-mute)
